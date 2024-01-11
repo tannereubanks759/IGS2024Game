@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e3d33b7db571450489fe5bfd36ce16d6
+timeCreated: 1517222897
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110346
+  packageName: Professional Hunting Rifle
+  packageVersion: 1.0
+  assetPath: Assets/Hunting_Rifle/Materials/Casual_Rifle_D.mat
+  uploadId: 233146

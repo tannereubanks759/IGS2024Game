@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: fc55d9a2993271b4a9971502497fe80d
+timeCreated: 1517221151
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110346
+  packageName: Professional Hunting Rifle
+  packageVersion: 1.0
+  assetPath: Assets/Hunting_Rifle/Materials/Bandages_D.mat
+  uploadId: 233146

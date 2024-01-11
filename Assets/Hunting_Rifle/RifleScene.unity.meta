@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 6e98b373f7348471aa1b6b7aa0521bc4
+timeCreated: 1520251927
+licenseType: Store
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110346
+  packageName: Professional Hunting Rifle
+  packageVersion: 1.0
+  assetPath: Assets/Hunting_Rifle/RifleScene.unity
+  uploadId: 233146

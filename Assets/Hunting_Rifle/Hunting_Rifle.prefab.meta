@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: b83fc7aa9f8fc4168bb5796c7eaa2416
+timeCreated: 1518691792
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110346
+  packageName: Professional Hunting Rifle
+  packageVersion: 1.0
+  assetPath: Assets/Hunting_Rifle/Hunting_Rifle.prefab
+  uploadId: 233146

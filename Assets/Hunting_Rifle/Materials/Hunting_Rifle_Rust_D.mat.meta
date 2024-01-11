@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 9b8c9534110578249a0bbadb1ce48615
+timeCreated: 1517223174
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110346
+  packageName: Professional Hunting Rifle
+  packageVersion: 1.0
+  assetPath: Assets/Hunting_Rifle/Materials/Hunting_Rifle_Rust_D.mat
+  uploadId: 233146

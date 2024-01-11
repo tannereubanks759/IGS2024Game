@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a07ac409a56b5104e8fb1b2afb884e83
+timeCreated: 1517223275
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110346
+  packageName: Professional Hunting Rifle
+  packageVersion: 1.0
+  assetPath: Assets/Hunting_Rifle/Materials/Hunting_Rifle5_D.mat
+  uploadId: 233146
