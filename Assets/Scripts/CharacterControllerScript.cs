@@ -42,7 +42,7 @@ public class CharacterControllerScript : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         moveDirection = transform.forward * vertical + transform.right * horizontal;
-        Debug.Log("Move Direction: " + moveDirection);
+        //Debug.Log("Move Direction: " + moveDirection);
         if (controller.isGrounded)
         {
 
