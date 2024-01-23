@@ -10,6 +10,7 @@ public class RandomMovement : MonoBehaviour
     public Transform centrePoint; //centre of the area the agent wants to move around in
 
     private float idleNextTime;
+    private bool hasTime;
     public float idleTimeTop;
     public float idleTimeBot;
     //instead of centrePoint you can set it as the transform of the agent if you don't care about a specific area
@@ -18,19 +19,25 @@ public class RandomMovement : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         idleNextTime = 0;
+        hasTime = false;
     }
 
 
     void Update()
     {
-        if (agent.remainingDistance <= agent.stoppingDistance && Time.time > idleNextTime) //done with path
+        if (agent.remainingDistance <= agent.stoppingDistance) //done with path
         {
+            if(hasTime == false) //Get Idle Time
+            {
+                idleNextTime = Time.time + Random.Range(idleTimeBot, idleTimeTop);
+                hasTime = true;
+            }
             Vector3 point;
-            if (RandomPoint(centrePoint.position, range, out point)) //pass in our centre point and radius of area
+            if (hasTime && Time.time > idleNextTime && RandomPoint(centrePoint.position, range, out point))
             {
                 Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
                 agent.SetDestination(point);
-                idleNextTime = Time.time + Random.Range(idleTimeBot, idleTimeTop);
+                hasTime = false;
             }
         }
 
