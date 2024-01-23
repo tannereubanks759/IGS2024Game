@@ -7,7 +7,10 @@ public class RandomMovement : MonoBehaviour
     public NavMeshAgent agent;
     public float range; //radius of sphere
 
-    public Transform centrePoint; //centre of the area the agent wants to move around in
+    private Vector3 centrePoint; //centre of the area the agent wants to move around in
+
+    public float WalkSpeed;
+    public float RunSpeed;
 
     private float idleNextTime;
     private bool hasTime;
@@ -20,6 +23,8 @@ public class RandomMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         idleNextTime = 0;
         hasTime = false;
+        centrePoint = this.transform.position;
+        agent.speed = WalkSpeed;
     }
 
 
@@ -33,7 +38,7 @@ public class RandomMovement : MonoBehaviour
                 hasTime = true;
             }
             Vector3 point;
-            if (hasTime && Time.time > idleNextTime && RandomPoint(centrePoint.position, range, out point))
+            if (hasTime && Time.time > idleNextTime && RandomPoint(centrePoint, range, out point))
             {
                 Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
                 agent.SetDestination(point);
@@ -42,13 +47,18 @@ public class RandomMovement : MonoBehaviour
         }
 
     }
-    
+
+    void Running()
+    {
+        
+    }
+
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
 
         Vector3 randomPoint = center + Random.insideUnitSphere * range; //random point in a sphere 
         NavMeshHit hit;
-        if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas)) //documentation: https://docs.unity3d.com/ScriptReference/AI.NavMesh.SamplePosition.html
+        if (NavMesh.SamplePosition(randomPoint, out hit, 10f, NavMesh.AllAreas)) //documentation: https://docs.unity3d.com/ScriptReference/AI.NavMesh.SamplePosition.html
         {
             //the 1.0f is the max distance from the random point to a point on the navmesh, might want to increase if range is big
             //or add a for loop like in the documentation
