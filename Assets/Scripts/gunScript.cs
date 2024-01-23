@@ -11,9 +11,14 @@ public class gunScript : MonoBehaviour
     public GameObject hitPointObj;
     public bool isAmmo = true;
     public GameObject reloadText;
+   [SerializeField] animalDamageHandler ani;
+    public int DAMAGE = 50;
+    public GameObject animal;
     void Start()
     {
         reloadText.SetActive(false);
+        
+        ani = animal.GetComponent<animalDamageHandler>();
     }
 
     // Update is called once per frame
@@ -56,12 +61,22 @@ public class gunScript : MonoBehaviour
 
         if (Physics.Raycast(ray, out target))
         {
-            Debug.Log("Hit something");
+            //Debug.Log("Hit something");
             hitPointObj.transform.position = target.point;
-
+            if (target.collider.tag == "Animal")
+            {
+                Debug.Log("Hit animal");
+               int currentHP = ani.damage(DAMAGE);
+                Debug.Log(currentHP);
+                if (currentHP <= 0)
+                {
+                    ani.killAnimal();
+                }
+            }
 
         }
         isAmmo = false;
         reloadText.SetActive(true);
-    }
+         }
+ 
 }
