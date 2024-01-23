@@ -17,12 +17,14 @@ public class RandomMovement : MonoBehaviour
     private GameObject Player;
     private bool hasPoint;
     private float oceanHeight;
+    public float listeningDistance;
 
     private float idleNextTime;
     private bool hasTime;
     public float idleTimeTop;
     public float idleTimeBot;
     Vector3 point;
+    float distanceFromPlayer;
     //instead of centrePoint you can set it as the transform of the agent if you don't care about a specific area
 
     void Start()
@@ -41,7 +43,7 @@ public class RandomMovement : MonoBehaviour
 
     void Update()
     {
-        
+        distanceFromPlayer = Vector3.Distance(Player.transform.position, this.transform.position);
         if (isRunning == false)
         {
             Roam();
@@ -51,7 +53,8 @@ public class RandomMovement : MonoBehaviour
             Running();
         }
 
-        if (isRunning == false && Input.GetKeyDown(KeyCode.J) && ableToRun) //debug simulate shoot at but not hit (make it run)
+
+        if ((isRunning == false && Input.GetKeyDown(KeyCode.J) && ableToRun) || distanceFromPlayer <= listeningDistance && hasPoint == false) //debug simulate shoot at but not hit (make it run) OR player in range
         {
             hasTime = false;
             hasPoint = false;
@@ -65,11 +68,11 @@ public class RandomMovement : MonoBehaviour
     {
         if(hasPoint == false)
         {
-            if(RandomPointNormalized(transform.position, range * runMultiplier, out point))
+            if(RandomPoint(transform.position, range * runMultiplier * 2f, out point))
             {
-                if(Vector3.Distance(Player.transform.position, point) > range*runMultiplier && point.y > oceanHeight + 3)
+                if(Vector3.Distance(Player.transform.position, point) > range*runMultiplier && point.y > oceanHeight + 5)
                 {
-                    Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
+                    Debug.DrawRay(point, Vector3.up, Color.blue, 5f); //so you can see with gizmos
                     agent.speed = RunSpeed;
                     agent.SetDestination(point);
                     hasPoint = true;
@@ -78,11 +81,16 @@ public class RandomMovement : MonoBehaviour
             }
         }
         
-        if (hasPoint == true && agent.remainingDistance <= 0f)
+        if (Vector3.Distance(agent.transform.position, point) <= 3f && hasPoint)
         {
+            hasPoint = false;
             isRunning = false;
         }
-        
+        else if (hasPoint && agent.velocity == Vector3.zero)
+        {
+            hasPoint = false;
+        }
+
     }
 
     void Roam()
@@ -120,21 +128,6 @@ public class RandomMovement : MonoBehaviour
         result = Vector3.zero;
         return false;
     }
-    bool RandomPointNormalized(Vector3 center, float range, out Vector3 result)
-    {
-
-        Vector3 randomPoint = center + Random.insideUnitSphere.normalized * range; //random point in a sphere 
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(randomPoint, out hit, Mathf.Infinity, NavMesh.AllAreas)) //documentation: https://docs.unity3d.com/ScriptReference/AI.NavMesh.SamplePosition.html
-        {
-            //the 1.0f is the max distance from the random point to a point on the navmesh, might want to increase if range is big
-            //or add a for loop like in the documentation
-            result = hit.position;
-            return true;
-        }
-
-        result = Vector3.zero;
-        return false;
-    }
+    
 }
 
