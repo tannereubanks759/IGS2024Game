@@ -13,11 +13,14 @@ public class RandomMovement : MonoBehaviour
     public float RunSpeed;
     public bool ableToRun;
     public float runMultiplier; //the multiplier of the range that it must travel
+    public bool ableToAttack;
+    public bool attackDamage;
     private bool isRunning;
     private GameObject Player;
     private bool hasPoint;
     private float oceanHeight;
     public float listeningDistance;
+
 
     private float idleNextTime;
     private bool hasTime;
@@ -54,7 +57,7 @@ public class RandomMovement : MonoBehaviour
         }
 
 
-        if ((isRunning == false && Input.GetKeyDown(KeyCode.J) && ableToRun) || distanceFromPlayer <= listeningDistance && hasPoint == false) //debug simulate shoot at but not hit (make it run) OR player in range
+        if (ableToRun && ((isRunning == false && Input.GetKeyDown(KeyCode.J)) || distanceFromPlayer <= listeningDistance && hasPoint == false)) //debug simulate shoot at but not hit (make it run) OR player in range
         {
             hasTime = false;
             hasPoint = false;
@@ -104,10 +107,13 @@ public class RandomMovement : MonoBehaviour
             }
             if (hasTime && Time.time > idleNextTime && RandomPoint(centrePoint, range, out point))
             {
-                Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
-                agent.speed = WalkSpeed;
-                agent.SetDestination(point);
-                hasTime = false;
+                if(point.y > oceanHeight + 5)
+                {
+                    Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
+                    agent.speed = WalkSpeed;
+                    agent.SetDestination(point);
+                    hasTime = false;
+                }
             }
         }
     }
