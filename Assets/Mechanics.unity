@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4514.7437, g: 3292.2114, b: 3432.4185, a: 1}
+  m_IndirectSpecularColor: {r: 5981.147, g: 4196.274, b: 4146.1177, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -602,8 +602,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 710249806}
   range: 51.94
-  WalkSpeed: 0
-  RunSpeed: 0
+  WalkSpeed: 3
+  RunSpeed: 10
+  ableToRun: 1
+  runMultiplier: 1
   idleTimeTop: 20.2
   idleTimeBot: 9.15
 --- !u!1 &924146478
@@ -934,14 +936,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971309985}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.29365283, y: -0, z: -0, w: 0.95591223}
+  m_LocalRotation: {x: 0.4225779, y: -0, z: -0, w: 0.90632665}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 343586218}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 34.154, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 49.995, y: 0, z: 0}
 --- !u!1 &1093602117
 GameObject:
   m_ObjectHideFlags: 0

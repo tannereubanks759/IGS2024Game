@@ -19,7 +19,6 @@ public class AlignWithGround : MonoBehaviour
         {
             Quaternion slopeRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
             transform.rotation = Quaternion.Slerp(transform.rotation, slopeRotation * Animal.transform.rotation, 3 * Time.deltaTime);
-            Debug.Log(hit.normal);
         }
     }
 }

@@ -15,17 +15,17 @@ Material:
   - _ALPHATEST_ON
   - _DISABLE_SSR_TRANSPARENT
   - _DOUBLESIDED_ON
+  - _MATERIAL_FEATURE_TRANSMISSION
   m_InvalidKeywords:
   - _DISTANCEBLEND_ON
   - _MASKMAP
-  - _MATERIAL_FEATURE_TRANSMISSION
   - _NORMALMAP
   - _NORMALMAP_TANGENT_SPACE
   - _THICKNESSMAP
   - _WINDCOLORMIX_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 1
+  m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2475
   stringTagMap:
     MotionVector: User
@@ -190,8 +190,8 @@ Material:
     - _DistortionVectorBias: -1
     - _DistortionVectorScale: 2
     - _DoubleSidedEnable: 1
-    - _DoubleSidedGIMode: 0
-    - _DoubleSidedNormalMode: 1
+    - _DoubleSidedGIMode: 2
+    - _DoubleSidedNormalMode: 2
     - _Drag: 0.7
     - _DstBlend: 0
     - _EmissiveColorMode: 1
@@ -223,6 +223,7 @@ Material:
     - _IridescenceThickness: 1
     - _LinkDetailsWithBase: 1
     - _MaterialID: 5
+    - _MaterialTypeMask: 32
     - _Metallic: 0
     - _NormalMapSpace: 0
     - _NormalScale: 1
@@ -295,8 +296,9 @@ Material:
     - _BaseColor: {r: 0.8962264, g: 0.89199895, b: 0.89199895, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 0.8962264, g: 0.89199895, b: 0.89199895, a: 1}
-    - _DiffusionProfileAsset: {r: -7.1912784e+34, g: 1.5250164e+22, b: 0.000001157826, a: 6.643526e-13}
-    - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
+    - _DiffusionProfileAsset: {r: -7.1912784e+34, g: 1.5250164e+22, b: 0.000001157826,
+        a: 6.643526e-13}
+    - _DoubleSidedConstants: {r: 1, g: 1, b: 1, a: 0}
     - _DryColor: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
@@ -315,3 +317,4 @@ Material:
     - _VertexNormalMultiply: {r: 0, g: 0, b: 0, a: 0}
     - _WindColorInfluence: {r: 0.315, g: 0.5, b: 0.5, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
