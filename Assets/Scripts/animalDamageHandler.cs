@@ -6,8 +6,8 @@ using UnityEngine;
 public class animalDamageHandler : MonoBehaviour
 {
 
-    int health = 100;
-    public int damage(int amount)
+    public int health = 100;
+    public int damage(int amount, int health)
     {
         
         health = health - amount;
@@ -15,8 +15,8 @@ public class animalDamageHandler : MonoBehaviour
 
         return health;  
     }
-    public void killAnimal()
+    /*public void killAnimal()
     {
         Destroy(this.gameObject);
-    }
+    }*/
 }

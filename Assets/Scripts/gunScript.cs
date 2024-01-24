@@ -14,10 +14,11 @@ public class gunScript : MonoBehaviour
    [SerializeField] animalDamageHandler ani;
     public int DAMAGE = 50;
     public GameObject animal;
+    public int currentHP;
     void Start()
     {
         reloadText.SetActive(false);
-        
+        currentHP = 100;
         ani = animal.GetComponent<animalDamageHandler>();
     }
 
@@ -66,11 +67,13 @@ public class gunScript : MonoBehaviour
             if (target.collider.tag == "Animal")
             {
                 Debug.Log("Hit animal");
-               int currentHP = ani.damage(DAMAGE);
+                 
+               currentHP = ani.damage(DAMAGE, currentHP);
                 Debug.Log(currentHP);
                 if (currentHP <= 0)
                 {
-                    ani.killAnimal();
+                    Debug.Log("Destroyed");
+                    Destroy(target.transform.gameObject);
                 }
             }
 
