@@ -10,6 +10,7 @@ public class CharacterControllerScript : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
     public bool isGrounded;
+    public bool isCrouched;
 
     //private variables
     private float mouseX;
@@ -43,6 +44,25 @@ public class CharacterControllerScript : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
         moveDirection = transform.forward * vertical + transform.right * horizontal;
         //Debug.Log("Move Direction: " + moveDirection);
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            //float temp = originalSpeed;
+            if (isCrouched == false)
+            {
+               controller.transform.localScale = new Vector3(.5f, .5f, .5f);
+                //controller.height = controller.height / 2;
+                originalSpeed = originalSpeed / 2;
+                isCrouched = true;
+            }
+            else
+            {
+                controller.transform.localScale = new Vector3(1f, 1f, 1f);
+                //controller.height = controller.height * 2;
+                originalSpeed = originalSpeed *2;
+                isCrouched = false;
+            }
+            //Debug.Log("Crouched");
+        }
         if (controller.isGrounded)
         {
             if (Velocity.y < 0)
