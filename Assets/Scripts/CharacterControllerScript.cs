@@ -45,15 +45,16 @@ public class CharacterControllerScript : MonoBehaviour
         //Debug.Log("Move Direction: " + moveDirection);
         if (controller.isGrounded)
         {
+            if (Velocity.y < 0)
+            {
+                Velocity.y = -25f;
+            }
 
             if (Input.GetKey(KeyCode.Space))
             {
                 Velocity.y = jumpForce;
             }
-            else
-            {
-                Velocity.y = 0;
-            }
+            
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 moveSpeed = sprintSpeed;
