@@ -20,6 +20,7 @@ public class gunScript : MonoBehaviour
         reloadText.SetActive(false);
         currentHP = 100;
         ani = animal.GetComponent<animalDamageHandler>();
+        Debug.Log(currentHP);
     }
 
     // Update is called once per frame
@@ -67,14 +68,14 @@ public class gunScript : MonoBehaviour
             if (target.collider.tag == "Animal")
             {
                 Debug.Log("Hit animal");
-                 
-               currentHP = ani.damage(DAMAGE, currentHP);
-                Debug.Log(currentHP);
-                if (currentHP <= 0)
+                target.transform.SendMessage("hitByRay");
+                //ani.damage(DAMAGE);
+                //Debug.Log(currentHP);
+                /*if (currentHP <= 0)
                 {
                     Debug.Log("Destroyed");
                     Destroy(target.transform.gameObject);
-                }
+                }*/
             }
 
         }
