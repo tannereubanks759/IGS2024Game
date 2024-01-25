@@ -14,13 +14,14 @@ public class RandomMovement : MonoBehaviour
     public bool ableToRun;
     public float runMultiplier; //the multiplier of the range that it must travel
     public bool ableToAttack;
-    public bool attackDamage;
+    public float attackDamage;
+    public float attackDistance;
     private bool isRunning;
     private GameObject Player;
     private bool hasPoint;
     private float oceanHeight;
     public float listeningDistance;
-
+    private bool isAttacking;
 
     private float idleNextTime;
     private bool hasTime;
@@ -41,13 +42,14 @@ public class RandomMovement : MonoBehaviour
         Player = GameObject.Find("Player");
         hasPoint = false;
         oceanHeight = GameObject.Find("Ocean").transform.position.y;
+        isAttacking = false;
     }
 
 
     void Update()
     {
         distanceFromPlayer = Vector3.Distance(Player.transform.position, this.transform.position);
-        if (isRunning == false)
+        if (isRunning == false && isAttacking == false)
         {
             Roam();
         }
@@ -55,7 +57,16 @@ public class RandomMovement : MonoBehaviour
         {
             Running();
         }
+        else if(isAttacking == true)
+        {
+            attack();
+        }
+        
 
+        if(ableToAttack && distanceFromPlayer < attackDistance)
+        {
+            isAttacking = true;
+        }
 
         if (ableToRun && ((isRunning == false && Input.GetKeyDown(KeyCode.J)) || distanceFromPlayer <= listeningDistance && hasPoint == false)) //debug simulate shoot at but not hit (make it run) OR player in range
         {
@@ -94,6 +105,12 @@ public class RandomMovement : MonoBehaviour
             hasPoint = false;
         }
 
+    }
+
+    void attack()
+    {
+        agent.SetDestination(Player.transform.position);
+        agent.speed = RunSpeed;
     }
 
     void Roam()

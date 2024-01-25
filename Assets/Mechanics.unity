@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 5963.4243, g: 4197.3716, b: 4185.86, a: 1}
+  m_IndirectSpecularColor: {r: 5983.35, g: 4192.3364, b: 4131.219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -606,6 +606,9 @@ MonoBehaviour:
   RunSpeed: 10
   ableToRun: 1
   runMultiplier: 2.05
+  ableToAttack: 1
+  attackDamage: 3
+  attackDistance: 20
   listeningDistance: 40
   idleTimeTop: 20.2
   idleTimeBot: 9.15
