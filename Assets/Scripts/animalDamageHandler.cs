@@ -7,16 +7,13 @@ public class animalDamageHandler : MonoBehaviour
 {
 
     public int health = 100;
-    public int damage(int amount, int health)
+    public int damage = 50;
+    void hitByRay()
     {
-        
-        health = health - amount;
-        
-
-        return health;  
+        Debug.Log("Was hit my ray");
+        health = health - damage;
+        Debug.Log(health);
     }
-    /*public void killAnimal()
-    {
-        Destroy(this.gameObject);
-    }*/
+   
+    
 }
