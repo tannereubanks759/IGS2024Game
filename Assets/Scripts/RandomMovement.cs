@@ -152,5 +152,12 @@ public class RandomMovement : MonoBehaviour
         return false;
     }
     
+    public void heardShot()
+    {
+        if(isRunning == false && isAttacking == false)
+        {
+            isRunning = true;
+        }
+    }
 }
 
