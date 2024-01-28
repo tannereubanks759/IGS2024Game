@@ -120,7 +120,7 @@ MonoBehaviour:
       directionalShadowsDepthBits: 32
       punctualShadowFilteringQuality: 2
       directionalShadowFilteringQuality: 2
-      areaShadowFilteringQuality: 0
+      areaShadowFilteringQuality: 1
       punctualLightShadowAtlas:
         shadowAtlasResolution: 4096
         shadowAtlasDepthBits: 16
