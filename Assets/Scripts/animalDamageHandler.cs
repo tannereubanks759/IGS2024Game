@@ -12,7 +12,11 @@ public class animalDamageHandler : MonoBehaviour
     {
         Debug.Log("Was hit my ray");
         health = health - damage;
-        Debug.Log(health);
+        if (health <=0)
+        {
+            Debug.Log("Dead");
+            Destroy(this.gameObject);
+        }
     }
    
     
