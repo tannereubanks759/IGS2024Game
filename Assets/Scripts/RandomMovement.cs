@@ -29,6 +29,8 @@ public class RandomMovement : MonoBehaviour
     public float idleTimeBot;
     Vector3 point;
     float distanceFromPlayer;
+
+    public Animator anim;
     //instead of centrePoint you can set it as the transform of the agent if you don't care about a specific area
 
     void Start()
@@ -80,7 +82,17 @@ public class RandomMovement : MonoBehaviour
 
     void Running()
     {
-        if(hasPoint == false)
+        if (agent.velocity == Vector3.zero)
+        {
+            anim.SetBool("run", false);
+        }
+        else
+        {
+            anim.SetBool("run", true);
+        }
+        anim.SetBool("walk", false);
+        anim.SetBool("attack", false);
+        if (hasPoint == false)
         {
             if(RandomPoint(transform.position, range * runMultiplier * 2f, out point))
             {
@@ -109,12 +121,24 @@ public class RandomMovement : MonoBehaviour
 
     void attack()
     {
+        anim.SetBool("run", true);
+        anim.SetBool("walk", false);
         agent.SetDestination(Player.transform.position);
         agent.speed = RunSpeed;
     }
 
     void Roam()
     {
+        if (agent.velocity == Vector3.zero)
+        {
+            anim.SetBool("walk", false);
+        }
+        else
+        {
+            anim.SetBool("walk", true);
+        }
+        anim.SetBool("run", false);
+        anim.SetBool("attack", false);
         if (agent.remainingDistance <= agent.stoppingDistance) //done with path
         {
             if (hasTime == false) //Get Idle Time
@@ -133,6 +157,8 @@ public class RandomMovement : MonoBehaviour
                 }
             }
         }
+        
+        
     }
 
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
