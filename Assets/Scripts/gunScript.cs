@@ -18,6 +18,7 @@ public class gunScript : MonoBehaviour
     Animator animator;
     private bool isScoped = false;
     public GameObject scopeUI;
+    public GameObject gun;
     void Start()
     {
         reloadText.SetActive(false);
@@ -52,20 +53,20 @@ public class gunScript : MonoBehaviour
                 isScoped = true;
                 if(isScoped)
                 {
-                    //onScoped();
+                    StartCoroutine(onScoped());
+                    
                 }
-                else
-                {
-                    //notScoped();
-                }
+               
             }
             else
             {
                 Debug.Log("Unscoped called");
                 animator.ResetTrigger("ads");
                 animator.SetTrigger("unAds");
-                isScoped = false;
                 
+                isScoped = false;
+                notScoped();
+
             }
             
             
@@ -80,13 +81,16 @@ public class gunScript : MonoBehaviour
             reloadText.SetActive (true);    
         }*/
     }
-    void onScoped()
+    IEnumerator onScoped()
     {
-        scopeUI.SetActive(isScoped);
+        yield return new WaitForSeconds(.25f);
+        scopeUI.SetActive(true);
+        gun.SetActive(false);
     }
     void notScoped()
     {
-        scopeUI.SetActive(isScoped);
+        scopeUI.SetActive(false);
+        gun.SetActive(true);
     }
     private void reload()
     {
