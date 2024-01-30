@@ -16,13 +16,16 @@ public class gunScript : MonoBehaviour
     public GameObject animal;
     public int currentHP;
     Animator animator;
+    private bool isScoped = false;
+    public GameObject scopeUI;
     void Start()
     {
         reloadText.SetActive(false);
         currentHP = 100;
         animator = GetComponent<Animator>();
         ani = animal.GetComponent<animalDamageHandler>();
-        Debug.Log(currentHP);
+        scopeUI.SetActive(false);
+        //Debug.Log(currentHP);
     }
 
     // Update is called once per frame
@@ -40,6 +43,32 @@ public class gunScript : MonoBehaviour
         if(Input.GetMouseButtonDown (1))
         {
             Debug.Log("Scope");
+           // bool isScoped = false;
+            if (isScoped == false)
+            {
+
+                animator.SetTrigger("ads");
+                
+                isScoped = true;
+                if(isScoped)
+                {
+                    //onScoped();
+                }
+                else
+                {
+                    //notScoped();
+                }
+            }
+            else
+            {
+                Debug.Log("Unscoped called");
+                animator.ResetTrigger("ads");
+                animator.SetTrigger("unAds");
+                isScoped = false;
+                
+            }
+            
+            
         }
         if(Input.GetKeyDown(KeyCode.R))
         {
@@ -50,6 +79,14 @@ public class gunScript : MonoBehaviour
         {
             reloadText.SetActive (true);    
         }*/
+    }
+    void onScoped()
+    {
+        scopeUI.SetActive(isScoped);
+    }
+    void notScoped()
+    {
+        scopeUI.SetActive(isScoped);
     }
     private void reload()
     {
@@ -81,7 +118,11 @@ public class gunScript : MonoBehaviour
             }
 
         }
-        animator.SetTrigger("clickShot");
+        if (isScoped == false && isAmmo == true)
+        {
+            animator.SetTrigger("clickShot");
+        }
+        
         isAmmo = false;
         reloadText.SetActive(true);
          }
