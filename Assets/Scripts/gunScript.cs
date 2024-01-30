@@ -15,10 +15,12 @@ public class gunScript : MonoBehaviour
     public int DAMAGE = 50;
     public GameObject animal;
     public int currentHP;
+    Animator animator;
     void Start()
     {
         reloadText.SetActive(false);
         currentHP = 100;
+        animator = GetComponent<Animator>();
         ani = animal.GetComponent<animalDamageHandler>();
         Debug.Log(currentHP);
     }
@@ -79,6 +81,7 @@ public class gunScript : MonoBehaviour
             }
 
         }
+        animator.SetTrigger("clickShot");
         isAmmo = false;
         reloadText.SetActive(true);
          }
