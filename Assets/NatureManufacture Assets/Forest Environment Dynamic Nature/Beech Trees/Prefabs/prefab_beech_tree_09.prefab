@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5970896099476160477}
   - component: {fileID: 8111676121974497241}
   - component: {fileID: 98276519953300816}
-  - component: {fileID: 9217850822288827758}
   m_Layer: 0
   m_Name: beech_tree_09_LOD0
   m_TagString: Untagged
@@ -111,22 +110,6 @@ CapsuleCollider:
   m_Height: 22.598114
   m_Direction: 1
   m_Center: {x: 0.01, y: 11.27, z: 0.08}
---- !u!208 &9217850822288827758
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120087488934026249}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.91, y: 0.925, z: 0.965}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1 &1260748801560008967
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +184,6 @@ GameObject:
   - component: {fileID: 2442946576623676404}
   - component: {fileID: 34612119003761140}
   - component: {fileID: 235963683282420257}
-  - component: {fileID: 3403298792430265615}
   m_Layer: 0
   m_Name: beech_tree_09_LOD2
   m_TagString: Untagged
@@ -244,7 +226,7 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
-  m_MotionVectors: 1
+  m_MotionVectors: 2
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
@@ -300,22 +282,6 @@ CapsuleCollider:
   m_Height: 22.598114
   m_Direction: 1
   m_Center: {x: 0.01, y: 10.64, z: 0.08}
---- !u!208 &3403298792430265615
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3059677210307620617}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.91, y: 0.925, z: 0.965}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1 &5840730500239164430
 GameObject:
   m_ObjectHideFlags: 0
