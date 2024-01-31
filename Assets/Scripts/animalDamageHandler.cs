@@ -2,7 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class animalDamageHandler : MonoBehaviour
 {
 
@@ -15,7 +15,11 @@ public class animalDamageHandler : MonoBehaviour
         if (health <=0)
         {
             Debug.Log("Dead");
-            Destroy(this.gameObject);
+            this.GetComponent<RandomMovement>().anim.SetBool("die", true);
+            Destroy(this.GetComponent<RandomMovement>());
+            Destroy(this.GetComponent<NavMeshAgent>());
+
+            //Destroy(this.gameObject);
         }
     }
    

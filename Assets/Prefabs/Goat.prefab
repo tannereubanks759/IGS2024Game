@@ -493,9 +493,10 @@ GameObject:
   - component: {fileID: 8728746046845526916}
   - component: {fileID: 8695384481768686781}
   - component: {fileID: 6478549702493288603}
+  - component: {fileID: 6303625739692441822}
   m_Layer: 0
   m_Name: Goat
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -584,6 +585,20 @@ MonoBehaviour:
   idleTimeTop: 20.2
   idleTimeBot: 9.15
   anim: {fileID: 1094371448162550776}
+--- !u!114 &6303625739692441822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2914297913811235089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373861ff33f026a41b4a017ce0424abc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  damage: 50
 --- !u!1 &3094365572977928784
 GameObject:
   m_ObjectHideFlags: 0

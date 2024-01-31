@@ -1268,9 +1268,10 @@ GameObject:
   - component: {fileID: 6814888527338235801}
   - component: {fileID: 201716568046880598}
   - component: {fileID: 1991117607671476136}
+  - component: {fileID: 3545082325429788371}
   m_Layer: 0
   m_Name: Rabbit
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1359,6 +1360,20 @@ MonoBehaviour:
   idleTimeTop: 10
   idleTimeBot: 4
   anim: {fileID: 4643400502959799322}
+--- !u!114 &3545082325429788371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7725219084302044927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373861ff33f026a41b4a017ce0424abc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  damage: 50
 --- !u!1 &7733338188499065168
 GameObject:
   m_ObjectHideFlags: 0

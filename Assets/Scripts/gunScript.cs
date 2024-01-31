@@ -13,12 +13,15 @@ public class gunScript : MonoBehaviour
     public GameObject reloadText;
    [SerializeField] animalDamageHandler ani;
     public int DAMAGE = 50;
+    public float range;
     public GameObject animal;
     public int currentHP;
     Animator animator;
     private bool isScoped = false;
     public GameObject scopeUI;
     public GameObject gun;
+    public LayerMask mask;
+    public GameObject crosshair;
     void Start()
     {
         reloadText.SetActive(false);
@@ -86,11 +89,13 @@ public class gunScript : MonoBehaviour
         yield return new WaitForSeconds(.25f);
         scopeUI.SetActive(true);
         gun.SetActive(false);
+        crosshair.SetActive(false);
     }
     void notScoped()
     {
         scopeUI.SetActive(false);
         gun.SetActive(true);
+        crosshair.SetActive(true);
     }
     private void reload()
     {
@@ -104,7 +109,7 @@ public class gunScript : MonoBehaviour
 
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out target))
+        if (Physics.Raycast(ray, out target, range,  mask))
         {
             //Debug.Log("Hit something");
             hitPointObj.transform.position = target.point;

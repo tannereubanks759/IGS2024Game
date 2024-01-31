@@ -1102,9 +1102,10 @@ GameObject:
   - component: {fileID: 7756572727623013443}
   - component: {fileID: 5952277248662093750}
   - component: {fileID: 5711290692000911608}
+  - component: {fileID: 1983510310960598491}
   m_Layer: 0
   m_Name: Bear
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1193,6 +1194,20 @@ MonoBehaviour:
   idleTimeTop: 20.2
   idleTimeBot: 9.15
   anim: {fileID: 6739336179852112285}
+--- !u!114 &1983510310960598491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7270159656920945751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373861ff33f026a41b4a017ce0424abc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  damage: 50
 --- !u!1 &7279520283210066508
 GameObject:
   m_ObjectHideFlags: 0
