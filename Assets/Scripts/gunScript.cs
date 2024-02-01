@@ -22,6 +22,8 @@ public class gunScript : MonoBehaviour
     public GameObject gun;
     public LayerMask mask;
     public GameObject crosshair;
+    private GameObject[] animals;
+    public float shotSoundDistance;
     void Start()
     {
         reloadText.SetActive(false);
@@ -131,9 +133,22 @@ public class gunScript : MonoBehaviour
         {
             animator.SetTrigger("clickShot");
         }
-        
+
+        AnimalChecker();
+
         isAmmo = false;
         reloadText.SetActive(true);
-         }
- 
+    }
+    
+    private void AnimalChecker() //check if animals are nearby
+    {
+        animals = GameObject.FindGameObjectsWithTag("Animal");
+        for(int i = 0; i < animals.Length; i++)
+        {
+            if (Vector3.Distance(this.transform.position, animals[i].transform.position) < shotSoundDistance)
+            {
+                animals[i].GetComponent<RandomMovement>().heardShot();
+            }
+        }
+    }
 }
