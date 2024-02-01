@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 9211.892, g: 6425.501, b: 5780.485, a: 1}
+  m_IndirectSpecularColor: {r: 9210.089, g: 6426.6494, b: 5789.0396, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 216362289}
   - component: {fileID: 216362288}
   - component: {fileID: 216362287}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spawner (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -773,7 +773,7 @@ GameObject:
   - component: {fileID: 270370738}
   - component: {fileID: 270370737}
   - component: {fileID: 270370736}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spawner (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1489,7 +1489,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 322343745}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: deer spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2010,7 +2010,7 @@ GameObject:
   - component: {fileID: 380933165}
   - component: {fileID: 380933164}
   - component: {fileID: 380933163}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spawner (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2133,7 +2133,7 @@ GameObject:
   - component: {fileID: 382892721}
   - component: {fileID: 382892720}
   - component: {fileID: 382892719}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spawner (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2256,7 +2256,7 @@ GameObject:
   - component: {fileID: 396949761}
   - component: {fileID: 396949760}
   - component: {fileID: 396949759}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spawner (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3235,7 +3235,7 @@ GameObject:
   - component: {fileID: 548689545}
   - component: {fileID: 548689542}
   - component: {fileID: 548689544}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3794,6 +3794,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0b8f110858050834380b6209fb0ad5fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5831962472886201258, guid: 0b8f110858050834380b6209fb0ad5fd,
         type: 3}
       propertyPath: m_Layer
@@ -3827,7 +3832,7 @@ GameObject:
   - component: {fileID: 697723823}
   - component: {fileID: 697723822}
   - component: {fileID: 697723821}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spawner (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4401,7 +4406,7 @@ GameObject:
   - component: {fileID: 827094560}
   - component: {fileID: 827094559}
   - component: {fileID: 827094558}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spawner (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4530,7 +4535,7 @@ GameObject:
   - component: {fileID: 851556191}
   - component: {fileID: 851556190}
   - component: {fileID: 851556189}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spawner (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4756,7 +4761,7 @@ GameObject:
   - component: {fileID: 938032447}
   - component: {fileID: 938032446}
   - component: {fileID: 938032445}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spawner (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6279,7 +6284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1261822725}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BearSPawners
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7577,7 +7582,7 @@ GameObject:
   - component: {fileID: 1501889351}
   - component: {fileID: 1501889350}
   - component: {fileID: 1501889349}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spawner (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7900,7 +7905,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1626325453}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WolfSpawners
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7938,7 +7943,7 @@ GameObject:
   - component: {fileID: 1634934748}
   - component: {fileID: 1634934747}
   - component: {fileID: 1634934746}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spawner (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8130,7 +8135,7 @@ MonoBehaviour:
   gun: {fileID: 809825439}
   mask:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 115
   crosshair: {fileID: 1052062219}
 --- !u!4 &1658944501 stripped
 Transform:
@@ -8859,7 +8864,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1811119656}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Goat SPawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9123,7 +9128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1914410673}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RabbitSpawners
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9364,7 +9369,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2005820203}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spawners
   m_TagString: Untagged
   m_Icon: {fileID: 0}
