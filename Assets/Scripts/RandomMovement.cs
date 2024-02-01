@@ -22,6 +22,7 @@ public class RandomMovement : MonoBehaviour
     private float oceanHeight;
     public float listeningDistance;
     private bool isAttacking;
+    
 
     private float idleNextTime;
     private bool hasTime;
