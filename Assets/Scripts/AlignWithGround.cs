@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class AlignWithGround : MonoBehaviour
 {
     public GameObject Animal;
@@ -15,7 +15,7 @@ public class AlignWithGround : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, Vector3.down, out hit, 10f))
+        if (Physics.Raycast(Animal.transform.position, Vector3.down, out hit, 10f))
         {
             Quaternion slopeRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
             transform.rotation = Quaternion.Slerp(transform.rotation, slopeRotation * Animal.transform.rotation, 3 * Time.deltaTime);
