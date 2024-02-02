@@ -11,34 +11,40 @@ public class DayNightControl : MonoBehaviour
     public float currentTime;
     public float timeSpeed = 1f;
 
-    [Header("Light Settings")]
-    public Light sunLight;
-
+    private bool isRotating;
     private void Update()
     {
-        currentTime += Time.deltaTime * timeSpeed;
-        Debug.Log(currentTime);
+        if (currentTime < 24f)
+        {
+            currentTime += Time.deltaTime * timeSpeed;
+        }
+        else if(currentTime > 24f)
+        {
+            currentTime = 24f;
+        }
        
         //end of day/night
         if (currentTime >= 24) 
         {
-            //GetComponent<DayNightControl>().enabled = false;
+            isRotating = false;
         }
 
 
-
-        UpdateLight();
+        if (isRotating)
+        {
+            UpdateLight();
+        }
     }
 
     private void Awake()
     {
-        currentTime = 0f;
-        UpdateLight();
+        currentTime = 6f;
+        isRotating = true;
     }
 
     void UpdateLight()
     {
         float sunRotation = currentTime / 24f * 360f;
-        sunLight.gameObject.transform.rotation = Quaternion.Euler(sunRotation - 90f, 0, 0f);
+        this.transform.rotation = Quaternion.Euler(sunRotation - 90f, 0, 0f);
     }
 }
