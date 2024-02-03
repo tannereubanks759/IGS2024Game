@@ -24,6 +24,8 @@ public class gunScript : MonoBehaviour
     public GameObject crosshair;
     private GameObject[] animals;
     public float shotSoundDistance;
+    public float scopedFOV;
+    public float baseFOV;
     void Start()
     {
         reloadText.SetActive(false);
@@ -31,6 +33,7 @@ public class gunScript : MonoBehaviour
         animator = GetComponent<Animator>();
         ani = animal.GetComponent<animalDamageHandler>();
         scopeUI.SetActive(false);
+        baseFOV = mainCam.fieldOfView;
         //Debug.Log(currentHP);
     }
 
@@ -91,11 +94,13 @@ public class gunScript : MonoBehaviour
         yield return new WaitForSeconds(.25f);
         scopeUI.SetActive(true);
         gun.SetActive(false);
+        mainCam.fieldOfView = scopedFOV;
         crosshair.SetActive(false);
     }
     void notScoped()
     {
         scopeUI.SetActive(false);
+        mainCam.fieldOfView = baseFOV;
         gun.SetActive(true);
         crosshair.SetActive(true);
     }

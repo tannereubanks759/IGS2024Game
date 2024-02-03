@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 5.0087304, g: 3.2142205, b: 2.3993533, a: 1}
+  m_IndirectSpecularColor: {r: 5.009043, g: 3.2140508, b: 2.3988307, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -461,7 +461,7 @@ Transform:
   m_GameObject: {fileID: 175023992}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 163.28972, y: 22.951092, z: 222.50485}
+  m_LocalPosition: {x: 163.28972, y: 23.45, z: 222.50485}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2523,6 +2523,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -9104393151568836868, guid: 59052c6b39b1d414ca3e3111674c620c,
         type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -9104393151568836868, guid: 59052c6b39b1d414ca3e3111674c620c,
+        type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 3c0c9e1dae2b6e54482ec64a8ff7c9f3, type: 2}
@@ -2584,7 +2589,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 59052c6b39b1d414ca3e3111674c620c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.8718028
+      value: 1.8718024
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 59052c6b39b1d414ca3e3111674c620c,
         type: 3}
@@ -2594,7 +2599,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 59052c6b39b1d414ca3e3111674c620c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.8718028
+      value: 1.8718024
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 59052c6b39b1d414ca3e3111674c620c,
         type: 3}
@@ -2609,7 +2614,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 59052c6b39b1d414ca3e3111674c620c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.3584307
+      value: -0.32999793
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 59052c6b39b1d414ca3e3111674c620c,
         type: 3}
@@ -2651,10 +2656,40 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -2738001872585492985, guid: 59052c6b39b1d414ca3e3111674c620c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0077
+      objectReference: {fileID: 0}
+    - target: {fileID: -2738001872585492985, guid: 59052c6b39b1d414ca3e3111674c620c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0163
+      objectReference: {fileID: 0}
+    - target: {fileID: -2738001872585492985, guid: 59052c6b39b1d414ca3e3111674c620c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0004
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 59052c6b39b1d414ca3e3111674c620c,
         type: 3}
       propertyPath: m_Name
       value: FpsArms
+      objectReference: {fileID: 0}
+    - target: {fileID: 5180355844767047442, guid: 59052c6b39b1d414ca3e3111674c620c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0422
+      objectReference: {fileID: 0}
+    - target: {fileID: 5180355844767047442, guid: 59052c6b39b1d414ca3e3111674c620c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5180355844767047442, guid: 59052c6b39b1d414ca3e3111674c620c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 7766216440724547685, guid: 59052c6b39b1d414ca3e3111674c620c,
         type: 3}
@@ -2787,7 +2822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCam: {fileID: 740566318}
   firepoint: {fileID: 1250584274}
-  hitPointObj: {fileID: 175023992}
+  hitPointObj: {fileID: 863024595}
   isAmmo: 1
   reloadText: {fileID: 1378978027}
   ani: {fileID: 0}
@@ -2801,6 +2836,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 115
   crosshair: {fileID: 2077232897}
+  shotSoundDistance: 0
+  scopedFOV: 20
+  baseFOV: 0
 --- !u!1 &1827278242
 GameObject:
   m_ObjectHideFlags: 0
