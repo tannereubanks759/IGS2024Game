@@ -9,32 +9,21 @@ public class GameManager : MonoBehaviour
     private float currentTime;
     public TextMeshProUGUI timeText;
     private DayNightControl sunControl;
-    
+    public string AMORPM;
     // Start is called before the first frame update
     void Start()
     {
         sunControl = GameObject.Find("Sun").GetComponent<DayNightControl>();
-        currentDay = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
         currentTime = sunControl.currentTime;
-        string AMORPM;
-        if (currentTime < 12f)
+        if(currentTime > 13)
         {
-            AMORPM = " AM";
+            currentTime -= 12;
         }
-        else if (currentTime < 13)
-        {
-            AMORPM = " PM";
-        }
-        else
-        {
-            currentTime = currentTime - 12;
-            AMORPM = " PM";
-        }
-        timeText.text = "Day " + currentDay.ToString() + "  " + currentTime.ToString("00.00").Replace(".", ":") + AMORPM;
+        timeText.text = "Day " + sunControl.currentDay.ToString() + "  " + currentTime.ToString("00.0").Replace(".", ":") + "0 " + AMORPM;
     }
 }

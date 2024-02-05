@@ -78,7 +78,6 @@ public class RandomMovement : MonoBehaviour
             isRunning = true;
         }
 
-        Debug.Log(isRunning);
     }
 
     void Running()
