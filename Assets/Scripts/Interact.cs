@@ -12,6 +12,7 @@ public class Interact : MonoBehaviour
     public bool isHolding;
     public GameObject totem;
     public GameObject rifle;
+    public Alter alterScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +34,10 @@ public class Interact : MonoBehaviour
             {
                 PickupTotem();
             }
+            if(lookObj != null && lookObj.gameObject.name == "alter")
+            {
+                PlaceTotem();
+            }
         }
     }
     public void PickupTotem()
@@ -48,7 +53,12 @@ public class Interact : MonoBehaviour
 
     public void PlaceTotem()
     {
-
+        alterScript.place();
+        rifle.SetActive(true);
+        totem.SetActive(false);
+        isLooking = false;
+        isHolding = false;
+        lookObj = null;
     }
     private void OnTriggerEnter(Collider other)
     {
