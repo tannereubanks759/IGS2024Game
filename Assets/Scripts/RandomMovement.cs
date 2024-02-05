@@ -125,6 +125,16 @@ public class RandomMovement : MonoBehaviour
         anim.SetBool("walk", false);
         agent.SetDestination(Player.transform.position);
         agent.speed = RunSpeed;
+        if(distanceFromPlayer < 3)
+        {
+            anim.SetBool("attack", true);
+            anim.SetBool("run", false);
+        }
+        else
+        {
+            anim.SetBool("run", true);
+            anim.SetBool("attack", false);
+        }
     }
 
     void Roam()
