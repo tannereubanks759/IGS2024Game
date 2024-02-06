@@ -44,7 +44,7 @@ public class gunScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (isAmmo == true)
+            if (isReloaded == true)
             {
                 //Debug.Log("Fire");
                 fireCalled();
@@ -84,6 +84,7 @@ public class gunScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && isAmmo == false)
         {
             Debug.Log("Reload");
+            isAmmo = true;  
             StartCoroutine(reload());
             //armAnimator.SetBool("isReload", false);
         }
@@ -110,15 +111,18 @@ public class gunScript : MonoBehaviour
     IEnumerator reload()
     {
         // create into ienumerator and wait reload animation time
+        if (isReloaded == false)
+        {
         armAnimator.SetTrigger("rr");
         yield return new WaitForSeconds(1.16f);
         isAmmo = true;
         reloadText.SetActive(false);
-
+        }
+        isReloaded = true;
     }
     private void fireCalled()
     {
-
+        isReloaded = false;
         RaycastHit target;
 
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
