@@ -29,7 +29,7 @@ public class animalDamageHandler : MonoBehaviour
             // this code sucks but works
             ///
 
-            //isDead = true;
+            isDead = true;
             //this.gameObject.AddComponent<Rigidbody>();
             //this.gameObject.GetComponent<Rigidbody>().useGravity = true;
             //Destroy(this.gameObject);

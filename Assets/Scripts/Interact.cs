@@ -5,6 +5,7 @@ using UnityEngine;
 public class Interact : MonoBehaviour
 {
     public float reachDistance;
+    private string animalType;
     public Animator anim;
     public GameObject lookObj;
     public bool isLooking;
@@ -13,6 +14,7 @@ public class Interact : MonoBehaviour
     public bool isHolding;
     public GameObject totem;
     public GameObject rifle;
+    public GameObject deadBearObj;
     public Alter alterScript;
     // Start is called before the first frame update
     void Start()
@@ -39,21 +41,20 @@ public class Interact : MonoBehaviour
             {
                 PlaceTotem();
             }
-            //else if(lookObj.gameObject.tag == "Animal" && lookObj.gameObject.GetComponent<animalDamageHandler>().isDead == true)
-            //{
-            //    PickupAnimal();
+            else if (lookObj.gameObject.tag == "Animal" && lookObj.gameObject.GetComponent<animalDamageHandler>().isDead == true)
+            {
+                PickupAnimal();
 
-            //}
-            //else if(holdingAnimal == true)
-            //{
-            //    DropAnimal();
-            //}
+            }
+            else if (holdingAnimal == true)
+            {
+                DropAnimal();
+            }
         }
 
     }
     public void PickupTotem()
     {
-        
         isHolding = true;
         totem.SetActive(true);
         Destroy(lookObj);
@@ -76,6 +77,10 @@ public class Interact : MonoBehaviour
     public void PickupAnimal()
     {
         //new code
+        if (lookObj.layer == 11)
+        {
+            animalType = "Bear";
+        }
         holdingAnimal = true;
         Destroy(lookObj);
         rifle.SetActive(false);
@@ -94,6 +99,10 @@ public class Interact : MonoBehaviour
         //either spawn in already dead prefab of respective animal,
         //or spawn in animal in death animation with animation sped
         //way up,then reset animation speed when done
+        if (lookObj.layer == 11)
+        {
+            Instantiate(deadBearObj, this.transform);
+        }
         rifle.SetActive(true);
         isLooking = false;
         holdingAnimal = false;
@@ -102,6 +111,7 @@ public class Interact : MonoBehaviour
         lookObj.gameObject.transform.parent = null;
         //last execution
         holdingAnimal = false;
+        animalType = "";
     }
 
 
