@@ -34,11 +34,12 @@ public class Interact : MonoBehaviour
             {
                 PickupTotem();
             }
-            if(lookObj != null && lookObj.gameObject.name == "alter")
+            if(lookObj != null && isHolding && lookObj.gameObject.name == "alter")
             {
                 PlaceTotem();
             }
         }
+
     }
     public void PickupTotem()
     {
@@ -60,7 +61,7 @@ public class Interact : MonoBehaviour
         isHolding = false;
         lookObj = null;
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if(other.tag == "Interact")
         {
