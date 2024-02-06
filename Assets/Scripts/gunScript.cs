@@ -81,7 +81,7 @@ public class gunScript : MonoBehaviour
 
 
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && isAmmo == false)
         {
             Debug.Log("Reload");
             StartCoroutine(reload());
