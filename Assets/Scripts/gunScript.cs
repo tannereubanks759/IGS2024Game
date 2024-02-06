@@ -150,7 +150,7 @@ public class gunScript : MonoBehaviour
         animals = GameObject.FindGameObjectsWithTag("Animal");
         for(int i = 0; i < animals.Length; i++)
         {
-            if (Vector3.Distance(this.transform.position, animals[i].transform.position) < shotSoundDistance)
+            if (animals[i].GetComponent<RandomMovement>() && Vector3.Distance(this.transform.position, animals[i].transform.position) < shotSoundDistance)
             {
                 animals[i].GetComponent<RandomMovement>().heardShot();
             }
