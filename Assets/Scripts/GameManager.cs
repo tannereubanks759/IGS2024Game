@@ -26,6 +26,6 @@ public class GameManager : MonoBehaviour
             currentTime -= 12;
         }
         seconds = (currentTime - (int)currentTime) * .6f;
-        timeText.text = "Day " + sunControl.currentDay.ToString() + "  " + ((int)currentTime).ToString() + ":" + ((int)(seconds*100)).ToString() + AMORPM;
+        timeText.text = "Day " + sunControl.currentDay.ToString() + "  " + ((int)currentTime).ToString() + ":" + ((int)(seconds*100)).ToString("00") + AMORPM;
     }
 }
