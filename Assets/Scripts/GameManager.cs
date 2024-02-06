@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timeText;
     private DayNightControl sunControl;
     public string AMORPM;
+    private float seconds;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
         {
             currentTime -= 12;
         }
-        timeText.text = "Day " + sunControl.currentDay.ToString() + "  " + currentTime.ToString("00.0").Replace(".", ":") + "0 " + AMORPM;
+        seconds = (currentTime - (int)currentTime) * .6f;
+        timeText.text = "Day " + sunControl.currentDay.ToString() + "  " + ((int)currentTime).ToString() + ":" + ((int)(seconds*100)).ToString() + AMORPM;
     }
 }
