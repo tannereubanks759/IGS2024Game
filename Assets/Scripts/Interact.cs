@@ -8,6 +8,7 @@ public class Interact : MonoBehaviour
     public Animator anim;
     public GameObject lookObj;
     public bool isLooking;
+    private bool holdingAnimal = false;
     public DayNightControl lightSystem;
     public bool isHolding;
     public GameObject totem;
@@ -30,14 +31,23 @@ public class Interact : MonoBehaviour
             {
                 lightSystem.Sleep();
             }
-            if(lookObj.gameObject.layer == 8)
+            else if(lookObj.gameObject.layer == 8)
             {
                 PickupTotem();
             }
-            if(lookObj != null && isHolding && lookObj.gameObject.name == "alter")
+            else if(lookObj != null && isHolding && lookObj.gameObject.name == "alter")
             {
                 PlaceTotem();
             }
+            //else if(lookObj.gameObject.tag == "Animal" && lookObj.gameObject.GetComponent<animalDamageHandler>().isDead == true)
+            //{
+            //    PickupAnimal();
+
+            //}
+            //else if(holdingAnimal == true)
+            //{
+            //    DropAnimal();
+            //}
         }
 
     }
@@ -61,9 +71,26 @@ public class Interact : MonoBehaviour
         isHolding = false;
         lookObj = null;
     }
+
+
+    public void PickupAnimal()
+    {
+        holdingAnimal = true;
+        lookObj.transform.SetParent(Camera.main.gameObject.transform, true);
+    }
+
+
+    public void DropAnimal()
+    {
+        lookObj.gameObject.transform.parent = null;
+        //last execution
+        holdingAnimal = false;
+    }
+
+
     private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Interact")
+        if(other.tag == "Interact" || other.tag == "Animal")
         {
             isLooking = true;
             lookObj = other.gameObject;
