@@ -11,7 +11,7 @@ public class gunScript : MonoBehaviour
     public GameObject hitPointObj;
     public bool isAmmo = true;
     public GameObject reloadText;
-   [SerializeField] animalDamageHandler ani;
+    [SerializeField] animalDamageHandler ani;
     public int DAMAGE = 50;
     public float range;
     public GameObject animal;
@@ -26,6 +26,8 @@ public class gunScript : MonoBehaviour
     public float shotSoundDistance;
     public float scopedFOV;
     public float baseFOV;
+    public Animator armAnimator;
+    public bool isReloaded = true;
     void Start()
     {
         reloadText.SetActive(false);
@@ -40,49 +42,50 @@ public class gunScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             if (isAmmo == true)
             {
                 //Debug.Log("Fire");
                 fireCalled();
             }
-            
+
         }
-        if(Input.GetMouseButtonDown (1))
+        if (Input.GetMouseButtonDown(1))
         {
             Debug.Log("Scope");
-           // bool isScoped = false;
+            // bool isScoped = false;
             if (isScoped == false)
             {
 
                 animator.SetTrigger("ads");
-                
+
                 isScoped = true;
-                if(isScoped)
+                if (isScoped)
                 {
                     StartCoroutine(onScoped());
-                    
+
                 }
-               
+
             }
             else
             {
                 Debug.Log("Unscoped called");
                 animator.ResetTrigger("ads");
                 animator.SetTrigger("unAds");
-                
+
                 isScoped = false;
                 notScoped();
 
             }
-            
-            
+
+
         }
-        if(Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             Debug.Log("Reload");
-            reload();
+            StartCoroutine(reload());
+            //armAnimator.SetBool("isReload", false);
         }
         /*if (isAmmo = !true)
         {
@@ -104,19 +107,23 @@ public class gunScript : MonoBehaviour
         gun.SetActive(true);
         crosshair.SetActive(true);
     }
-    private void reload()
+    IEnumerator reload()
     {
+        // create into ienumerator and wait reload animation time
+        armAnimator.SetTrigger("rr");
+        yield return new WaitForSeconds(1.16f);
         isAmmo = true;
         reloadText.SetActive(false);
+
     }
     private void fireCalled()
     {
-        
+
         RaycastHit target;
 
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray, out target, range,  mask))
+        armAnimator.ResetTrigger("rr");
+        if (Physics.Raycast(ray, out target, range, mask))
         {
             //Debug.Log("Hit something");
             hitPointObj.transform.position = target.point;
@@ -144,7 +151,6 @@ public class gunScript : MonoBehaviour
         isAmmo = false;
         reloadText.SetActive(true);
     }
-    
     private void AnimalChecker() //check if animals are nearby
     {
         animals = GameObject.FindGameObjectsWithTag("Animal");
