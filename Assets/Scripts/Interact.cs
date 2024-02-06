@@ -75,13 +75,30 @@ public class Interact : MonoBehaviour
 
     public void PickupAnimal()
     {
+        //new code
         holdingAnimal = true;
-        lookObj.transform.SetParent(Camera.main.gameObject.transform, true);
+        Destroy(lookObj);
+        rifle.SetActive(false);
+        // activate child prefab of respective animal here
+        isLooking = false;
+        lookObj = null;
+        // old code
+        //holdingAnimal = true;
+        //lookObj.transform.SetParent(Camera.main.gameObject.transform, true);
     }
 
 
     public void DropAnimal()
     {
+        //new code
+        //either spawn in already dead prefab of respective animal,
+        //or spawn in animal in death animation with animation sped
+        //way up,then reset animation speed when done
+        rifle.SetActive(true);
+        isLooking = false;
+        holdingAnimal = false;
+        lookObj = null;
+        //old code
         lookObj.gameObject.transform.parent = null;
         //last execution
         holdingAnimal = false;
