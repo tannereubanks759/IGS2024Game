@@ -39,6 +39,10 @@ public class animalDamageHandler : MonoBehaviour
             animal.heardShot();
         }
     }
-   
-    
+
+    void headShot()
+    {
+        isDead = true;
+    }
 }
+

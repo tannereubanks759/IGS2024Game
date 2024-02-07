@@ -143,6 +143,11 @@ public class gunScript : MonoBehaviour
                     Destroy(target.transform.gameObject);
                 }*/
             }
+            else if (target.collider.tag == "head")
+            {
+                Debug.Log("Headshot");
+               // target.transform.SendMessage("headShot"); not working? sendmessage has no reciever
+            }
 
         }
         if (isScoped == false && isAmmo == true)
