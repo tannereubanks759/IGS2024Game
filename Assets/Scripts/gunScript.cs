@@ -146,7 +146,7 @@ public class gunScript : MonoBehaviour
             else if (target.collider.tag == "head")
             {
                 Debug.Log("Headshot");
-               // target.transform.SendMessage("headShot"); not working? sendmessage has no reciever
+                target.transform.SendMessage("headShot"); 
             }
 
         }
