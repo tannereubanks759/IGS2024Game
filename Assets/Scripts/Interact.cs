@@ -76,13 +76,14 @@ public class Interact : MonoBehaviour
 
     public void PickupAnimal()
     {
+        Debug.Log("tried animal pickup");
         //new code
         if (lookObj.layer == 11)
         {
             animalType = "Bear";
         }
         holdingAnimal = true;
-        Destroy(lookObj);
+        Destroy(lookObj.gameObject);
         rifle.SetActive(false);
         // activate child prefab of respective animal here
         isLooking = false;
@@ -121,6 +122,8 @@ public class Interact : MonoBehaviour
         {
             isLooking = true;
             lookObj = other.gameObject;
+            string output = lookObj.tag.ToString();
+            Debug.Log(output);
         }
     }
     private void OnTriggerExit(Collider other)
