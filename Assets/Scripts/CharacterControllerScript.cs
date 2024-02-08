@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CharacterControllerScript : MonoBehaviour
@@ -7,6 +8,8 @@ public class CharacterControllerScript : MonoBehaviour
     //public variables
     public float xSens;
     public float ySens;
+   private float scopeSenseX;
+    private float scopeSenseY;   
     public float moveSpeed;
     public float jumpForce;
     public bool isGrounded;
@@ -25,14 +28,18 @@ public class CharacterControllerScript : MonoBehaviour
     private float originalSpeed;
     private float sprintSpeed;
     private float airSpeed;
+    private bool isScoped;
     // Start is called before the first frame update
     void Start()
     {
         originalSpeed = moveSpeed;
         sprintSpeed = moveSpeed * 2;
         airSpeed = moveSpeed / 4;
+        scopeSenseX = xSens / 3;
+        scopeSenseY = ySens / 3;
         controller = this.GetComponent<CharacterController>();
         mainCam = Camera.main.gameObject;
+        isScoped = false;
         cursorDisable();
     }
 
@@ -63,8 +70,15 @@ public class CharacterControllerScript : MonoBehaviour
             }
             //Debug.Log("Crouched");
         }
-        if (controller.isGrounded)
+        if (Input.GetMouseButtonDown(1))
         {
+            //Debug.Log("Scoped");
+            isScoped = !isScoped;
+        }
+        float currentX = isScoped ? scopeSenseX : xSens;
+        float currentY = isScoped ? scopeSenseY : ySens;
+        if (controller.isGrounded)
+        {   
             if (Velocity.y < 0)
             {
                 Velocity.y = -25f;
@@ -95,8 +109,8 @@ public class CharacterControllerScript : MonoBehaviour
         controller.SimpleMove((moveDirection).normalized * moveSpeed);
         controller.Move(Velocity * Time.deltaTime);
         //mouse Look
-        mouseX -= Input.GetAxisRaw("Mouse Y") * ySens;
-        mouseY += Input.GetAxisRaw("Mouse X") * xSens;
+        mouseX -= Input.GetAxisRaw("Mouse Y") * currentY;
+        mouseY += Input.GetAxisRaw("Mouse X") * currentX;
         mouseX = Mathf.Clamp(mouseX, -90f, 90f);
         this.transform.rotation = Quaternion.Euler(0, mouseY, 0);
         mainCam.transform.rotation = Quaternion.Euler(mouseX, mouseY, 0);
