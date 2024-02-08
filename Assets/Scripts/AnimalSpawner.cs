@@ -21,12 +21,6 @@ public class AnimalSpawner : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Spawn()
     {
         for(int i = 0; i < spawnCount; i++)
