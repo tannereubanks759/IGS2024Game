@@ -53,7 +53,7 @@ public class gunScript : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(1))
         {
-            Debug.Log("Scope");
+            //Debug.Log("Scope");
             // bool isScoped = false;
             if (isScoped == false)
             {
@@ -70,7 +70,7 @@ public class gunScript : MonoBehaviour
             }
             else
             {
-                Debug.Log("Unscoped called");
+                //Debug.Log("Unscoped called");
                 animator.ResetTrigger("ads");
                 animator.SetTrigger("unAds");
 
