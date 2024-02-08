@@ -5,8 +5,8 @@ using UnityEngine;
 public class Interact : MonoBehaviour
 {
     public float reachDistance;
-    private string animalType;
-    public Animator anim;
+    //private string animalType;
+    //public Animator anim;
     public GameObject lookObj;
     public bool isLooking;
     private bool holdingAnimal = false;
@@ -15,6 +15,7 @@ public class Interact : MonoBehaviour
     public GameObject totem;
     public GameObject rifle;
     public GameObject deadBearObj;
+    private GameObject holderAnimal;
     public Alter alterScript;
     // Start is called before the first frame update
     void Start()
@@ -76,17 +77,21 @@ public class Interact : MonoBehaviour
 
     public void PickupAnimal()
     {
+        //string holderName = getcomp<animal>().name;
+        //holderAnimal = lookObj;
+        //etc.
+
         Debug.Log("tried animal pickup");
         //new code
         if (lookObj.layer == 11)
         {
-            animalType = "Bear";
+            //animalType = "Bear";
         }
         holdingAnimal = true;
-        Destroy(lookObj.gameObject);
+        lookObj.gameObject.SetActive(false);
         rifle.SetActive(false);
         // activate child prefab of respective animal here
-        isLooking = false;
+        isLooking = true;
         lookObj = null;
         // old code
         //holdingAnimal = true;
@@ -96,6 +101,14 @@ public class Interact : MonoBehaviour
 
     public void DropAnimal()
     {
+        // if (holderName = bear)
+        //      spawn dead bear
+        //etc.
+
+        //final steps
+        //holderName = "";
+        //
+
         //new code
         //either spawn in already dead prefab of respective animal,
         //or spawn in animal in death animation with animation sped
@@ -107,12 +120,12 @@ public class Interact : MonoBehaviour
         rifle.SetActive(true);
         isLooking = false;
         holdingAnimal = false;
+        lookObj.gameObject.SetActive(true);
         lookObj = null;
         //old code
-        lookObj.gameObject.transform.parent = null;
         //last execution
         holdingAnimal = false;
-        animalType = "";
+        //animalType = "";
     }
 
 

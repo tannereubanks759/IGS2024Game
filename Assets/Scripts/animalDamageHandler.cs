@@ -30,14 +30,23 @@ public class animalDamageHandler : MonoBehaviour
             ///
 
             isDead = true;
-            //this.gameObject.AddComponent<Rigidbody>();
-            //this.gameObject.GetComponent<Rigidbody>().useGravity = true;
+            this.gameObject.AddComponent<Rigidbody>();
+            Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
+            rb.useGravity = true;
+            waitHalfSecond();
+            rb.isKinematic = true;
+            
             //Destroy(this.gameObject);
         }
         else
         {
             animal.heardShot();
         }
+    }
+
+    IEnumerator waitHalfSecond()
+    {
+        yield return new WaitForSeconds(0.5f);
     }
 
    /* void headShot()

@@ -36,6 +36,7 @@ public class RandomMovement : MonoBehaviour
 
     void Start()
     {
+        
         agent = GetComponent<NavMeshAgent>();
         idleNextTime = 0;
         hasTime = false;
