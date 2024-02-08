@@ -40,9 +40,9 @@ public class animalDamageHandler : MonoBehaviour
         }
     }
 
-    void headShot()
+   /* void headShot()
     {
         isDead = true;
-    }
+    }*/
 }
 
