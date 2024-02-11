@@ -1105,6 +1105,7 @@ GameObject:
   - component: {fileID: 5711290692000911608}
   - component: {fileID: 1983510310960598491}
   - component: {fileID: 1652170871304516114}
+  - component: {fileID: -5716542806623877780}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Animal
@@ -1232,6 +1233,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.58, y: 0.69, z: 0.84}
   m_Center: {x: 0, y: 1.02, z: 1.33}
+--- !u!114 &-5716542806623877780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7270159656920945751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2efc5f98e45054f90cd66109c6a7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Bear
 --- !u!1 &7279520283210066508
 GameObject:
   m_ObjectHideFlags: 0

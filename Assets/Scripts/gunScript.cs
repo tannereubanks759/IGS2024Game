@@ -17,7 +17,7 @@ public class gunScript : MonoBehaviour
     public GameObject animal;
     public int currentHP;
     Animator animator;
-    private bool isScoped = false;
+    public bool isScoped = false;
     public GameObject scopeUI;
     public GameObject gun;
     public LayerMask mask;

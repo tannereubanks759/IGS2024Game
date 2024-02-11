@@ -14,6 +14,8 @@ public class CharacterControllerScript : MonoBehaviour
     public float jumpForce;
     public bool isGrounded;
     public bool isCrouched;
+    public bool isPaused;
+    public gunScript gun;
 
     //private variables
     private float mouseX;
@@ -29,9 +31,11 @@ public class CharacterControllerScript : MonoBehaviour
     private float sprintSpeed;
     private float airSpeed;
     private bool isScoped;
+    private bool inWater;
     // Start is called before the first frame update
     void Start()
     {
+        inWater = false;
         originalSpeed = moveSpeed;
         sprintSpeed = moveSpeed * 2;
         airSpeed = moveSpeed / 4;
@@ -46,76 +50,100 @@ public class CharacterControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //movement
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
-        moveDirection = transform.forward * vertical + transform.right * horizontal;
-        //Debug.Log("Move Direction: " + moveDirection);
-        if (Input.GetKeyDown(KeyCode.C))
+        if (!isPaused)
         {
-            //float temp = originalSpeed;
-            if (isCrouched == false)
+            if(this.transform.position.y < 4.173f)
             {
-               controller.transform.localScale = new Vector3(.5f, .5f, .5f);
-                //controller.height = controller.height / 2;
-                originalSpeed = originalSpeed / 2;
-                isCrouched = true;
+                inWater = true;
             }
             else
             {
-                controller.transform.localScale = new Vector3(1f, 1f, 1f);
-                //controller.height = controller.height * 2;
-                originalSpeed = originalSpeed *2;
-                isCrouched = false;
-            }
-            //Debug.Log("Crouched");
-        }
-        if (Input.GetMouseButtonDown(1))
-        {
-            //Debug.Log("Scoped");
-            isScoped = !isScoped;
-        }
-        float currentX = isScoped ? scopeSenseX : xSens;
-        float currentY = isScoped ? scopeSenseY : ySens;
-        if (controller.isGrounded)
-        {   
-            if (Velocity.y < 0)
-            {
-                Velocity.y = -25f;
+                inWater = false;
             }
 
-            if (Input.GetKey(KeyCode.Space))
+            //movement
+            horizontal = Input.GetAxisRaw("Horizontal");
+            vertical = Input.GetAxisRaw("Vertical");
+            moveDirection = transform.forward * vertical + transform.right * horizontal;
+            //Debug.Log("Move Direction: " + moveDirection);
+            if (Input.GetKeyDown(KeyCode.C))
             {
-                Velocity.y = jumpForce;
+                //float temp = originalSpeed;
+                if (isCrouched == false)
+                {
+                    controller.transform.localScale = new Vector3(.5f, .5f, .5f);
+                    //controller.height = controller.height / 2;
+                    originalSpeed = originalSpeed / 2;
+                    isCrouched = true;
+                }
+                else
+                {
+                    controller.transform.localScale = new Vector3(1f, 1f, 1f);
+                    //controller.height = controller.height * 2;
+                    originalSpeed = originalSpeed * 2;
+                    isCrouched = false;
+                }
+                //Debug.Log("Crouched");
             }
-            
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetMouseButtonDown(1))
             {
-                moveSpeed = sprintSpeed;
+                //Debug.Log("Scoped");
+                isScoped = !isScoped;
+            }
+            float currentX = isScoped ? scopeSenseX : xSens;
+            float currentY = isScoped ? scopeSenseY : ySens;
+            if (controller.isGrounded)
+            {
+                if (Velocity.y < 0)
+                {
+                    Velocity.y = -25f;
+                }
+
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    Velocity.y = jumpForce;
+                }
+
+                if (!inWater && Input.GetKey(KeyCode.LeftShift))
+                {
+                    moveSpeed = sprintSpeed;
+                }
+                else
+                {
+                    if (!inWater)
+                    {
+                        moveSpeed = originalSpeed;
+                    }
+                    else
+                    {
+                        moveSpeed = 1f;
+                    }
+                }
+
             }
             else
             {
-                moveSpeed = originalSpeed;
+                if (Velocity.y > -9.81f)
+                {
+                    Velocity.y -= 9.81f * Time.deltaTime;
+                }
+            }
+
+            if (gun.isScoped == false)
+            {
+                controller.SimpleMove((moveDirection).normalized * moveSpeed);
+                controller.Move(Velocity * Time.deltaTime);
             }
             
+            //mouse Look
+            mouseX -= Input.GetAxisRaw("Mouse Y") * currentY;
+            mouseY += Input.GetAxisRaw("Mouse X") * currentX;
+            mouseX = Mathf.Clamp(mouseX, -90f, 90f);
+            this.transform.rotation = Quaternion.Euler(0, mouseY, 0);
+            mainCam.transform.rotation = Quaternion.Euler(mouseX, mouseY, 0);
         }
-        else 
-        {
-            if (Velocity.y > -9.81f)
-            {
-                Velocity.y -= 9.81f * Time.deltaTime;
-            }
-        }
-        controller.SimpleMove((moveDirection).normalized * moveSpeed);
-        controller.Move(Velocity * Time.deltaTime);
-        //mouse Look
-        mouseX -= Input.GetAxisRaw("Mouse Y") * currentY;
-        mouseY += Input.GetAxisRaw("Mouse X") * currentX;
-        mouseX = Mathf.Clamp(mouseX, -90f, 90f);
-        this.transform.rotation = Quaternion.Euler(0, mouseY, 0);
-        mainCam.transform.rotation = Quaternion.Euler(mouseX, mouseY, 0);
-
         
+
     }
     public void cursorDisable()
     {

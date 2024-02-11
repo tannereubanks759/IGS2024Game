@@ -9,7 +9,7 @@ public class Interact : MonoBehaviour
     //public Animator anim;
     public GameObject lookObj;
     public bool isLooking;
-    private bool holdingAnimal = false;
+    public bool holdingAnimal;
     public DayNightControl lightSystem;
     public bool isHolding;
     public GameObject totem;
@@ -17,9 +17,11 @@ public class Interact : MonoBehaviour
     public GameObject deadBearObj;
     private GameObject holderAnimal;
     public Alter alterScript;
+    public GameObject[] animalParents;
     // Start is called before the first frame update
     void Start()
     {
+        holdingAnimal = false;
         isLooking = false;
         rifle.SetActive(true);
         totem.SetActive(false);
@@ -28,30 +30,34 @@ public class Interact : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isLooking)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if(lookObj.gameObject.name == "Bed")
+            if (isLooking)
             {
-                lightSystem.Sleep();
-            }
-            else if(lookObj.gameObject.layer == 8)
-            {
-                PickupTotem();
-            }
-            else if(lookObj != null && isHolding && lookObj.gameObject.name == "alter")
-            {
-                PlaceTotem();
-            }
-            else if (lookObj.gameObject.tag == "Animal" && lookObj.gameObject.GetComponent<animalDamageHandler>().isDead == true)
-            {
-                PickupAnimal();
+                if (lookObj != null && lookObj.gameObject.name == "Bed")
+                {
+                    lightSystem.Sleep();
+                }
+                else if (!isHolding && lookObj != null && lookObj.gameObject.layer == 8)
+                {
+                    PickupTotem();
+                }
+                else if (lookObj != null && isHolding && lookObj.gameObject.name == "alter")
+                {
+                    PlaceTotem();
+                }
+                else if (!isHolding && !holdingAnimal && lookObj != null && lookObj.gameObject.tag == "Animal" && lookObj.gameObject.GetComponent<animalDamageHandler>().isDead == true)
+                {
+                    PickupAnimal();
 
+                }
             }
             else if (holdingAnimal == true)
             {
                 DropAnimal();
             }
         }
+
 
     }
     public void PickupTotem()
@@ -80,52 +86,47 @@ public class Interact : MonoBehaviour
         //string holderName = getcomp<animal>().name;
         //holderAnimal = lookObj;
         //etc.
-
-        Debug.Log("tried animal pickup");
-        //new code
-        if (lookObj.layer == 11)
-        {
-            //animalType = "Bear";
-        }
-        holdingAnimal = true;
-        lookObj.gameObject.SetActive(false);
-        rifle.SetActive(false);
-        // activate child prefab of respective animal here
         isLooking = true;
+        holderAnimal = lookObj;
+        string holderName = holderAnimal.GetComponent<Entity>().name;
+        for(int i = 0; i < animalParents.Length; i++)
+        {
+            if(animalParents[i].gameObject.name == holderName)
+            {
+                animalParents[i].SetActive(true);
+                break;
+            }
+        }
+        holderAnimal.GetComponent<Rigidbody>().isKinematic = true;
+        holderAnimal.transform.position = this.gameObject.transform.position - Vector3.up * 10;
+        Debug.Log("tried animal pickup");
+        isHolding = true;
+        holdingAnimal = true;
+        rifle.SetActive(false);
         lookObj = null;
-        // old code
-        //holdingAnimal = true;
-        //lookObj.transform.SetParent(Camera.main.gameObject.transform, true);
+        
     }
 
 
     public void DropAnimal()
     {
-        // if (holderName = bear)
-        //      spawn dead bear
-        //etc.
-
-        //final steps
-        //holderName = "";
-        //
-
-        //new code
-        //either spawn in already dead prefab of respective animal,
-        //or spawn in animal in death animation with animation sped
-        //way up,then reset animation speed when done
-        if (lookObj.layer == 11)
-        {
-            Instantiate(deadBearObj, this.transform);
-        }
-        rifle.SetActive(true);
         isLooking = false;
-        holdingAnimal = false;
-        lookObj.gameObject.SetActive(true);
         lookObj = null;
-        //old code
-        //last execution
+        isHolding = false;
+        holderAnimal.SetActive(true);
+        string holderName = holderAnimal.GetComponent<Entity>().name;
+        for (int i = 0; i < animalParents.Length; i++)
+        {
+            if (animalParents[i].gameObject.name == holderName)
+            {
+                animalParents[i].SetActive(false);
+            }
+        }
+        holderAnimal.transform.position = this.gameObject.transform.position + transform.forward * 3f;
+        holderAnimal.GetComponent<Rigidbody>().isKinematic = false;
+        rifle.SetActive(true);
         holdingAnimal = false;
-        //animalType = "";
+        holderAnimal = null;
     }
 
 
@@ -141,7 +142,7 @@ public class Interact : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Interact")
+        if(other.tag == "Interact" || other.tag == "Animal")
         {
             isLooking = false;
             lookObj = null;

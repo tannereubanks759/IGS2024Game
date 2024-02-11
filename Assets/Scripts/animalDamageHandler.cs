@@ -15,43 +15,35 @@ public class animalDamageHandler : MonoBehaviour
     }
     void hitByRay()
     {
-        Debug.Log("Was hit my ray");
-        health = health - damage;
-        if (health <=0)
-        {
-            Debug.Log("Dead");
-            animal.anim.SetBool("die", true);
-            Destroy(animal);
-            Destroy(this.GetComponent<NavMeshAgent>());
-            //flag for pickup script
+        if(!(isDead)){
+            Debug.Log("Was hit my ray");
+            health = health - damage;
+            if (health <= 0)
+            {
+                Debug.Log("Dead");
+                animal.anim.SetBool("die", true);
+                Destroy(animal);
+                Destroy(this.GetComponent<NavMeshAgent>());
+                //flag for pickup script
 
-            ///
-            // this code sucks but works
-            ///
+                ///
+                // this code sucks but works
+                ///
 
-            isDead = true;
-            this.gameObject.AddComponent<Rigidbody>();
-            Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
-            rb.useGravity = true;
-            waitHalfSecond();
-            rb.isKinematic = true;
-            
-            //Destroy(this.gameObject);
-        }
-        else
-        {
-            animal.heardShot();
+                isDead = true;
+                this.gameObject.AddComponent<Rigidbody>();
+                Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
+                rb.useGravity = true;
+                rb.isKinematic = true;
+                animal.GetComponentInChildren<AlignWithGround>().enabled = false;
+                //Destroy(this.gameObject);
+            }
+            else
+            {
+                animal.heardShot();
+            }
         }
     }
 
-    IEnumerator waitHalfSecond()
-    {
-        yield return new WaitForSeconds(0.5f);
-    }
-
-   /* void headShot()
-    {
-        isDead = true;
-    }*/
 }
 
