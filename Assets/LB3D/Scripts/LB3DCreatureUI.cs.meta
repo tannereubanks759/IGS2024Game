@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 70ef5332215d76645972eddf009f5301
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 185046
+  packageName: Oculon, Eyeball Centipede Monster Game Enemy
+  packageVersion: 1.5.0
+  assetPath: Assets/LB3D/Scripts/LB3DCreatureUI.cs
+  uploadId: 419709

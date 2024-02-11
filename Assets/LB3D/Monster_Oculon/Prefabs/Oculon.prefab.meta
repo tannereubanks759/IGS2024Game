@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 97c1068adbbe14e47ab5ceb170b75abb
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 185046
+  packageName: Oculon, Eyeball Centipede Monster Game Enemy
+  packageVersion: 1.5.0
+  assetPath: Assets/LB3D/Monster_Oculon/Prefabs/Oculon.prefab
+  uploadId: 419709
