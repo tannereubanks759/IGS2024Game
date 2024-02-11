@@ -136,6 +136,12 @@ public class RandomMovement : MonoBehaviour
             anim.SetBool("run", true);
             anim.SetBool("attack", false);
         }
+
+        if(agent.hasPath == false)
+        {
+            isRunning = true;
+            isAttacking = false;
+        }
     }
 
     void Roam()
