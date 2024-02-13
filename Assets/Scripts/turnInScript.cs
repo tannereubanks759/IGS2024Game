@@ -35,6 +35,7 @@ public class turnInScript : MonoBehaviour
                 {
                     //Debug.Log("Player sacraficed animal");
                     quotaAnimalsList.Remove(nameOfAnimal);
+
                     Debug.Log("Animal removed from quota");
                 }
                 else
