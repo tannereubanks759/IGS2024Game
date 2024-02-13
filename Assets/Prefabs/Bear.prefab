@@ -1190,6 +1190,8 @@ MonoBehaviour:
   isDead: 0
   health: 100
   damage: 50
+  head: {fileID: 8883433347534899784}
+  body: {fileID: 8388509577901210854}
 --- !u!114 &-5716542806623877780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1222,8 +1224,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.67298126, y: 1.0151424, z: 1.931366}
-  m_Center: {x: -0.04771042, y: 0.68568134, z: -0.051956177}
+  m_Size: {x: 2.2204306, y: 0.6978922, z: 0.88684666}
+  m_Center: {x: -1.8435994, y: 0.112710476, z: -0.5742125}
 --- !u!1 &7279520283210066508
 GameObject:
   m_ObjectHideFlags: 0

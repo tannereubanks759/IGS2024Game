@@ -46,7 +46,7 @@ public class Interact : MonoBehaviour
                 {
                     PlaceTotem();
                 }
-                else if (!isHolding && !holdingAnimal && lookObj != null && lookObj.gameObject.tag == "Animal" && lookObj.gameObject.GetComponent<animalDamageHandler>().isDead == true)
+                else if (!isHolding && !holdingAnimal && lookObj != null && (lookObj.gameObject.tag == "head" || lookObj.gameObject.tag == "body") && lookObj.gameObject.GetComponent<AnimalReference>().handler.isDead == true)
                 {
                     PickupAnimal();
 
@@ -87,7 +87,7 @@ public class Interact : MonoBehaviour
         //holderAnimal = lookObj;
         //etc.
         isLooking = true;
-        holderAnimal = lookObj;
+        holderAnimal = lookObj.GetComponent<AnimalReference>().handler.gameObject;
         string holderName = holderAnimal.GetComponent<Entity>().name;
         for(int i = 0; i < animalParents.Length; i++)
         {
@@ -97,14 +97,13 @@ public class Interact : MonoBehaviour
                 break;
             }
         }
-        holderAnimal.GetComponent<Rigidbody>().isKinematic = true;
         holderAnimal.transform.position = this.gameObject.transform.position - Vector3.up * 10;
         Debug.Log("tried animal pickup");
         isHolding = true;
         holdingAnimal = true;
         rifle.SetActive(false);
         lookObj = null;
-        
+        holderAnimal.GetComponent<BoxCollider>().enabled = false;
     }
 
 
@@ -123,16 +122,23 @@ public class Interact : MonoBehaviour
             }
         }
         RaycastHit hit;
-        if (Physics.Raycast(this.gameObject.transform.position, transform.forward, out hit, 3f))
+        if (Physics.Raycast(this.gameObject.transform.position, transform.forward, out hit, 5f))
         {
             holderAnimal.transform.position = hit.point;
+            holderAnimal.GetComponent<Rigidbody>().useGravity = false;
+            holderAnimal.GetComponent<Rigidbody>().isKinematic = true;
+            holderAnimal.GetComponent<BoxCollider>().enabled = false;
         }
         else
         {
+            holderAnimal.GetComponent<BoxCollider>().enabled = true;
+            holderAnimal.GetComponent<Rigidbody>().useGravity = true;
             holderAnimal.transform.position = this.gameObject.transform.position + transform.forward * 3f;
         }
-       
-        holderAnimal.GetComponent<Rigidbody>().isKinematic = false;
+
+        holderAnimal.GetComponent<animalDamageHandler>().head.GetComponent<Rigidbody>().isKinematic = false;
+        holderAnimal.GetComponent<animalDamageHandler>().body.GetComponent<Rigidbody>().isKinematic = false;
+        
         rifle.SetActive(true);
         holdingAnimal = false;
         holderAnimal = null;
@@ -141,7 +147,7 @@ public class Interact : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Interact" || other.tag == "Animal")
+        if(other.tag == "Interact" || other.tag == "head" || other.tag == "body")
         {
             isLooking = true;
             lookObj = other.gameObject;
@@ -151,7 +157,7 @@ public class Interact : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Interact" || other.tag == "Animal")
+        if(other.tag == "Interact" || other.tag == "head" || other.tag == "body")
         {
             isLooking = false;
             lookObj = null;
