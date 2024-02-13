@@ -45,5 +45,32 @@ public class animalDamageHandler : MonoBehaviour
         }
     }
 
+    void headShot()
+    {
+        if (!(isDead))
+        {
+            
+            Debug.Log("Dead");
+            animal.anim.SetBool("die", true);
+            Destroy(animal);
+            Destroy(this.GetComponent<NavMeshAgent>());
+            //flag for pickup script
+
+            ///
+            // this code sucks but works
+            ///
+
+            isDead = true;
+            this.gameObject.AddComponent<Rigidbody>();
+            Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
+            rb.useGravity = true;
+            rb.isKinematic = true;
+            animal.GetComponentInChildren<AlignWithGround>().enabled = false;
+            //Destroy(this.gameObject);
+            
+            
+        }
+    }
+
 }
 

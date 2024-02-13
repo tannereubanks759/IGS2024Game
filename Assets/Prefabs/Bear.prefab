@@ -1101,11 +1101,10 @@ GameObject:
   m_Component:
   - component: {fileID: 9143024323414398476}
   - component: {fileID: 7756572727623013443}
-  - component: {fileID: 5952277248662093750}
   - component: {fileID: 5711290692000911608}
   - component: {fileID: 1983510310960598491}
-  - component: {fileID: 1652170871304516114}
   - component: {fileID: -5716542806623877780}
+  - component: {fileID: 831669165091811767}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Animal
@@ -1151,27 +1150,6 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &5952277248662093750
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7270159656920945751}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1.0768948, z: 2.0702515}
-  m_Center: {x: 0, y: 0.75145817, z: -0.0119018555}
 --- !u!114 &5711290692000911608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1212,7 +1190,20 @@ MonoBehaviour:
   isDead: 0
   health: 100
   damage: 50
---- !u!65 &1652170871304516114
+--- !u!114 &-5716542806623877780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7270159656920945751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2efc5f98e45054f90cd66109c6a7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Bear
+--- !u!65 &831669165091811767
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1231,21 +1222,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.58, y: 0.69, z: 0.84}
-  m_Center: {x: 0, y: 1.02, z: 1.33}
---- !u!114 &-5716542806623877780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7270159656920945751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a2efc5f98e45054f90cd66109c6a7da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Bear
+  m_Size: {x: 0.67298126, y: 1.0151424, z: 1.931366}
+  m_Center: {x: -0.04771042, y: 0.68568134, z: -0.051956177}
 --- !u!1 &7279520283210066508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,9 +1590,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6733591022682399346}
+  - component: {fileID: 8013776891244183992}
+  - component: {fileID: 7709318396491232333}
   m_Layer: 0
   m_Name: Bear_Spine_02SHJnt
-  m_TagString: Untagged
+  m_TagString: body
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1635,6 +1615,40 @@ Transform:
   - {fileID: 5862388714716276434}
   m_Father: {fileID: 8110866706342878339}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8013776891244183992
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8388509577901210854}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.57, y: 0.69, z: 0.84}
+  m_Center: {x: -0.17, y: 0, z: 0.06}
+--- !u!114 &7709318396491232333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8388509577901210854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c9eb649344b04449219970c22525f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handler: {fileID: 1983510310960598491}
 --- !u!1 &8396435055696265142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,6 +1691,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7195684115271937048}
   - component: {fileID: 8025402959540345540}
+  - component: {fileID: 2446636915103053120}
   m_Layer: 0
   m_Name: BOXCOLLIDERHEAD
   m_TagString: head
@@ -1720,3 +1735,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.38, y: 0.42649713, z: 0.48483106}
   m_Center: {x: -5.296442e-10, y: -0.053847983, z: -0.012584803}
+--- !u!114 &2446636915103053120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8883433347534899784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c9eb649344b04449219970c22525f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handler: {fileID: 1983510310960598491}
