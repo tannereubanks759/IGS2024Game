@@ -2365,6 +2365,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeText: {fileID: 1131584450}
   AMORPM: 
+  terrain: {fileID: 0}
+  treeObstacle: {fileID: 0}
 --- !u!114 &253721134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2379,6 +2381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paused: 0
   PauseCanvas: {fileID: 1823167223}
+  player: {fileID: 0}
 --- !u!1 &258103842
 GameObject:
   m_ObjectHideFlags: 0
@@ -8904,12 +8907,14 @@ MonoBehaviour:
   reachDistance: 5
   lookObj: {fileID: 0}
   isLooking: 0
+  holdingAnimal: 0
   lightSystem: {fileID: 971309989}
   isHolding: 0
   totem: {fileID: 1572019671}
   rifle: {fileID: 1704165516}
   deadBearObj: {fileID: 0}
   alterScript: {fileID: 634097753}
+  animalParents: []
 --- !u!1 &747830301
 GameObject:
   m_ObjectHideFlags: 0
@@ -12357,6 +12362,8 @@ MonoBehaviour:
   jumpForce: 5
   isGrounded: 0
   isCrouched: 0
+  isPaused: 0
+  gun: {fileID: 1704165519}
 --- !u!4 &1083629260
 Transform:
   m_ObjectHideFlags: 0
@@ -18091,6 +18098,7 @@ MonoBehaviour:
   range: 100
   animal: {fileID: 7941402138566422478, guid: 877d960c109c109428fdd687fd12be7c, type: 3}
   currentHP: 100
+  isScoped: 0
   scopeUI: {fileID: 349182731}
   gun: {fileID: 28794348}
   mask:

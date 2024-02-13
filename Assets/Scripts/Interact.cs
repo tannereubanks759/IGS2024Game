@@ -122,7 +122,16 @@ public class Interact : MonoBehaviour
                 animalParents[i].SetActive(false);
             }
         }
-        holderAnimal.transform.position = this.gameObject.transform.position + transform.forward * 3f;
+        RaycastHit hit;
+        if (Physics.Raycast(this.gameObject.transform.position, transform.forward, out hit, 3f))
+        {
+            holderAnimal.transform.position = hit.point;
+        }
+        else
+        {
+            holderAnimal.transform.position = this.gameObject.transform.position + transform.forward * 3f;
+        }
+       
         holderAnimal.GetComponent<Rigidbody>().isKinematic = false;
         rifle.SetActive(true);
         holdingAnimal = false;
