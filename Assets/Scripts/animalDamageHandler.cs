@@ -52,9 +52,6 @@ public class animalDamageHandler : MonoBehaviour
         ///
 
         isDead = true;
-        this.AddComponent<Rigidbody>();
-        this.GetComponent<Rigidbody>().useGravity = false;
-        this.GetComponent<Rigidbody>().mass = 500f;
         head.gameObject.AddComponent<Rigidbody>();
         body.gameObject.AddComponent<Rigidbody>();
         Rigidbody rb = head.gameObject.GetComponent<Rigidbody>();
@@ -63,10 +60,13 @@ public class animalDamageHandler : MonoBehaviour
         rb.isKinematic = true;
         rb2.useGravity = true;
         rb2.isKinematic = true;
-        animal.GetComponentInChildren<AlignWithGround>().enabled = false;
+        //animal.GetComponentInChildren<AlignWithGround>().enabled = false;
         this.gameObject.transform.rotation = this.GetComponentInChildren<Animator>().transform.rotation;
         this.GetComponentInChildren<Animator>().transform.localRotation = Quaternion.identity;
     }
 
+    
 }
+
+
 

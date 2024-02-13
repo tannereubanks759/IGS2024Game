@@ -62,7 +62,6 @@ public class MonsterAI : MonoBehaviour
        
         if (agent.remainingDistance <= agent.stoppingDistance + 1)
         {
-            Debug.Log("Looking for path");
             if (RandomPoint(agent.transform.position, wanderRange*2, out point))
             {
                 float pointDistance = Vector3.Distance(point, player.transform.position);

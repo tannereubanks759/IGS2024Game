@@ -124,20 +124,19 @@ public class Interact : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(this.gameObject.transform.position, transform.forward, out hit, 5f))
         {
-            holderAnimal.transform.position = hit.point;
-            holderAnimal.GetComponent<Rigidbody>().useGravity = false;
-            holderAnimal.GetComponent<Rigidbody>().isKinematic = true;
-            holderAnimal.GetComponent<BoxCollider>().enabled = false;
+            //if(Vector3.Angle(hit.normal, transform.forward) < 30)
+            
+            Debug.Log("raycast");
+            Vector3 position = hit.point + Vector3.up * .7f;
+            holderAnimal.transform.position = position;
+            
+            
         }
-        else
+        else if(Physics.Raycast(this.gameObject.transform.position + transform.forward * 5f, Vector3.down, out hit, 100f))
         {
-            holderAnimal.GetComponent<BoxCollider>().enabled = true;
-            holderAnimal.GetComponent<Rigidbody>().useGravity = true;
-            holderAnimal.transform.position = this.gameObject.transform.position + transform.forward * 3f;
+            Vector3 position = hit.point + Vector3.up * .7f;
+            holderAnimal.transform.position = position;
         }
-
-        holderAnimal.GetComponent<animalDamageHandler>().head.GetComponent<Rigidbody>().isKinematic = false;
-        holderAnimal.GetComponent<animalDamageHandler>().body.GetComponent<Rigidbody>().isKinematic = false;
         
         rifle.SetActive(true);
         holdingAnimal = false;
