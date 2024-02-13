@@ -8,6 +8,7 @@ TagManager:
   - Interact
   - AlterTotem
   - head
+  - body
   layers:
   - Default
   - TransparentFX

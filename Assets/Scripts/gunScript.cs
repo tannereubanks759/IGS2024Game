@@ -131,10 +131,15 @@ public class gunScript : MonoBehaviour
         {
             //Debug.Log("Hit something");
             hitPointObj.transform.position = target.point;
-            if (target.collider.tag == "Animal")
+            if(target.collider.tag == "Animal")
+            {
+                target.transform.SendMessage("hitByRay");
+            }
+            if (target.collider.tag == "body")
             {
                 Debug.Log("Hit animal");
-                target.transform.SendMessage("hitByRay");
+                //target.transform.SendMessage("hitByRay");
+                target.collider.GetComponent<AnimalReference>().talkToHandler();
                 //ani.damage(DAMAGE);
                 //Debug.Log(currentHP);
                 /*if (currentHP <= 0)
@@ -146,7 +151,7 @@ public class gunScript : MonoBehaviour
             else if (target.collider.tag == "head")
             {
                 Debug.Log("Headshot");
-                target.transform.SendMessage("headShot"); 
+                target.collider.GetComponent<AnimalReference>().talkToHandler(); 
             }
 
         }
