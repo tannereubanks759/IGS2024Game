@@ -157,6 +157,7 @@ Transform:
   - {fileID: 1392861946}
   - {fileID: 1651751280}
   - {fileID: 2119630826}
+  - {fileID: 886556684}
   m_Father: {fileID: 1704165517}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &28794350
@@ -1731,6 +1732,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &886556683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 886556684}
+  m_Layer: 6
+  m_Name: effectPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &886556684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886556683}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.7212, y: 0.1251, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 28794349}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &914311576
 GameObject:
@@ -4236,6 +4268,8 @@ MonoBehaviour:
   isDead: 0
   health: 100
   damage: 50
+  head: {fileID: 0}
+  body: {fileID: 0}
 --- !u!65 &1827278244
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5116,7 +5150,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2119630826
 Transform:
   m_ObjectHideFlags: 0
@@ -6647,6 +6681,8 @@ MonoBehaviour:
   isDead: 0
   health: 100
   damage: 50
+  head: {fileID: 0}
+  body: {fileID: 0}
 --- !u!1 &1686036603630704328
 GameObject:
   m_ObjectHideFlags: 0
@@ -8298,6 +8334,8 @@ MonoBehaviour:
   isDead: 0
   health: 100
   damage: 50
+  head: {fileID: 0}
+  body: {fileID: 0}
 --- !u!4 &4114131545061703429
 Transform:
   m_ObjectHideFlags: 0
@@ -11000,6 +11038,8 @@ MonoBehaviour:
   isDead: 0
   health: 100
   damage: 50
+  head: {fileID: 0}
+  body: {fileID: 0}
 --- !u!1 &7237237411483195643
 GameObject:
   m_ObjectHideFlags: 0
@@ -11942,6 +11982,8 @@ MonoBehaviour:
   isDead: 0
   health: 100
   damage: 50
+  head: {fileID: 0}
+  body: {fileID: 0}
 --- !u!4 &8495179767660204403
 Transform:
   m_ObjectHideFlags: 0
@@ -12598,6 +12640,8 @@ MonoBehaviour:
   isDead: 0
   health: 100
   damage: 50
+  head: {fileID: 0}
+  body: {fileID: 0}
 --- !u!4 &9081635077976193764
 Transform:
   m_ObjectHideFlags: 0
