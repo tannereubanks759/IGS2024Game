@@ -52,7 +52,7 @@ public class DayNightControl : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private void Start()
     {
         currentTime = 6f;
         isRotating = true;

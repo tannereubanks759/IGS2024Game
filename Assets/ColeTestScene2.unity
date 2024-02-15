@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 9209.657, g: 5537.6255, b: 4041.9458, a: 1}
+  m_IndirectSpecularColor: {r: 9209.659, g: 5537.5825, b: 4041.9692, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2391,7 +2391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paused: 0
   PauseCanvas: {fileID: 1823167223}
-  player: {fileID: 0}
+  player: {fileID: 1083629259}
 --- !u!1 &258103842
 GameObject:
   m_ObjectHideFlags: 0
@@ -11236,7 +11236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d27d9b3716df04aae5f4480d07bd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTime: 5.14
+  currentTime: 4.3
   timeSpeed: 0.05
   currentDay: 0
   manager: {fileID: 253721133}
