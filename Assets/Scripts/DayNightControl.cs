@@ -69,7 +69,7 @@ public class DayNightControl : MonoBehaviour
     public void Sleep()
     {
         if(currentTime >= 19) { 
-            currentTime = 6;
+            currentTime = 5.5f;
             isRotating = true;
             currentDay += 1;
             SleepText.enabled = false;
