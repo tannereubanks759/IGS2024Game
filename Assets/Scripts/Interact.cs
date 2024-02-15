@@ -151,7 +151,7 @@ public class Interact : MonoBehaviour
             isLooking = true;
             lookObj = other.gameObject;
             string output = lookObj.tag.ToString();
-            Debug.Log(output);
+            //Debug.Log(output);
         }
     }
     private void OnTriggerExit(Collider other)

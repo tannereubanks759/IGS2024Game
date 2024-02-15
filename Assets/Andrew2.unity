@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 9210.792, g: 5537.477, b: 4042.7505, a: 1}
+  m_IndirectSpecularColor: {r: 9216.112, g: 5537.524, b: 4031.7896, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -875,8 +875,6 @@ RectTransform:
   - {fileID: 2077232898}
   - {fileID: 1307032342}
   - {fileID: 1378978028}
-  - {fileID: 1694396503}
-  - {fileID: 1968295300}
   m_Father: {fileID: 585238758}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8632,7 +8630,6 @@ Transform:
   - {fileID: 6796780992198058576}
   - {fileID: 5953320465691137087}
   - {fileID: 3739709226034023143}
-  - {fileID: 1904391319}
   - {fileID: 1933739503}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8773,7 +8770,7 @@ GameObject:
   - component: {fileID: 621639672}
   m_Layer: 2
   m_Name: Deer
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17754,7 +17751,7 @@ GameObject:
   - component: {fileID: 1288349589}
   m_Layer: 2
   m_Name: Wolf
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21372,7 +21369,7 @@ GameObject:
   - component: {fileID: 1527261844}
   m_Layer: 2
   m_Name: Rabbit
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24111,16 +24108,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694396500}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 231.9185}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 88874632}
+  m_Father: {fileID: 1834333433}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -23.0496, y: -274.4876}
+  m_AnchoredPosition: {x: -983.0496, y: -814.4876}
   m_SizeDelta: {x: 244.0992, y: 61.0248}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1704165516
@@ -24564,7 +24561,7 @@ GameObject:
   - component: {fileID: 1745512135}
   m_Layer: 2
   m_Name: Bear
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24785,7 +24782,7 @@ GameObject:
   - component: {fileID: 1761645468}
   m_Layer: 2
   m_Name: Goat
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25273,6 +25270,7 @@ MonoBehaviour:
   noAnimalText: {fileID: 1968295299}
   quotaAnimalsList:
   - animalTest
+  - Bear
 --- !u!1 &1798721526
 GameObject:
   m_ObjectHideFlags: 0
@@ -26012,6 +26010,8 @@ RectTransform:
   - {fileID: 519491895}
   - {fileID: 1131584449}
   - {fileID: 1852942610}
+  - {fileID: 1694396503}
+  - {fileID: 1968295300}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -26754,12 +26754,12 @@ Transform:
   m_GameObject: {fileID: 1904391315}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.7693787, y: -0.9475441, z: -15.018509}
+  m_LocalPosition: {x: 96.29, y: 9.13, z: 519.153}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1794720816}
-  m_Father: {fileID: 585238758}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1911048966
 GameObject:
@@ -27350,16 +27350,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968295299}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 231.9185}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 88874632}
+  m_Father: {fileID: 1834333433}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12, y: -258.5554}
+  m_AnchoredPosition: {x: -972, y: -798.5554}
   m_SizeDelta: {x: 455.162, y: 113.7905}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1968295301
@@ -55193,6 +55193,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 585238758}
   - {fileID: 438709470}
+  - {fileID: 1904391319}
   - {fileID: 375405658}
   - {fileID: 971309988}
   - {fileID: 343586218}

@@ -53,7 +53,7 @@ public class turnInScript : MonoBehaviour
         
         if (collision.tag == "Player")
         {
-            //Debug.Log("Player entered range");
+            Debug.Log("Player entered range");
             inRange = true;
             interactImage.SetActive(true);
         }

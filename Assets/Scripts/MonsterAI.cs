@@ -73,7 +73,7 @@ public class MonsterAI : MonoBehaviour
         }
         else
         {
-            Debug.Log("hasPath");
+            //Debug.Log("hasPath");
         }
     }
 
