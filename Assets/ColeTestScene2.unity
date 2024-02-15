@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 9215.8545, g: 5537.4224, b: 4031.7817, a: 1}
+  m_IndirectSpecularColor: {r: 9209.657, g: 5537.6255, b: 4041.9458, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3731,7 +3731,7 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 0.8819223
+  m_Intensity: 4725.4927
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -3868,7 +3868,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.8819223
+  m_Intensity: 4725.4927
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -8925,7 +8925,11 @@ MonoBehaviour:
   rifle: {fileID: 1704165516}
   deadBearObj: {fileID: 0}
   alterScript: {fileID: 634097753}
-  animalParents: []
+  animalParents:
+  - {fileID: 1745512134}
+  - {fileID: 621639671}
+  - {fileID: 1527261843}
+  - {fileID: 1761645467}
 --- !u!45 &740566323
 Skybox:
   m_ObjectHideFlags: 0

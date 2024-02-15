@@ -95,6 +95,7 @@ public class gunScript : MonoBehaviour
     }
     IEnumerator onScoped()
     {
+        Camera.main.GetComponent<Interact>().enabled = false;
         yield return new WaitForSeconds(.25f);
         scopeUI.SetActive(true);
         gun.SetActive(false);
@@ -103,6 +104,7 @@ public class gunScript : MonoBehaviour
     }
     void notScoped()
     {
+        Camera.main.GetComponent<Interact>().enabled = true;
         scopeUI.SetActive(false);
         mainCam.fieldOfView = baseFOV;
         gun.SetActive(true);
