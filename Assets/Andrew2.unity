@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 9216.112, g: 5537.524, b: 4031.7896, a: 1}
+  m_IndirectSpecularColor: {r: 9217.718, g: 5538.4106, b: 4032.7896, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8768,6 +8768,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 621639672}
+  - component: {fileID: 621639673}
   m_Layer: 2
   m_Name: Deer
   m_TagString: Animal
@@ -8792,6 +8793,27 @@ Transform:
   - {fileID: 967521157}
   m_Father: {fileID: 740566317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &621639673
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621639671}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &626563726
 GameObject:
   m_ObjectHideFlags: 0
@@ -17749,6 +17771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1288349589}
+  - component: {fileID: 1288349590}
   m_Layer: 2
   m_Name: Wolf
   m_TagString: Animal
@@ -17773,6 +17796,27 @@ Transform:
   - {fileID: 1191111160}
   m_Father: {fileID: 740566317}
   m_LocalEulerAnglesHint: {x: 0.39, y: 5.086, z: 356.491}
+--- !u!65 &1288349590
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288349588}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1291215187
 GameObject:
   m_ObjectHideFlags: 0
@@ -21367,6 +21411,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1527261844}
+  - component: {fileID: 1527261845}
   m_Layer: 2
   m_Name: Rabbit
   m_TagString: Animal
@@ -21391,6 +21436,27 @@ Transform:
   - {fileID: 975226988}
   m_Father: {fileID: 740566317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1527261845
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527261843}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1529432405
 GameObject:
   m_ObjectHideFlags: 0
@@ -24559,6 +24625,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1745512135}
+  - component: {fileID: 1745512136}
   m_Layer: 2
   m_Name: Bear
   m_TagString: Animal
@@ -24583,6 +24650,27 @@ Transform:
   - {fileID: 407657301}
   m_Father: {fileID: 740566317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1745512136
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745512134}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1747849724
 GameObject:
   m_ObjectHideFlags: 0
@@ -24780,6 +24868,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1761645468}
+  - component: {fileID: 1761645469}
   m_Layer: 2
   m_Name: Goat
   m_TagString: Animal
@@ -24804,6 +24893,27 @@ Transform:
   - {fileID: 837383250}
   m_Father: {fileID: 740566317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1761645469
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761645467}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1770648575
 PrefabInstance:
   m_ObjectHideFlags: 0
