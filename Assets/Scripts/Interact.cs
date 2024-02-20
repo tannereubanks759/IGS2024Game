@@ -18,11 +18,14 @@ public class Interact : MonoBehaviour
     private GameObject holderAnimal;
     public Alter alterScript;
     public GameObject[] animalParents;
+    public GameObject objectWithScript;
+    //turnInScript turnInRef;
     // Start is called before the first frame update
     void Start()
     {
         holdingAnimal = false;
         isLooking = false;
+        objectWithScript.GetComponent<turnInScript>();
         rifle.SetActive(true);
         totem.SetActive(false);
     }
@@ -37,6 +40,7 @@ public class Interact : MonoBehaviour
                 if (lookObj != null && lookObj.gameObject.name == "Bed")
                 {
                     lightSystem.Sleep();
+                    objectWithScript.GetComponent<turnInScript>().dayCountUpdate();
                 }
                 else if (!isHolding && lookObj != null && lookObj.gameObject.layer == 8)
                 {
