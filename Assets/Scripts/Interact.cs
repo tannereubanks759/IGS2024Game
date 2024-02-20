@@ -103,7 +103,7 @@ public class Interact : MonoBehaviour
         holdingAnimal = true;
         rifle.SetActive(false);
         lookObj = null;
-        holderAnimal.GetComponent<BoxCollider>().enabled = false;
+        //holderAnimal.GetComponent<BoxCollider>().enabled = false;
     }
 
 
