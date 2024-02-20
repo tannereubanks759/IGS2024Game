@@ -53,13 +53,13 @@ public class turnInScript : MonoBehaviour
         
         if (collision.tag == "Player")
         {
-            Debug.Log("Player entered range");
+            //Debug.Log("Player entered range");
             inRange = true;
             interactImage.SetActive(true);
         }
         if(collision.tag == "Animal")
         {
-            //Debug.Log("Animal carried into range");
+            Debug.Log("Animal carried into range");
             hasAnimal = true;
              nameOfAnimal = collision.name;
             //Debug.Log(nameOfAnimal);
