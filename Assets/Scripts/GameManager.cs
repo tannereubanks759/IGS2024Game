@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     private float seconds;
     public Terrain terrain;
     public GameObject treeObstacle;
+    public List<GameObject> animalList = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,10 @@ public class GameManager : MonoBehaviour
         }
         seconds = (currentTime - (int)currentTime) * .6f;
         timeText.text = "Day " + sunControl.currentDay.ToString() + "  " + ((int)currentTime).ToString() + ":" + ((int)(seconds*100)).ToString("00") + AMORPM;
+        if (sunControl.currentTime > 19 && animalList.Count > 0)
+        {
+            DespawnAnimals();
+        }
     }
 
     void SpawnTreeObstacles()
@@ -40,6 +46,18 @@ public class GameManager : MonoBehaviour
             var localPos = new Vector3(treeInstancePos.x * terrain.terrainData.size.x, treeInstancePos.y * terrain.terrainData.size.y, treeInstancePos.z * terrain.terrainData.size.z);
             var worldPos = Terrain.activeTerrain.transform.TransformPoint(localPos);
             Instantiate(treeObstacle, worldPos, treeObstacle.transform.rotation);
+        }
+    }
+
+    //check is dead flag of animal fromcdamage handler script, despawn if not dead (allows players to maintain progress in terms of dead animals)
+    public void DespawnAnimals()
+    {
+        for (int i = 0; i < animalList.Count; i++)
+        {
+            if (animalList[i].GetComponent<animalDamageHandler>().isDead == false)
+            {
+                Destroy(animalList[i]);
+            }
         }
     }
 }

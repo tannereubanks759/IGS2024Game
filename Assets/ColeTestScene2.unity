@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 9209.659, g: 5537.5825, b: 4041.9692, a: 1}
+  m_IndirectSpecularColor: {r: 9217.671, g: 5538.399, b: 4032.8755, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1789,6 +1789,7 @@ MonoBehaviour:
   spawnRange: 92.3
   spawnCount: 1
   animal: {fileID: 2674247296883533286, guid: 6ae71d5d4f571434e9685413fb2577ff, type: 3}
+  manager: {fileID: 253721133}
 --- !u!23 &216362289
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2377,6 +2378,7 @@ MonoBehaviour:
   AMORPM: 
   terrain: {fileID: 375405657}
   treeObstacle: {fileID: 0}
+  animalList: []
 --- !u!114 &253721134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2665,6 +2667,7 @@ MonoBehaviour:
   spawnRange: 91.2
   spawnCount: 2
   animal: {fileID: 3080558855436511557, guid: 7447ed370815f8041bed0fda805535c3, type: 3}
+  manager: {fileID: 253721133}
 --- !u!23 &270370738
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4428,6 +4431,7 @@ MonoBehaviour:
   spawnRange: 109.2
   spawnCount: 2
   animal: {fileID: 2674247296883533286, guid: 6ae71d5d4f571434e9685413fb2577ff, type: 3}
+  manager: {fileID: 253721133}
 --- !u!23 &380933165
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4583,6 +4587,7 @@ MonoBehaviour:
   spawnRange: 41.5
   spawnCount: 2
   animal: {fileID: 7725219084302044927, guid: c1130a4e72e02ef449ff51750f463e84, type: 3}
+  manager: {fileID: 253721133}
 --- !u!23 &382892721
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4791,6 +4796,7 @@ MonoBehaviour:
   spawnRange: 43.45
   spawnCount: 1
   animal: {fileID: 2914297913811235089, guid: 01c76496826a89a4d8badb0bf673c778, type: 3}
+  manager: {fileID: 253721133}
 --- !u!23 &396949761
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7043,6 +7049,7 @@ MonoBehaviour:
   spawnRange: 140
   spawnCount: 5
   animal: {fileID: 2674247296883533286, guid: 6ae71d5d4f571434e9685413fb2577ff, type: 3}
+  manager: {fileID: 253721133}
 --- !u!4 &548689543
 Transform:
   m_ObjectHideFlags: 0
@@ -8466,6 +8473,7 @@ MonoBehaviour:
   spawnRange: 41.5
   spawnCount: 2
   animal: {fileID: 7725219084302044927, guid: c1130a4e72e02ef449ff51750f463e84, type: 3}
+  manager: {fileID: 253721133}
 --- !u!23 &697723823
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9807,6 +9815,7 @@ MonoBehaviour:
   spawnRange: 82.1
   spawnCount: 2
   animal: {fileID: 3080558855436511557, guid: 7447ed370815f8041bed0fda805535c3, type: 3}
+  manager: {fileID: 253721133}
 --- !u!23 &827094560
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10065,6 +10074,7 @@ MonoBehaviour:
   spawnRange: 164.2
   spawnCount: 4
   animal: {fileID: 7270159656920945751, guid: ea4741bf723258b43b1712f763ab1dcb, type: 3}
+  manager: {fileID: 253721133}
 --- !u!23 &851556191
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10771,6 +10781,7 @@ MonoBehaviour:
   spawnRange: 41.5
   spawnCount: 2
   animal: {fileID: 7725219084302044927, guid: c1130a4e72e02ef449ff51750f463e84, type: 3}
+  manager: {fileID: 253721133}
 --- !u!23 &938032447
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15265,6 +15276,7 @@ MonoBehaviour:
   spawnRange: 43.45
   spawnCount: 1
   animal: {fileID: 2914297913811235089, guid: 01c76496826a89a4d8badb0bf673c778, type: 3}
+  manager: {fileID: 253721133}
 --- !u!23 &1501889351
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17515,6 +17527,7 @@ MonoBehaviour:
   spawnRange: 76.4
   spawnCount: 2
   animal: {fileID: 3080558855436511557, guid: 7447ed370815f8041bed0fda805535c3, type: 3}
+  manager: {fileID: 253721133}
 --- !u!23 &1634934748
 MeshRenderer:
   m_ObjectHideFlags: 0

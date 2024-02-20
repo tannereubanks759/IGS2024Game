@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 public class AnimalSpawner : MonoBehaviour
 {
+    
     public float spawnRange;
     public float spawnCount;
     public GameObject animal;
@@ -12,14 +14,19 @@ public class AnimalSpawner : MonoBehaviour
     private Vector3 point;
     private bool hasPoint;
     private GameObject Ocean;
+
+    public GameManager manager;
     // Start is called before the first frame update
     void Start()
     {
+        
         Ocean = GameObject.Find("Ocean");
         hasPoint = false;
         Spawn();
         
     }
+
+   
 
     public void Spawn()
     {
@@ -33,6 +40,8 @@ public class AnimalSpawner : MonoBehaviour
                     if(point.y > Ocean.transform.position.y)
                     {
                         GameObject temp = Instantiate(animal, transform.position, Quaternion.identity);
+                        //add temp animal to manager list for despawn (not working)
+                        manager.animalList.Add(temp);
                         Vector3 positionForAnimal = point + new Vector3(0, 3, 0);
                         temp.transform.position = positionForAnimal;
                         hasPoint = true;
@@ -41,6 +50,8 @@ public class AnimalSpawner : MonoBehaviour
             }
         }
     }
+
+    
 
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
