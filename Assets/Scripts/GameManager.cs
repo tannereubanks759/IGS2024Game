@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
             if (animalList[i].GetComponent<animalDamageHandler>().isDead == false)
             {
                 Destroy(animalList[i]);
+                animalList.Remove(animalList[i]);
             }
         }
     }

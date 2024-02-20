@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 9217.671, g: 5538.399, b: 4032.8755, a: 1}
+  m_IndirectSpecularColor: {r: 9211.47, g: 5536.5396, b: 4036.188, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2377,7 +2377,8 @@ MonoBehaviour:
   timeText: {fileID: 1131584450}
   AMORPM: 
   terrain: {fileID: 375405657}
-  treeObstacle: {fileID: 0}
+  treeObstacle: {fileID: 9035995530827538350, guid: 84033a03c97073d4490472dfd11b110a,
+    type: 3}
   animalList: []
 --- !u!114 &253721134
 MonoBehaviour:
@@ -8938,6 +8939,7 @@ MonoBehaviour:
   - {fileID: 621639671}
   - {fileID: 1527261843}
   - {fileID: 1761645467}
+  objectWithScript: {fileID: 0}
 --- !u!45 &740566323
 Skybox:
   m_ObjectHideFlags: 0
@@ -11249,7 +11251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTime: 4.3
   timeSpeed: 0.05
-  currentDay: 0
+  currentDay: 1
   manager: {fileID: 253721133}
   SleepText: {fileID: 1852942611}
 --- !u!1001 &973007756

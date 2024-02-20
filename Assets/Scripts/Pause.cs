@@ -47,6 +47,8 @@ public class Pause : MonoBehaviour
     public void ReturnToMainMenu()
     {
         SceneManager.LoadScene(0);
+        //fixing time bug when restarting game from main menu (time scale was still 0 on scene load)
+        Time.timeScale = 1;
     }
 
 
