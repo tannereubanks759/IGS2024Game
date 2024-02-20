@@ -14,6 +14,7 @@ public class DayNightControl : MonoBehaviour
     private bool isRotating;
     public GameManager manager;
     public TextMeshProUGUI SleepText;
+    public AnimalSpawner[] spawners;
     private void Update()
     {
         if (currentTime < 24f)
@@ -73,6 +74,10 @@ public class DayNightControl : MonoBehaviour
             isRotating = true;
             currentDay += 1;
             SleepText.enabled = false;
+            for(int i = 0; i < spawners.Length; i++)
+            {
+                spawners[i].animalsSpawnedCount = 0;
+            }
         }
     }
 }
