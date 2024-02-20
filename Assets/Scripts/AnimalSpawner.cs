@@ -9,10 +9,10 @@ public class AnimalSpawner : MonoBehaviour
     
     public float spawnRange;
     public float spawnCount;
-    public float animalsSpawnedCount;
     public GameObject animal;
 
     private Vector3 point;
+    private bool hasPoint;
     private GameObject Ocean;
 
     public GameManager manager;
@@ -21,30 +21,32 @@ public class AnimalSpawner : MonoBehaviour
     {
         
         Ocean = GameObject.Find("Ocean");
+        hasPoint = false;
+        Spawn();
         
     }
-    private void Update()
-    {
-        if(animalsSpawnedCount < spawnCount)
-        {
-            Spawn();
-        }
-    }
 
-
+   
 
     public void Spawn()
     {
-        if (RandomPoint(this.transform.position, spawnRange, out point))
+        for(int i = 0; i < spawnCount; i++)
         {
-            if(point.y > Ocean.transform.position.y)
+            hasPoint = false;
+            while(hasPoint == false)
             {
-                GameObject temp = Instantiate(animal, transform.position, Quaternion.identity);
-                //add temp animal to manager list for despawn (not working)
-                manager.animalList.Add(temp);
-                Vector3 positionForAnimal = point + new Vector3(0, 2, 0);
-                temp.transform.position = positionForAnimal;
-                animalsSpawnedCount++;
+                if (RandomPoint(this.transform.position, spawnRange, out point))
+                {
+                    if(point.y > Ocean.transform.position.y)
+                    {
+                        GameObject temp = Instantiate(animal, transform.position, Quaternion.identity);
+                        //add temp animal to manager list for despawn (not working)
+                        manager.animalList.Add(temp);
+                        Vector3 positionForAnimal = point + new Vector3(0, 3, 0);
+                        temp.transform.position = positionForAnimal;
+                        hasPoint = true;
+                    }
+                }
             }
         }
     }
