@@ -50,31 +50,7 @@ public class turnInScript : MonoBehaviour
                     {
                         Debug.Log("QUOTA FINISHED");
                         //dayCounter++; set this in sleep script
-                        if(dayCounter == 1)
-                        {
-                            Debug.Log("Day 2 quota");
-
-                        }
-                        else if (dayCounter == 2) 
-                        {
-                            Debug.Log("Day 3 quota");
-                        }
-                        else if (dayCounter == 3)
-                        {
-                            Debug.Log("Day 4 quota");
-                        }
-                        else if (dayCounter == 4)
-                        {
-                            Debug.Log("Day 5 quota");
-                        }
-                        else if (dayCounter == 5)
-                        {
-                            Debug.Log("Day 6 quota");
-                        }
-                        else if (dayCounter == 6)
-                        {
-                            Debug.Log("Day 7 quota");
-                        }
+                        
                     }
 
                 }
@@ -138,5 +114,41 @@ public class turnInScript : MonoBehaviour
         
         dayCounter++;
         Debug.Log("DAY UPDATED TO" + dayCounter);
+        if (dayCounter == 1)
+        {
+            Debug.Log("Day 2 quota");
+            quotaAnimalsList.Clear();
+            quotaAnimalsList.Add("QUOTA 2 TEST");
+        }
+        else if (dayCounter == 2)
+        {
+            Debug.Log("Day 3 quota");
+            quotaAnimalsList.Clear();
+            quotaAnimalsList.Add("QUOTA 3 TEST");
+        }
+        else if (dayCounter == 3)
+        {
+            Debug.Log("Day 4 quota");
+            quotaAnimalsList.Clear();
+            quotaAnimalsList.Add("QUOTA 4 TEST");
+        }
+        else if (dayCounter == 4)
+        {
+            Debug.Log("Day 5 quota");
+            quotaAnimalsList.Clear();
+            quotaAnimalsList.Add("QUOTA 5 TEST");
+        }
+        else if (dayCounter == 5)
+        {
+            Debug.Log("Day 6 quota");
+            quotaAnimalsList.Clear();
+            quotaAnimalsList.Add("QUOTA 6 TEST");
+        }
+        else if (dayCounter == 6)
+        {
+            Debug.Log("Day 7 quota");
+            quotaAnimalsList.Clear();
+            quotaAnimalsList.Add("QUOTA 7 TEST");
+        }
     }
 }
