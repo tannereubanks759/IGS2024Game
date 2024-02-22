@@ -230,9 +230,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4233629347628247700}
+  - component: {fileID: 4927820286983838858}
+  - component: {fileID: 28304276419091924}
   m_Layer: 0
   m_Name: Wolf_Spine_02SHJnt
-  m_TagString: Untagged
+  m_TagString: body
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,6 +255,40 @@ Transform:
   - {fileID: 8501085314679758956}
   m_Father: {fileID: 4246498442212619390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4927820286983838858
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543520581383536135}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.86616457, y: 0.36771387, z: 0.33271155}
+  m_Center: {x: -0.06691719, y: 0.009447818, z: 0.016523778}
+--- !u!114 &28304276419091924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543520581383536135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c9eb649344b04449219970c22525f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handler: {fileID: -6686375759152291528}
 --- !u!1 &1561809009660006696
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,10 +752,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6664817188111999623}
   - component: {fileID: 1622128504738694867}
-  - component: {fileID: 8453304124782689831}
   - component: {fileID: 7002490135201566597}
   - component: {fileID: -6686375759152291528}
-  - component: {fileID: 942802307067047907}
   - component: {fileID: -6607920915969202683}
   m_Layer: 0
   m_Name: Wolf
@@ -766,27 +800,6 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &8453304124782689831
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3080558855436511557}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.7254152, z: 1.2676392}
-  m_Center: {x: 0, y: 0.04120207, z: -0.05609131}
 --- !u!114 &7002490135201566597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -827,27 +840,8 @@ MonoBehaviour:
   isDead: 0
   health: 100
   damage: 50
---- !u!65 &942802307067047907
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3080558855436511557}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0, y: 0.41, z: 0.93}
+  head: {fileID: 7206633287413879724}
+  body: {fileID: 1543520581383536135}
 --- !u!114 &-6607920915969202683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1874,9 +1868,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6011418469119849982}
+  - component: {fileID: 2639180995349862423}
+  - component: {fileID: 6242920583037424202}
   m_Layer: 0
   m_Name: Wolf_Head_JawSHJnt
-  m_TagString: Untagged
+  m_TagString: head
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1898,6 +1894,40 @@ Transform:
   - {fileID: 2337117049466056084}
   m_Father: {fileID: 3940918293731818841}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2639180995349862423
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7206633287413879724}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.22252819, y: 0.17424183, z: 0.2653832}
+  m_Center: {x: -0.003374851, y: 0.050836522, z: -0.057589337}
+--- !u!114 &6242920583037424202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7206633287413879724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c9eb649344b04449219970c22525f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handler: {fileID: -6686375759152291528}
 --- !u!1 &7662574944927427043
 GameObject:
   m_ObjectHideFlags: 0
