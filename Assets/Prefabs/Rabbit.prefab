@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 5946678515557292103}
   m_Layer: 0
   m_Name: WildRabbit_Spine_03SHJnt
-  m_TagString: Untagged
+  m_TagString: body
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -549,9 +549,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7780605780169620111}
+  - component: {fileID: 3362026643355456257}
+  - component: {fileID: 1807110497888275772}
   m_Layer: 0
   m_Name: WildRabbit_Spine_02SHJnt
-  m_TagString: Untagged
+  m_TagString: body
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -572,6 +574,40 @@ Transform:
   - {fileID: 5946678515557292103}
   m_Father: {fileID: 285882685469108722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3362026643355456257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3291397744340834348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c9eb649344b04449219970c22525f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handler: {fileID: 3545082325429788371}
+--- !u!65 &1807110497888275772
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3291397744340834348}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.45001146, y: 0.25451756, z: 0.28572538}
+  m_Center: {x: -0.077026136, y: -0.03717249, z: -0.024656143}
 --- !u!1 &3679317434167842256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,7 +1302,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4247154034790135029}
   - component: {fileID: 6814888527338235801}
-  - component: {fileID: 201716568046880598}
   - component: {fileID: 1991117607671476136}
   - component: {fileID: 3545082325429788371}
   - component: {fileID: 4068095054586860841}
@@ -1315,27 +1350,6 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &201716568046880598
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7725219084302044927}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.94, y: 0.58, z: 0.97}
-  m_Center: {x: 0, y: -0.12, z: 0}
 --- !u!114 &1991117607671476136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1374,8 +1388,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
-  health: 100
+  health: 50
   damage: 50
+  head: {fileID: 0}
+  body: {fileID: 3291397744340834348}
 --- !u!114 &4068095054586860841
 MonoBehaviour:
   m_ObjectHideFlags: 0
