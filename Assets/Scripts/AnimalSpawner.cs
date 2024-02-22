@@ -21,11 +21,15 @@ public class AnimalSpawner : MonoBehaviour
     {
         
         Ocean = GameObject.Find("Ocean");
-        Spawn();
+        
         
     }
 
-   
+    private void Update()
+    {
+        Spawn();
+    }
+
 
     public void Spawn()
     {
