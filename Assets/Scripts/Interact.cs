@@ -15,7 +15,7 @@ public class Interact : MonoBehaviour
     public GameObject totem;
     public GameObject rifle;
     public GameObject deadBearObj;
-    private GameObject holderAnimal;
+    public GameObject holderAnimal;
     public Alter alterScript;
     public GameObject[] animalParents;
     public GameObject objectWithScript;

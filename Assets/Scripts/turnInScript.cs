@@ -20,12 +20,16 @@ public class turnInScript : MonoBehaviour
     public GameObject animalBeingCarried;
     public GameObject oldArms;
     private int dayCounter = 0;
+    Interact interactScipt;
+    private Camera cam;
     /*public GameObject lookObj;*/
     void Start()
     {
+        cam = Camera.main;
         boxCol = GetComponent<BoxCollider>();
         interactImage.SetActive(false);
         noAnimalText.SetActive(false);
+        interactScipt = cam.GetComponent<Interact>();
         //lookObj = null;
         
     }
@@ -41,9 +45,17 @@ public class turnInScript : MonoBehaviour
                 if(hasAnimal && isQuota)
                 {
                     //Debug.Log("Player sacraficed animal");
+                    // isLooking = false;
+                    //lookObj = null;
+                    //isHolding = false;
                     quotaAnimalsList.Remove(nameOfAnimal);
                     animalBeingCarried.SetActive(false);
-                    oldArms.SetActive(false);
+                    interactScipt.isLooking = false;
+                    interactScipt.lookObj = null;
+                    interactScipt.isHolding = false;
+                    interactScipt.holdingAnimal = false;
+                    interactScipt.holderAnimal = null;
+                    //oldArms.SetActive(false);
                     rifle.SetActive(true);
                     Debug.Log("Animal removed from quota");
                     if(quotaAnimalsList.Count == 0)
