@@ -22,7 +22,10 @@ public class RandomMovement : MonoBehaviour
     private float oceanHeight;
     public float listeningDistance;
     private bool isAttacking;
-    
+
+    public bool packAnimal;
+    public bool packLeader;
+    public GameObject packleaderAnimal;
 
     private float idleNextTime;
     private bool hasTime;
@@ -32,6 +35,8 @@ public class RandomMovement : MonoBehaviour
     float distanceFromPlayer;
 
     public Animator anim;
+
+    public GameManager manager;
     //instead of centrePoint you can set it as the transform of the agent if you don't care about a specific area
 
     void Start()
@@ -47,9 +52,9 @@ public class RandomMovement : MonoBehaviour
         hasPoint = false;
         oceanHeight = GameObject.Find("Ocean").transform.position.y;
         isAttacking = false;
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
-
-
+    
     void Update()
     {
         distanceFromPlayer = Vector3.Distance(Player.transform.position, this.transform.position);
@@ -57,27 +62,28 @@ public class RandomMovement : MonoBehaviour
         {
             Roam();
         }
+        else if (isAttacking == true)
+        {
+            attack();
+        }
         else if(isRunning == true)
         {
             Running();
         }
-        else if(isAttacking == true)
-        {
-            attack();
-        }
+        
         
 
-        if(ableToAttack && distanceFromPlayer < attackDistance)
+        if(ableToAttack && distanceFromPlayer < listeningDistance)
         {
             isAttacking = true;
-        }
-
-        if (ableToRun && ((isRunning == false && Input.GetKeyDown(KeyCode.J)) || distanceFromPlayer <= listeningDistance && hasPoint == false)) //debug simulate shoot at but not hit (make it run) OR player in range
+        }else if (ableToRun && isAttacking == false && distanceFromPlayer <= listeningDistance && hasPoint == false) //debug simulate shoot at but not hit (make it run) OR player in range
         {
             hasTime = false;
             hasPoint = false;
             isRunning = true;
         }
+
+        FindPackLeader();
 
     }
 
@@ -144,6 +150,22 @@ public class RandomMovement : MonoBehaviour
         }
     }
 
+    void FindPackLeader()
+    {
+        if(packLeader == false && packAnimal == true && packleaderAnimal == null) //check if it rides in packs
+        {
+            for(int i = 0; i < manager.animalList.Count; i++) //loop through animals in scene
+            {
+                RandomMovement animal = manager.animalList[i].GetComponent<RandomMovement>();
+                if (animal.packLeader && Vector3.Distance(animal.transform.position, this.transform.position) < 90)
+                {
+                    packleaderAnimal = animal.gameObject;
+                    Debug.Log("Found pack animal");
+                }
+            }
+        }
+    }
+
     void Roam()
     {
         if (agent.velocity == Vector3.zero)
@@ -156,24 +178,41 @@ public class RandomMovement : MonoBehaviour
         }
         anim.SetBool("run", false);
         anim.SetBool("attack", false);
-        if (agent.remainingDistance <= agent.stoppingDistance) //done with path
+        agent.speed = WalkSpeed;
+        if (packAnimal && packleaderAnimal != null)
         {
-            if (hasTime == false) //Get Idle Time
+            agent.SetDestination(packleaderAnimal.transform.position);
+            if (agent.remainingDistance <= agent.stoppingDistance+3) //done with path
             {
-                idleNextTime = Time.time + Random.Range(idleTimeBot, idleTimeTop);
-                hasTime = true;
+                agent.isStopped = true;
             }
-            if (hasTime && Time.time > idleNextTime && RandomPoint(centrePoint, range, out point))
+            else
             {
-                if(point.y > oceanHeight + 5)
+                agent.isStopped = false;
+            }
+        }
+        else 
+        {
+            if (agent.remainingDistance <= agent.stoppingDistance+1) //done with path
+            {
+                if (hasTime == false) //Get Idle Time
                 {
-                    Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
-                    agent.speed = WalkSpeed;
-                    agent.SetDestination(point);
-                    hasTime = false;
+                    idleNextTime = Time.time + Random.Range(idleTimeBot, idleTimeTop);
+                    hasTime = true;
+                }
+                if (hasTime && Time.time > idleNextTime && RandomPoint(centrePoint, range, out point))
+                {
+                    if (point.y > oceanHeight + 5)
+                    {
+                        Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
+                        agent.speed = WalkSpeed;
+                        agent.SetDestination(point);
+                        hasTime = false;
+                    }
                 }
             }
         }
+        
         
         
     }
@@ -197,7 +236,7 @@ public class RandomMovement : MonoBehaviour
     
     public void heardShot()
     {
-        if(isRunning == false && isAttacking == false)
+        if(ableToRun && isRunning == false && isAttacking == false)
         {
             isRunning = true;
         }

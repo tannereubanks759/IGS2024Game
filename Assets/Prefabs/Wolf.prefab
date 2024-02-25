@@ -771,7 +771,7 @@ Transform:
   m_GameObject: {fileID: 3080558855436511557}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 74.9, y: 15.34, z: 431.1}
+  m_LocalPosition: {x: 74.9, y: 15.365, z: 431.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -816,15 +816,19 @@ MonoBehaviour:
   range: 51.94
   WalkSpeed: 3
   RunSpeed: 10
-  ableToRun: 0
+  ableToRun: 1
   runMultiplier: 2.05
   ableToAttack: 1
   attackDamage: 2
-  attackDistance: 20
+  attackDistance: 40
   listeningDistance: 40
+  packAnimal: 1
+  packLeader: 0
+  packleaderAnimal: {fileID: 0}
   idleTimeTop: 20.2
   idleTimeBot: 9.15
   anim: {fileID: 6963593654396563935}
+  manager: {fileID: 0}
 --- !u!114 &-6686375759152291528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -914,7 +918,7 @@ Transform:
   m_GameObject: {fileID: 3396669620119634880}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.709, z: 0}
+  m_LocalPosition: {x: 0, y: -0.534, z: 0}
   m_LocalScale: {x: 1.3677, y: 1.3677, z: 1.3677}
   m_ConstrainProportionsScale: 0
   m_Children:

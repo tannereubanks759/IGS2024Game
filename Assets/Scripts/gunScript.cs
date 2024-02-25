@@ -132,7 +132,7 @@ public class gunScript : MonoBehaviour
         if (Physics.Raycast(ray, out target, range, mask))
         {
             //Debug.Log("Hit something");
-            hitPointObj.transform.position = target.point;
+            //hitPointObj.transform.position = target.point;
             if(target.collider.tag == "Animal")
             {
                 target.transform.SendMessage("hitByRay");
