@@ -14,10 +14,11 @@ public class GameManager : MonoBehaviour
     public Terrain terrain;
     public GameObject treeObstacle;
     public List<GameObject> animalList = new List<GameObject>();
-
+    public bool animalsDespawned;
     // Start is called before the first frame update
     void Start()
     {
+        animalsDespawned = false;
         SpawnTreeObstacles();
         sunControl = GameObject.Find("Sun").GetComponent<DayNightControl>();
     }
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
         }
         seconds = (currentTime - (int)currentTime) * .6f;
         timeText.text = "Day " + sunControl.currentDay.ToString() + "  " + ((int)currentTime).ToString() + ":" + ((int)(seconds*100)).ToString("00") + AMORPM;
-        if (sunControl.currentTime > 19 && animalList.Count > 0)
+        if (sunControl.currentTime > 19 && animalsDespawned == false)
         {
             DespawnAnimals();
         }
@@ -58,7 +59,21 @@ public class GameManager : MonoBehaviour
             {
                 Destroy(animalList[i]);
                 animalList.Remove(animalList[i]);
+                i--;
             }
         }
+        animalsDespawned = true;
     }
+
+    public void DespawnAllAnimals()
+    {
+        for (int i = 0; i < animalList.Count; i++)
+        {
+            Destroy(animalList[i]);
+            animalList.Remove(animalList[i]);
+            i--;
+        }
+        animalsDespawned = true;
+    }
+
 }

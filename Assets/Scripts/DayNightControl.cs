@@ -73,6 +73,20 @@ public class DayNightControl : MonoBehaviour
             isRotating = true;
             currentDay += 1;
             SleepText.enabled = false;
+            manager.animalsDespawned = false;
+            GameObject[] spawners = GameObject.FindGameObjectsWithTag("spawner");
+            manager.DespawnAllAnimals();
+            for(int i = 0; i < spawners.Length; i++)
+            {
+                if (spawners[i].GetComponent<AnimalSpawner>())
+                {
+                    spawners[i].GetComponent<AnimalSpawner>().animalsSpawnedCount = 0;
+                }
+                else if(spawners[i].GetComponent<WolfSpawner>())
+                {
+                    spawners[i].GetComponent<WolfSpawner>().animalsSpawnedCount = 0;
+                }
+            }
         }
     }
 }

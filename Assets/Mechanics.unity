@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 9203.208, g: 5536.719, b: 4050.6333, a: 1}
+  m_IndirectSpecularColor: {r: 9211.255, g: 5537.4966, b: 4037.4146, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2030,7 +2030,7 @@ GameObject:
   - component: {fileID: 216362287}
   m_Layer: 2
   m_Name: Spawner (2)
-  m_TagString: Untagged
+  m_TagString: spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -2085,6 +2085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 92.3
   spawnCount: 1
+  animalsSpawnedCount: 0
   animal: {fileID: 2674247296883533286, guid: 6ae71d5d4f571434e9685413fb2577ff, type: 3}
   manager: {fileID: 253721133}
 --- !u!23 &216362289
@@ -2978,6 +2979,7 @@ MonoBehaviour:
   treeObstacle: {fileID: 9035995530827538350, guid: 84033a03c97073d4490472dfd11b110a,
     type: 3}
   animalList: []
+  animalsDespawned: 0
 --- !u!114 &253721134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3210,7 +3212,7 @@ GameObject:
   - component: {fileID: 270370740}
   m_Layer: 2
   m_Name: Spawner (7)
-  m_TagString: Untagged
+  m_TagString: spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -3317,6 +3319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 90
   spawnCount: 4
+  animalsSpawnedCount: 0
   animal: {fileID: 3080558855436511557, guid: 7447ed370815f8041bed0fda805535c3, type: 3}
   leader: {fileID: 3080558855436511557, guid: fca9e2d5278e1ee4c812215d40877f53, type: 3}
   manager: {fileID: 253721133}
@@ -5632,7 +5635,7 @@ GameObject:
   - component: {fileID: 380933163}
   m_Layer: 2
   m_Name: Spawner (1)
-  m_TagString: Untagged
+  m_TagString: spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -5687,6 +5690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 109.2
   spawnCount: 2
+  animalsSpawnedCount: 0
   animal: {fileID: 2674247296883533286, guid: 6ae71d5d4f571434e9685413fb2577ff, type: 3}
   manager: {fileID: 253721133}
 --- !u!23 &380933165
@@ -5788,7 +5792,7 @@ GameObject:
   - component: {fileID: 382892719}
   m_Layer: 2
   m_Name: Spawner (3)
-  m_TagString: Untagged
+  m_TagString: spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -5843,6 +5847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 41.5
   spawnCount: 2
+  animalsSpawnedCount: 0
   animal: {fileID: 7725219084302044927, guid: c1130a4e72e02ef449ff51750f463e84, type: 3}
   manager: {fileID: 253721133}
 --- !u!23 &382892721
@@ -6028,7 +6033,7 @@ GameObject:
   - component: {fileID: 396949759}
   m_Layer: 2
   m_Name: Spawner (11)
-  m_TagString: Untagged
+  m_TagString: spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -6083,6 +6088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 43.45
   spawnCount: 1
+  animalsSpawnedCount: 0
   animal: {fileID: 2914297913811235089, guid: 01c76496826a89a4d8badb0bf673c778, type: 3}
   manager: {fileID: 253721133}
 --- !u!23 &396949761
@@ -8749,7 +8755,7 @@ GameObject:
   - component: {fileID: 548689544}
   m_Layer: 2
   m_Name: Spawner
-  m_TagString: Untagged
+  m_TagString: spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -8768,6 +8774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 140
   spawnCount: 5
+  animalsSpawnedCount: 0
   animal: {fileID: 2674247296883533286, guid: 6ae71d5d4f571434e9685413fb2577ff, type: 3}
   manager: {fileID: 253721133}
 --- !u!4 &548689543
@@ -10227,7 +10234,7 @@ GameObject:
   - component: {fileID: 697723821}
   m_Layer: 2
   m_Name: Spawner (4)
-  m_TagString: Untagged
+  m_TagString: spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -10282,6 +10289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 41.5
   spawnCount: 2
+  animalsSpawnedCount: 0
   animal: {fileID: 7725219084302044927, guid: c1130a4e72e02ef449ff51750f463e84, type: 3}
   manager: {fileID: 253721133}
 --- !u!23 &697723823
@@ -12010,7 +12018,7 @@ GameObject:
   - component: {fileID: 827094562}
   m_Layer: 2
   m_Name: Spawner (8)
-  m_TagString: Untagged
+  m_TagString: spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -12117,6 +12125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 90
   spawnCount: 2
+  animalsSpawnedCount: 0
   animal: {fileID: 3080558855436511557, guid: 7447ed370815f8041bed0fda805535c3, type: 3}
   leader: {fileID: 3080558855436511557, guid: fca9e2d5278e1ee4c812215d40877f53, type: 3}
   manager: {fileID: 253721133}
@@ -12437,7 +12446,7 @@ GameObject:
   - component: {fileID: 851556189}
   m_Layer: 2
   m_Name: Spawner (6)
-  m_TagString: Untagged
+  m_TagString: spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -12492,6 +12501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 164.2
   spawnCount: 4
+  animalsSpawnedCount: 0
   animal: {fileID: 7270159656920945751, guid: ea4741bf723258b43b1712f763ab1dcb, type: 3}
   manager: {fileID: 253721133}
 --- !u!23 &851556191
@@ -13679,7 +13689,7 @@ GameObject:
   - component: {fileID: 938032445}
   m_Layer: 2
   m_Name: Spawner (5)
-  m_TagString: Untagged
+  m_TagString: spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -13734,6 +13744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 41.5
   spawnCount: 2
+  animalsSpawnedCount: 0
   animal: {fileID: 7725219084302044927, guid: c1130a4e72e02ef449ff51750f463e84, type: 3}
   manager: {fileID: 253721133}
 --- !u!23 &938032447
@@ -15812,7 +15823,7 @@ GameObject:
   - component: {fileID: 1083629260}
   - component: {fileID: 1083629259}
   - component: {fileID: 1083629258}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -15874,7 +15885,7 @@ Transform:
   m_GameObject: {fileID: 1083629257}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.6687658, z: -0, w: 0.74347323}
-  m_LocalPosition: {x: 483.9, y: 20.08, z: 574.8}
+  m_LocalPosition: {x: 63.58, y: 11.85, z: 530.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -20613,7 +20624,7 @@ GameObject:
   - component: {fileID: 1501889349}
   m_Layer: 2
   m_Name: Spawner (10)
-  m_TagString: Untagged
+  m_TagString: spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -20668,6 +20679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 43.45
   spawnCount: 1
+  animalsSpawnedCount: 0
   animal: {fileID: 2914297913811235089, guid: 01c76496826a89a4d8badb0bf673c778, type: 3}
   manager: {fileID: 253721133}
 --- !u!23 &1501889351
@@ -23089,7 +23101,7 @@ GameObject:
   - component: {fileID: 1634934750}
   m_Layer: 2
   m_Name: Spawner (9)
-  m_TagString: Untagged
+  m_TagString: spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -23196,6 +23208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 90
   spawnCount: 2
+  animalsSpawnedCount: 0
   animal: {fileID: 3080558855436511557, guid: 7447ed370815f8041bed0fda805535c3, type: 3}
   leader: {fileID: 3080558855436511557, guid: fca9e2d5278e1ee4c812215d40877f53, type: 3}
   manager: {fileID: 253721133}
@@ -26673,6 +26686,74 @@ Transform:
   - {fileID: 229394342}
   m_Father: {fileID: 761462627}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1923434637
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7270159656920945751, guid: ea4741bf723258b43b1712f763ab1dcb,
+        type: 3}
+      propertyPath: m_Name
+      value: Bear
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143024323414398476, guid: ea4741bf723258b43b1712f763ab1dcb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 67.66489
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143024323414398476, guid: ea4741bf723258b43b1712f763ab1dcb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143024323414398476, guid: ea4741bf723258b43b1712f763ab1dcb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 551.46423
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143024323414398476, guid: ea4741bf723258b43b1712f763ab1dcb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143024323414398476, guid: ea4741bf723258b43b1712f763ab1dcb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143024323414398476, guid: ea4741bf723258b43b1712f763ab1dcb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143024323414398476, guid: ea4741bf723258b43b1712f763ab1dcb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143024323414398476, guid: ea4741bf723258b43b1712f763ab1dcb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143024323414398476, guid: ea4741bf723258b43b1712f763ab1dcb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143024323414398476, guid: ea4741bf723258b43b1712f763ab1dcb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea4741bf723258b43b1712f763ab1dcb, type: 3}
 --- !u!1 &1927912972
 GameObject:
   m_ObjectHideFlags: 0
@@ -47156,3 +47237,4 @@ SceneRoots:
   - {fileID: 253721132}
   - {fileID: 1823167224}
   - {fileID: 1233320358}
+  - {fileID: 1923434637}

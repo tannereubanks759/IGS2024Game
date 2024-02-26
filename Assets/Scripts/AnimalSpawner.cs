@@ -9,7 +9,7 @@ public class AnimalSpawner : MonoBehaviour
     
     public float spawnRange;
     public float spawnCount;
-    private float animalsSpawnedCount;
+    public float animalsSpawnedCount;
     public GameObject animal;
 
     private Vector3 point;

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8110866706342878339}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_Spine_01SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8173215652692363330}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_l_HindLeg_ToeSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4367260638628138249}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_r_FrontLeg_KneeSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 747171252727801464}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_l_FrontLeg_ToeSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5008718226411366752}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_Neck_02SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541217056674221956}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_Head_JawSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4540809067273174399}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_l_HindLeg_BallSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9151173642092970132}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_l_Ear_01_01SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2567636701376850771}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_Neck_01SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1133179711894142911}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_l_FrontLeg_BallSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8274520843162760810}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_l_FrontLeg_HipSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2719195685938956809}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_l_HindLeg_KneeSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,7 +393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1126915172278543459}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_r_Ear_01_01SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6334311478220834825}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_r_HindLeg_AnkleSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +457,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4804204845575902267}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_l_Ear_01_02SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1145365833266208997}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_Tail_01_01SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7133760293155190031}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_r_Clavicle_01_01SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,7 +552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8675682155152950684}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_Spine_04SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +584,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 371070173717263354}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_r_HindLeg_ToeSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6742214803828576123}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_Tail_01_02SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -646,7 +646,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 504565008734467994}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_Neck_TopSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -680,7 +680,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7846479189848782927}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_r_HindLeg_KneeSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -713,7 +713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8670367141368197724}
   - component: {fileID: 3533348291674980253}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: brown_bea4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -840,7 +840,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7174273632228258079}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_ROOTSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -875,7 +875,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 750797498516698179}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_l_HindLeg_HipSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -907,7 +907,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6631715824398378990}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_l_FrontLeg_AnkleSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -939,7 +939,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8534339916666318971}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_r_HindLeg_HipSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -971,7 +971,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5862388714716276434}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_Spine_03SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1003,7 +1003,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 117822570303588365}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_Spine_TopSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1037,7 +1037,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4805919553216753751}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_r_Ear_01_02SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1068,7 +1068,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2091686505103856169}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_r_FrontLeg_HipSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1105,7 +1105,7 @@ GameObject:
   - component: {fileID: 1983510310960598491}
   - component: {fileID: -5716542806623877780}
   - component: {fileID: 831669165091811767}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear
   m_TagString: Animal
   m_Icon: {fileID: 0}
@@ -1172,9 +1172,13 @@ MonoBehaviour:
   attackDamage: 3
   attackDistance: 30
   listeningDistance: 40
+  packAnimal: 0
+  packLeader: 0
+  packleaderAnimal: {fileID: 0}
   idleTimeTop: 20.2
   idleTimeBot: 9.15
   anim: {fileID: 6739336179852112285}
+  manager: {fileID: 0}
 --- !u!114 &1983510310960598491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1235,7 +1239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5732470570901831786}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_r_FrontLeg_BallSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1267,7 +1271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9027862256211255169}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_l_HindLeg_AnkleSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1299,7 +1303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3931505985480427520}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_l_FrontLeg_KneeSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1331,7 +1335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3468199293388739150}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_Head_JawEndSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1362,7 +1366,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1914829105983542587}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_MAINSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1394,7 +1398,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2970730686943239628}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_r_FrontLeg_ToeSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1425,7 +1429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6767054341679833539}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_Head_TopSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1458,7 +1462,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2475863803447887168}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_r_HindLeg_BallSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1492,7 +1496,7 @@ GameObject:
   - component: {fileID: 1373298270880239433}
   - component: {fileID: 6739336179852112285}
   - component: {fileID: 8628331727051412833}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Brown_bear_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1560,7 +1564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431182422387698636}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_r_FrontLeg_AnkleSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1594,7 +1598,7 @@ GameObject:
   - component: {fileID: 6733591022682399346}
   - component: {fileID: 8013776891244183992}
   - component: {fileID: 7709318396491232333}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_Spine_02SHJnt
   m_TagString: body
   m_Icon: {fileID: 0}
@@ -1660,7 +1664,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9180094625115760877}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bear_l_Clavicle_01_01SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1694,7 +1698,7 @@ GameObject:
   - component: {fileID: 7195684115271937048}
   - component: {fileID: 8025402959540345540}
   - component: {fileID: 2446636915103053120}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BOXCOLLIDERHEAD
   m_TagString: head
   m_Icon: {fileID: 0}

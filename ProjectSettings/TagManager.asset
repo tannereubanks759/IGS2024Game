@@ -9,6 +9,7 @@ TagManager:
   - AlterTotem
   - head
   - body
+  - spawner
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - totem
   - player
   - hands
-  - 
+  - animal
   - 
   - 
   - 

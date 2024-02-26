@@ -152,7 +152,7 @@ public class RandomMovement : MonoBehaviour
 
     void FindPackLeader()
     {
-        if(packLeader == false && packAnimal == true && packleaderAnimal == null) //check if it rides in packs
+        if(packLeader == false && packAnimal == true && packleaderAnimal == null && this.gameObject.GetComponent<animalDamageHandler>().isDead == false) //check if it rides in packs
         {
             for(int i = 0; i < manager.animalList.Count; i++) //loop through animals in scene
             {
