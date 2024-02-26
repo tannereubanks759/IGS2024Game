@@ -133,10 +133,7 @@ public class gunScript : MonoBehaviour
         {
             //Debug.Log("Hit something");
             //hitPointObj.transform.position = target.point;
-            if(target.collider.tag == "Animal")
-            {
-                target.transform.SendMessage("hitByRay");
-            }
+            
             if (target.collider.tag == "body")
             {
                 Debug.Log("Hit animal");

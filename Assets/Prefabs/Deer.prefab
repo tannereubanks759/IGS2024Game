@@ -792,6 +792,7 @@ MonoBehaviour:
   runMultiplier: 2.05
   ableToAttack: 0
   attackDamage: 3
+  attackTime: 2
   attackDistance: 20
   listeningDistance: 40
   packAnimal: 0

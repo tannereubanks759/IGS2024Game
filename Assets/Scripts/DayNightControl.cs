@@ -66,6 +66,11 @@ public class DayNightControl : MonoBehaviour
         this.transform.rotation = Quaternion.Euler(sunRotation - 90f, 0, 0f);
     }
 
+    public void Knockout()
+    {
+        currentTime = 19;
+        manager.DespawnAnimals();
+    }
     public void Sleep()
     {
         if(currentTime >= 19) { 

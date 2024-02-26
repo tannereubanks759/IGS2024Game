@@ -15,6 +15,8 @@ public class RandomMovement : MonoBehaviour
     public float runMultiplier; //the multiplier of the range that it must travel
     public bool ableToAttack;
     public float attackDamage;
+    public float attackTime;
+    private bool isSwinging;
     public float attackDistance;
     private bool isRunning;
     private GameObject Player;
@@ -41,7 +43,7 @@ public class RandomMovement : MonoBehaviour
 
     void Start()
     {
-        
+        isSwinging = false;
         agent = GetComponent<NavMeshAgent>();
         idleNextTime = 0;
         hasTime = false;
@@ -128,14 +130,18 @@ public class RandomMovement : MonoBehaviour
 
     void attack()
     {
-        anim.SetBool("run", true);
-        anim.SetBool("walk", false);
         agent.SetDestination(Player.transform.position);
         agent.speed = RunSpeed;
         if(distanceFromPlayer < 3)
         {
+            
             anim.SetBool("attack", true);
             anim.SetBool("run", false);
+            if (!isSwinging)
+            {
+                StartCoroutine(attackPlayer());
+                isSwinging = true;
+            }
         }
         else
         {
@@ -240,6 +246,17 @@ public class RandomMovement : MonoBehaviour
         {
             isRunning = true;
         }
+    }
+
+    IEnumerator attackPlayer()
+    {
+        yield return new WaitForSeconds(attackTime);
+        if(distanceFromPlayer < 3)
+        {
+            Player.GetComponent<CharacterControllerScript>().KnockedOut();
+        }
+        yield return new WaitForSeconds(12 - attackTime);
+        isSwinging = false;
     }
     
 }

@@ -32,10 +32,19 @@ public class CharacterControllerScript : MonoBehaviour
     private float airSpeed;
     private bool isScoped;
     private bool inWater;
+
+    public DayNightControl lightControl;
+    private int Lives;
+    bool knockedOut;
+    public GameObject caveSpawn;
+    public GameObject knockoutImage;
     // Start is called before the first frame update
     void Start()
     {
+        knockoutImage.SetActive(false);
+        knockedOut = false;
         inWater = false;
+        Lives = 3;
         originalSpeed = moveSpeed;
         sprintSpeed = moveSpeed * 2;
         airSpeed = moveSpeed / 4;
@@ -154,5 +163,32 @@ public class CharacterControllerScript : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+    }
+
+    public void KnockedOut()
+    {
+        if(knockedOut == false)
+        {
+            knockedOut = true;
+            lightControl.Knockout();
+            StartCoroutine(HurtEnum());
+        }
+    }
+    public void Die()
+    {
+        knockedOut = true;
+        Lives--;
+        this.transform.position = caveSpawn.transform.position;
+        StartCoroutine(HurtEnum());
+    }
+
+    public IEnumerator HurtEnum()
+    {
+        knockoutImage.SetActive(true);
+        isPaused = true;
+        yield return new WaitForSeconds(12.1f);
+        knockoutImage.SetActive(false);
+        knockedOut = false;
+        isPaused = false;
     }
 }
