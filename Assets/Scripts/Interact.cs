@@ -40,7 +40,7 @@ public class Interact : MonoBehaviour
                 if (lookObj != null && lookObj.gameObject.name == "Bed")
                 {
                     lightSystem.Sleep();
-                    objectWithScript.GetComponent<turnInScript>().dayCountUpdate();
+                    //objectWithScript.GetComponent<turnInScript>().dayCountUpdate();
                 }
                 else if (!isHolding && lookObj != null && lookObj.gameObject.layer == 8)
                 {
@@ -128,11 +128,21 @@ public class Interact : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(this.gameObject.transform.position, transform.forward, out hit, 5f))
         {
-            //if(Vector3.Angle(hit.normal, transform.forward) < 30)
+            if(Vector3.Angle(hit.normal, transform.forward) < 30)
+            {
+                Debug.Log("raycast");
+                Vector3 position = hit.point + Vector3.up * .7f;
+                holderAnimal.transform.position = position;
+            }
+            else if(Physics.Raycast(this.transform.forward * (Vector3.Distance(hit.point, transform.position)/2), Vector3.down, out hit)) {
+                Debug.Log("raycast");
+                Vector3 position = hit.point + Vector3.up * .7f;
+                holderAnimal.transform.position = position;
+            }
+
             
-            Debug.Log("raycast");
-            Vector3 position = hit.point + Vector3.up * .7f;
-            holderAnimal.transform.position = position;
+            
+            
             
             
         }
