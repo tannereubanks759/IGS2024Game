@@ -131,10 +131,10 @@ public class gunScript : MonoBehaviour
         armAnimator.ResetTrigger("rr");
         if (Physics.Raycast(ray, out target, range, mask))
         {
-            //Debug.Log("Hit something");
+            Debug.Log("Hit something");
             //hitPointObj.transform.position = target.point;
-            
 
+            Debug.Log(target.collider.name);
             if (target.collider.tag == "body")
             {
                 Debug.Log("Hit animal");
