@@ -11,9 +11,11 @@ public class AnimalReference : MonoBehaviour
         if(this.gameObject.tag == "head")
         {
             handler.SendMessage("headShot");
+            Debug.Log("Shot head");
         }
         else if(this.gameObject.tag == "body")
         {
+            Debug.Log("Shot body");
             handler.SendMessage("hitByRay");
         }
     }
