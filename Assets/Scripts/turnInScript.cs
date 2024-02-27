@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -19,9 +20,11 @@ public class turnInScript : MonoBehaviour
     public GameObject rifle;
     public GameObject animalBeingCarried;
     public GameObject oldArms;
-    private int dayCounter = 0;
+    //private int dayCounter = 0;
     Interact interactScipt;
     private Camera cam;
+    bool readyForNextDay = false;
+    int quotaCount=0;
     /*public GameObject lookObj;*/
     void Start()
     {
@@ -61,6 +64,7 @@ public class turnInScript : MonoBehaviour
                     if(quotaAnimalsList.Count == 0)
                     {
                         Debug.Log("QUOTA FINISHED");
+                        readyForNextDay=true;
                         //dayCounter++; set this in sleep script
                         
                     }
@@ -87,7 +91,7 @@ public class turnInScript : MonoBehaviour
         }
         if(collision.tag == "Animal")
         {
-            //Debug.Log("Animal carried into range");
+            Debug.Log("Animal carried into range");
             hasAnimal = true;
              nameOfAnimal = collision.name;
             animalBeingCarried = collision.gameObject;
@@ -123,44 +127,53 @@ public class turnInScript : MonoBehaviour
     }
     public void dayCountUpdate()
     {
+        if(readyForNextDay)
+        {
+            quotaCount++;
+            updateQuota(quotaCount);
+            //Debug.Log("New quota number is:" + quotaCount);
+        }
         
-        dayCounter++;
-        Debug.Log("DAY UPDATED TO" + dayCounter);
-        if (dayCounter == 1)
+    }
+    private void updateQuota(int aQuotaCount)
+    {
+        if(aQuotaCount == 1)
         {
-            Debug.Log("Day 2 quota");
             quotaAnimalsList.Clear();
-            quotaAnimalsList.Add("QUOTA 2 TEST");
+            //Debug.Log("!!!QUOTA FOR DAY 2");
+            quotaAnimalsList.Add("Quota totem 2");
+            //SET totem 2 QUOTA
         }
-        else if (dayCounter == 2)
+        else if(aQuotaCount == 2) 
         {
-            Debug.Log("Day 3 quota");
             quotaAnimalsList.Clear();
-            quotaAnimalsList.Add("QUOTA 3 TEST");
+            quotaAnimalsList.Add("Quota totem 3");
+            //SET totem 3 QUOTA
         }
-        else if (dayCounter == 3)
+        else if (aQuotaCount == 3)
         {
-            Debug.Log("Day 4 quota");
             quotaAnimalsList.Clear();
-            quotaAnimalsList.Add("QUOTA 4 TEST");
+            quotaAnimalsList.Add("Quota totem 4");
+            // set totem 4 quota
         }
-        else if (dayCounter == 4)
+        else if (aQuotaCount == 4)
         {
-            Debug.Log("Day 5 quota");
             quotaAnimalsList.Clear();
-            quotaAnimalsList.Add("QUOTA 5 TEST");
+            quotaAnimalsList.Add("Quota totem 5");
+            // set totem 5 quota
         }
-        else if (dayCounter == 5)
+        else if (aQuotaCount == 5)
         {
-            Debug.Log("Day 6 quota");
             quotaAnimalsList.Clear();
-            quotaAnimalsList.Add("QUOTA 6 TEST");
+            quotaAnimalsList.Add("Quota totem 6");
+            // set totem 6 quota
         }
-        else if (dayCounter == 6)
+        else if (aQuotaCount == 6)
         {
-            Debug.Log("Day 7 quota");
             quotaAnimalsList.Clear();
-            quotaAnimalsList.Add("QUOTA 7 TEST");
+            quotaAnimalsList.Add("Quota totem 7");
+            // set totem 7 quota
         }
     }
 }
+

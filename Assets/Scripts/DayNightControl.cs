@@ -14,6 +14,7 @@ public class DayNightControl : MonoBehaviour
     private bool isRotating;
     public GameManager manager;
     public TextMeshProUGUI SleepText;
+    public GameObject objectWithScript;
     private void Update()
     {
         if (currentTime < 24f)
@@ -58,6 +59,7 @@ public class DayNightControl : MonoBehaviour
         isRotating = true;
         currentDay = 1;
         SleepText.enabled = false;
+        objectWithScript.GetComponent<turnInScript>();    
     }
 
     void UpdateLight()
@@ -81,7 +83,9 @@ public class DayNightControl : MonoBehaviour
             manager.animalsDespawned = false;
             GameObject[] spawners = GameObject.FindGameObjectsWithTag("spawner");
             manager.DespawnAllAnimals();
-            for(int i = 0; i < spawners.Length; i++)
+            objectWithScript.GetComponent<turnInScript>().dayCountUpdate();
+            Debug.Log("CALLED DAYCOUNT FROM DAYNIGHT");
+            for (int i = 0; i < spawners.Length; i++)
             {
                 if (spawners[i].GetComponent<AnimalSpawner>())
                 {
