@@ -24,11 +24,13 @@ public class MonsterAI : MonoBehaviour
 
     private Vector3 point;
 
-    static int MonstersInRange;
+    public static int MonstersInRange;
     public bool inRangeOfPlayer;
 
     //public variables
     public float wanderRange;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +58,8 @@ public class MonsterAI : MonoBehaviour
             default:
                 break;
         }
+
+        Debug.Log(MonstersInRange);
 
         if(distanceFromPlayer < wanderRange)
         {

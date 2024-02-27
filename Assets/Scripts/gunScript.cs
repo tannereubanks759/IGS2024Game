@@ -28,6 +28,7 @@ public class gunScript : MonoBehaviour
     public float baseFOV;
     public Animator armAnimator;
     public bool isReloaded = true;
+    public CharacterController playerControl;
     void Start()
     {
         reloadText.SetActive(false);
@@ -51,7 +52,7 @@ public class gunScript : MonoBehaviour
             }
 
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && playerControl.isGrounded)
         {
             //Debug.Log("Scope");
             // bool isScoped = false;
