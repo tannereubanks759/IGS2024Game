@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 9216.651, g: 5537.805, b: 4032.063, a: 1}
+  m_IndirectSpecularColor: {r: 9214.919, g: 5536.5747, b: 4030.977, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12707,6 +12707,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bear
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270159656920945751, guid: ea4741bf723258b43b1712f763ab1dcb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9143024323414398476, guid: ea4741bf723258b43b1712f763ab1dcb,
         type: 3}
@@ -47971,6 +47976,7 @@ MonoBehaviour:
   quotaFive: {fileID: 1080628083}
   quotaSix: {fileID: 1697325036}
   quotaSeven: {fileID: 356025667}
+  objWithAlterScript: {fileID: 283112218}
 --- !u!4 &2083867841
 Transform:
   m_ObjectHideFlags: 0

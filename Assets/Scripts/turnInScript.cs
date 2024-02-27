@@ -34,7 +34,7 @@ public class turnInScript : MonoBehaviour
     public GameObject quotaFive;
     public GameObject quotaSix;
     public GameObject quotaSeven;
-    
+    public GameObject objWithAlterScript;
     void Start()
     {
         cam = Camera.main;
@@ -42,6 +42,7 @@ public class turnInScript : MonoBehaviour
         interactImage.SetActive(false);
         noAnimalText.SetActive(false);
         interactScipt = cam.GetComponent<Interact>();
+        objWithAlterScript.GetComponent<Alter>();
         //lookObj = null;
         
     }
@@ -140,6 +141,7 @@ public class turnInScript : MonoBehaviour
         {
             quotaCount++;
             updateQuota(quotaCount);
+            objWithAlterScript.GetComponent<Alter>().spawnTotem();
             //Debug.Log("New quota number is:" + quotaCount);
         }
         
@@ -152,7 +154,8 @@ public class turnInScript : MonoBehaviour
             //Debug.Log("!!!QUOTA FOR DAY 2");
             quotaAnimalsList.Add("Quota totem 2");
             quotaOne.SetActive(false );
-            quotaTwo.SetActive(true );  
+            quotaTwo.SetActive(true );
+            readyForNextDay = false;
             //SET totem 2 QUOTA
         }
         else if(aQuotaCount == 2) 
@@ -161,6 +164,7 @@ public class turnInScript : MonoBehaviour
             quotaAnimalsList.Add("Quota totem 3");
             quotaTwo.SetActive(false);
             quotaThree.SetActive(true);
+            readyForNextDay = false;
             //SET totem 3 QUOTA
         }
         else if (aQuotaCount == 3)
@@ -169,6 +173,7 @@ public class turnInScript : MonoBehaviour
             quotaAnimalsList.Add("Quota totem 4");
             quotaThree.SetActive(false);
             quotaFour.SetActive(true);
+            readyForNextDay = false;
             // set totem 4 quota
         }
         else if (aQuotaCount == 4)
@@ -177,6 +182,7 @@ public class turnInScript : MonoBehaviour
             quotaAnimalsList.Add("Quota totem 5");
             quotaFour.SetActive(false);
             quotaFive.SetActive(true);
+            readyForNextDay = false;
             // set totem 5 quota
         }
         else if (aQuotaCount == 5)
@@ -185,6 +191,7 @@ public class turnInScript : MonoBehaviour
             quotaAnimalsList.Add("Quota totem 6");
             quotaFive.SetActive(false);
             quotaSix.SetActive(true);
+            readyForNextDay = false;
             // set totem 6 quota
         }
         else if (aQuotaCount == 6)
@@ -193,6 +200,7 @@ public class turnInScript : MonoBehaviour
             quotaAnimalsList.Add("Quota totem 7");
             quotaSix.SetActive(false);
             quotaSeven.SetActive(true);
+            readyForNextDay = false;
             // set totem 7 quota
         }
     }
