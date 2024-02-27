@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 9216.6045, g: 5537.7817, b: 4032.0552, a: 1}
+  m_IndirectSpecularColor: {r: 9216.651, g: 5537.805, b: 4032.063, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -47964,6 +47964,13 @@ MonoBehaviour:
   rifle: {fileID: 1113007067}
   animalBeingCarried: {fileID: 0}
   oldArms: {fileID: 0}
+  quotaOne: {fileID: 990760462}
+  quotaTwo: {fileID: 273209954}
+  quotaThree: {fileID: 1364409266}
+  quotaFour: {fileID: 1339679812}
+  quotaFive: {fileID: 1080628083}
+  quotaSix: {fileID: 1697325036}
+  quotaSeven: {fileID: 356025667}
 --- !u!4 &2083867841
 Transform:
   m_ObjectHideFlags: 0

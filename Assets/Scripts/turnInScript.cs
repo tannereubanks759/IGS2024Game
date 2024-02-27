@@ -26,6 +26,15 @@ public class turnInScript : MonoBehaviour
     bool readyForNextDay = false;
     int quotaCount=0;
     /*public GameObject lookObj;*/
+    [SerializeField]
+    public GameObject quotaOne;
+    public GameObject quotaTwo;
+    public GameObject quotaThree;
+    public GameObject quotaFour;
+    public GameObject quotaFive;
+    public GameObject quotaSix;
+    public GameObject quotaSeven;
+    
     void Start()
     {
         cam = Camera.main;
@@ -142,36 +151,48 @@ public class turnInScript : MonoBehaviour
             quotaAnimalsList.Clear();
             //Debug.Log("!!!QUOTA FOR DAY 2");
             quotaAnimalsList.Add("Quota totem 2");
+            quotaOne.SetActive(false );
+            quotaTwo.SetActive(true );  
             //SET totem 2 QUOTA
         }
         else if(aQuotaCount == 2) 
         {
             quotaAnimalsList.Clear();
             quotaAnimalsList.Add("Quota totem 3");
+            quotaTwo.SetActive(false);
+            quotaThree.SetActive(true);
             //SET totem 3 QUOTA
         }
         else if (aQuotaCount == 3)
         {
             quotaAnimalsList.Clear();
             quotaAnimalsList.Add("Quota totem 4");
+            quotaThree.SetActive(false);
+            quotaFour.SetActive(true);
             // set totem 4 quota
         }
         else if (aQuotaCount == 4)
         {
             quotaAnimalsList.Clear();
             quotaAnimalsList.Add("Quota totem 5");
+            quotaFour.SetActive(false);
+            quotaFive.SetActive(true);
             // set totem 5 quota
         }
         else if (aQuotaCount == 5)
         {
             quotaAnimalsList.Clear();
             quotaAnimalsList.Add("Quota totem 6");
+            quotaFive.SetActive(false);
+            quotaSix.SetActive(true);
             // set totem 6 quota
         }
         else if (aQuotaCount == 6)
         {
             quotaAnimalsList.Clear();
             quotaAnimalsList.Add("Quota totem 7");
+            quotaSix.SetActive(false);
+            quotaSeven.SetActive(true);
             // set totem 7 quota
         }
     }
