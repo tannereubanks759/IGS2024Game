@@ -126,27 +126,32 @@ public class Interact : MonoBehaviour
             }
         }
         RaycastHit hit;
+        
         if (Physics.Raycast(this.gameObject.transform.position, transform.forward, out hit, 5f))
         {
-            if(Vector3.Angle(hit.normal, transform.forward) < 30)
+            RaycastHit hit1;
+            if(Vector3.Angle(hit.normal, transform.forward) < 45)
             {
+                
                 Debug.Log("raycast");
                 Vector3 position = hit.point + Vector3.up * .7f;
                 holderAnimal.transform.position = position;
             }
-            else if(Physics.Raycast(this.transform.forward * (Vector3.Distance(hit.point, transform.position)/2), Vector3.down, out hit)) {
+            else if (Physics.Raycast(this.gameObject.transform.position + this.transform.forward * (hit.distance / 2), Vector3.down, out hit1, 7.5f))
+            {
                 Debug.Log("raycast");
-                Vector3 position = hit.point + Vector3.up * .7f;
+                Vector3 position = hit1.point + Vector3.up * .7f;
+                
                 holderAnimal.transform.position = position;
             }
 
-            
-            
-            
-            
-            
+
+
+
+
+
         }
-        else if(Physics.Raycast(this.gameObject.transform.position + transform.forward * 5f, Vector3.down, out hit, 100f))
+        else if(Physics.Raycast(this.gameObject.transform.position + transform.forward * 4.2f, Vector3.down, out hit, 7.5f))
         {
             Vector3 position = hit.point + Vector3.up * .7f;
             holderAnimal.transform.position = position;

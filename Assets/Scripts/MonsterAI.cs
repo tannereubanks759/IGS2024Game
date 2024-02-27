@@ -19,12 +19,13 @@ public class MonsterAI : MonoBehaviour
     private NavMeshAgent agent;
 
     //enumerator to control the state of the enemy, uses switch statement within update
-    private enum enemyStates { Surround, Attack, Sleep }
+    private enum enemyStates { Wander, Attack, Sleep }
     enemyStates state;
 
     private Vector3 point;
 
-
+    static int MonstersInRange;
+    public bool inRangeOfPlayer;
 
     //public variables
     public float wanderRange;
@@ -33,7 +34,7 @@ public class MonsterAI : MonoBehaviour
     {
         ocean = GameObject.Find("Ocean");
         agent = this.GetComponent<NavMeshAgent>();
-        state = enemyStates.Surround;
+        state = enemyStates.Wander;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterControllerScript>();
     }
 
@@ -43,8 +44,8 @@ public class MonsterAI : MonoBehaviour
         distanceFromPlayer = Vector3.Distance(player.transform.position, this.transform.position);
         switch (state)
         {
-            case enemyStates.Surround :
-                Surround();
+            case enemyStates.Wander :
+                Wander();
                 break;
             case enemyStates.Sleep:
                 Sleep();
@@ -55,21 +56,45 @@ public class MonsterAI : MonoBehaviour
             default:
                 break;
         }
+
+        if(distanceFromPlayer < wanderRange)
+        {
+            inRangeOfPlayer = true;
+        }
+        else
+        {
+            inRangeOfPlayer = false;
+        }
+        
     }
 
-    void Surround()
+    void Wander()
     {
        
         if (agent.remainingDistance <= agent.stoppingDistance + 1)
         {
-            if (RandomPoint(agent.transform.position, wanderRange*2, out point))
+            if (inRangeOfPlayer || (MonstersInRange < 1 && !inRangeOfPlayer))
             {
-                float pointDistance = Vector3.Distance(point, player.transform.position);
-                if (point.y > ocean.transform.position.y + 5f && pointDistance >= wanderRange - 10 && pointDistance < wanderRange)
+                if (RandomPoint(agent.transform.position, wanderRange * 2, out point))
                 {
-                    agent.SetDestination(point);
+                    float pointDistance = Vector3.Distance(point, player.transform.position);
+                    if (point.y > ocean.transform.position.y + 5f)
+                    {
+                        agent.SetDestination(point);
+                    }
                 }
             }
+            else
+            {
+                if (RandomPoint(agent.transform.position, wanderRange * 2, out point))
+                {
+                    float pointDistance = Vector3.Distance(point, player.transform.position);
+                    if (point.y > ocean.transform.position.y + 5f && pointDistance > wanderRange)
+                    {
+                        agent.SetDestination(point);
+                    }
+                }
+            } 
         }
         else
         {
@@ -102,5 +127,20 @@ public class MonsterAI : MonoBehaviour
 
         result = Vector3.zero;
         return false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            MonstersInRange++;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player") 
+        {
+            MonstersInRange--;
+        }
     }
 }
