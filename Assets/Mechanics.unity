@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 9173.964, g: 5530.227, b: 4072.6646, a: 1}
+  m_IndirectSpecularColor: {r: 9205.603, g: 5537.274, b: 4048.641, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -25488,7 +25488,7 @@ MonoBehaviour:
   gun: {fileID: 28794348}
   mask:
     serializedVersion: 2
-    m_Bits: 51
+    m_Bits: 2099
   crosshair: {fileID: 1052062219}
   shotSoundDistance: 100
   scopedFOV: 40
