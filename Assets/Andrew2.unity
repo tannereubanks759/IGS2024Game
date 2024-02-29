@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 9214.919, g: 5536.5747, b: 4030.977, a: 1}
+  m_IndirectSpecularColor: {r: 9215.569, g: 5537.395, b: 4031.6567, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -26982,6 +26982,7 @@ MonoBehaviour:
   baseFOV: 60
   armAnimator: {fileID: 573155697}
   isReloaded: 1
+  playerControl: {fileID: 949324459}
 --- !u!4 &1113007069
 Transform:
   m_ObjectHideFlags: 0
@@ -31695,6 +31696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f177c4ac39e4bb49a7c10e6d7967e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inRangeOfPlayer: 0
   wanderRange: 100
 --- !u!114 &1364688259
 MonoBehaviour:

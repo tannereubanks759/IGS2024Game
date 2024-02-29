@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 9199.442, g: 5535.887, b: 4053.6567, a: 1}
+  m_IndirectSpecularColor: {r: 9215.862, g: 5537.438, b: 4031.7817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -30871,13 +30871,13 @@ MonoBehaviour:
   rifle: {fileID: 1704165516}
   animalBeingCarried: {fileID: 0}
   oldArms: {fileID: 0}
-  quotaOne: {fileID: 0}
-  quotaTwo: {fileID: 0}
-  quotaThree: {fileID: 0}
-  quotaFour: {fileID: 0}
-  quotaFive: {fileID: 0}
-  quotaSix: {fileID: 0}
-  quotaSeven: {fileID: 0}
+  quotaOne: {fileID: 1938246608}
+  quotaTwo: {fileID: 1912380459}
+  quotaThree: {fileID: 154043087}
+  quotaFour: {fileID: 250496702}
+  quotaFive: {fileID: 514798802}
+  quotaSix: {fileID: 220475463}
+  quotaSeven: {fileID: 1992694279}
   objWithAlterScript: {fileID: 634097746}
 --- !u!1 &1024563879
 GameObject:
@@ -57182,7 +57182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1912380460
 RectTransform:
   m_ObjectHideFlags: 0
@@ -58228,7 +58228,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1938246609
 RectTransform:
   m_ObjectHideFlags: 0
