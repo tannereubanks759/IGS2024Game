@@ -52,12 +52,17 @@ public class animalDamageHandler : MonoBehaviour
         ///
 
         isDead = true;
-        head.gameObject.AddComponent<Rigidbody>();
         body.gameObject.AddComponent<Rigidbody>();
-        Rigidbody rb = head.gameObject.GetComponent<Rigidbody>();
+        Rigidbody rb;
+        if(head != null)
+        {
+            head.gameObject.AddComponent<Rigidbody>();
+            rb = head.gameObject.GetComponent<Rigidbody>();
+            rb.useGravity = true;
+            rb.isKinematic = true;
+        }
         Rigidbody rb2 = body.gameObject.GetComponent<Rigidbody>();
-        rb.useGravity = true;
-        rb.isKinematic = true;
+        
         rb2.useGravity = true;
         rb2.isKinematic = true;
         //animal.GetComponentInChildren<AlignWithGround>().enabled = false;
