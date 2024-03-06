@@ -152,7 +152,11 @@ public class turnInScript : MonoBehaviour
         {
             quotaAnimalsList.Clear();
             //Debug.Log("!!!QUOTA FOR DAY 2");
-            quotaAnimalsList.Add("Quota totem 2");
+            quotaAnimalsList.Add("Rabbit");
+            quotaAnimalsList.Add("Rabbit");
+            quotaAnimalsList.Add("Deer");
+            quotaAnimalsList.Add("Deer");
+            quotaAnimalsList.Add("Wolf");
             quotaOne.SetActive(false );
             quotaTwo.SetActive(true );
             readyForNextDay = false;
@@ -161,7 +165,10 @@ public class turnInScript : MonoBehaviour
         else if(aQuotaCount == 2) 
         {
             quotaAnimalsList.Clear();
-            quotaAnimalsList.Add("Quota totem 3");
+            quotaAnimalsList.Add("Rabbit");
+            quotaAnimalsList.Add("Deer");
+            quotaAnimalsList.Add("Wolf");
+            quotaAnimalsList.Add("Wolf");
             quotaTwo.SetActive(false);
             quotaThree.SetActive(true);
             readyForNextDay = false;
@@ -170,7 +177,10 @@ public class turnInScript : MonoBehaviour
         else if (aQuotaCount == 3)
         {
             quotaAnimalsList.Clear();
-            quotaAnimalsList.Add("Quota totem 4");
+            quotaAnimalsList.Add("Deer");
+            quotaAnimalsList.Add("Wolf");
+            quotaAnimalsList.Add("Wolf");
+            quotaAnimalsList.Add("Bear");
             quotaThree.SetActive(false);
             quotaFour.SetActive(true);
             readyForNextDay = false;
@@ -179,7 +189,10 @@ public class turnInScript : MonoBehaviour
         else if (aQuotaCount == 4)
         {
             quotaAnimalsList.Clear();
-            quotaAnimalsList.Add("Quota totem 5");
+            quotaAnimalsList.Add("Goat");
+            quotaAnimalsList.Add("Wolf");
+            quotaAnimalsList.Add("Bear");
+            quotaAnimalsList.Add("Bear");
             quotaFour.SetActive(false);
             quotaFive.SetActive(true);
             readyForNextDay = false;
@@ -188,7 +201,12 @@ public class turnInScript : MonoBehaviour
         else if (aQuotaCount == 5)
         {
             quotaAnimalsList.Clear();
-            quotaAnimalsList.Add("Quota totem 6");
+            quotaAnimalsList.Add("Goat");
+            quotaAnimalsList.Add("Wolf");
+            quotaAnimalsList.Add("Wolf");
+            quotaAnimalsList.Add("Bear");
+            quotaAnimalsList.Add("Bear");
+            quotaAnimalsList.Add("Bear");
             quotaFive.SetActive(false);
             quotaSix.SetActive(true);
             readyForNextDay = false;
@@ -197,10 +215,15 @@ public class turnInScript : MonoBehaviour
         else if (aQuotaCount == 6)
         {
             quotaAnimalsList.Clear();
-            quotaAnimalsList.Add("Quota totem 7");
+            quotaAnimalsList.Add("Rabbit");
+            quotaAnimalsList.Add("Deer");
+            quotaAnimalsList.Add("Goat");
+            quotaAnimalsList.Add("Wolf");
+            quotaAnimalsList.Add("Bear");
             quotaSix.SetActive(false);
             quotaSeven.SetActive(true);
             readyForNextDay = false;
+            
             // set totem 7 quota
         }
     }
