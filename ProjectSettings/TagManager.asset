@@ -10,6 +10,7 @@ TagManager:
   - head
   - body
   - spawner
+  - MonsterAttack
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - player
   - hands
   - animal
-  - 
+  - monster
   - 
   - 
   - 

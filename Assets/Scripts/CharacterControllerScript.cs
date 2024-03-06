@@ -38,6 +38,7 @@ public class CharacterControllerScript : MonoBehaviour
     bool knockedOut;
     public GameObject caveSpawn;
     public GameObject knockoutImage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -94,7 +95,7 @@ public class CharacterControllerScript : MonoBehaviour
                 }
                 //Debug.Log("Crouched");
             }
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(1) && gun.gameObject.activeSelf == true)
             {
                 //Debug.Log("Scoped");
                 isScoped = !isScoped;
@@ -190,5 +191,14 @@ public class CharacterControllerScript : MonoBehaviour
         knockoutImage.SetActive(false);
         knockedOut = false;
         isPaused = false;
+    }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if(col.gameObject.tag == "MonsterAttack")
+        {
+            col.gameObject.GetComponentInParent<MonsterAI>().seesPlayer = false;
+            Die();
+        }
     }
 }

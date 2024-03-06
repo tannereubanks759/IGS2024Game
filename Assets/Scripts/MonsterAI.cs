@@ -7,6 +7,8 @@ using UnityEngine.AI;
 public class MonsterAI : MonoBehaviour
 {
     //private variables
+    bool leftSight;
+    private bool playingAttackAnim;
 
     //ocean
     private GameObject ocean;
@@ -24,20 +26,27 @@ public class MonsterAI : MonoBehaviour
 
     private Vector3 point;
 
+    //Sight variables
     public static int MonstersInRange;
     public bool inRangeOfPlayer;
+    public bool seesPlayer;
 
     //public variables
     public float wanderRange;
-
+    public float attackSearchTime; //how much time it takes to stop attacking after the player has left the sight of the monster;
+    private Animator anim;
     
     // Start is called before the first frame update
     void Start()
     {
+        leftSight = false;
+        seesPlayer = false;
         ocean = GameObject.Find("Ocean");
         agent = this.GetComponent<NavMeshAgent>();
         state = enemyStates.Wander;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterControllerScript>();
+        anim = this.GetComponent<Animator>();
+        playingAttackAnim = false;
     }
 
     // Update is called once per frame
@@ -60,6 +69,7 @@ public class MonsterAI : MonoBehaviour
         }
 
         Debug.Log(MonstersInRange);
+        Debug.Log(state);
 
         if(distanceFromPlayer < wanderRange)
         {
@@ -69,20 +79,33 @@ public class MonsterAI : MonoBehaviour
         {
             inRangeOfPlayer = false;
         }
+
+        //animationControl
+        if (agent.velocity != Vector3.zero)
+        {
+            anim.SetBool("is_walking", true);
+        }
+        else{
+            anim.SetBool("is_walking", false);
+        }
         
     }
-
+    IEnumerator ResetAttack()
+    {
+        yield return new WaitForSeconds(3);
+        playingAttackAnim = false;
+    }
     void Wander()
     {
        
         if (agent.remainingDistance <= agent.stoppingDistance + 1)
         {
+            Debug.Log("does not have point");
             if (inRangeOfPlayer || (MonstersInRange < 1 && !inRangeOfPlayer))
             {
                 if (RandomPoint(agent.transform.position, wanderRange * 2, out point))
                 {
-                    float pointDistance = Vector3.Distance(point, player.transform.position);
-                    if (point.y > ocean.transform.position.y + 5f)
+                    if (point.y > ocean.transform.position.y + 2f)
                     {
                         agent.SetDestination(point);
                     }
@@ -93,7 +116,7 @@ public class MonsterAI : MonoBehaviour
                 if (RandomPoint(agent.transform.position, wanderRange * 2, out point))
                 {
                     float pointDistance = Vector3.Distance(point, player.transform.position);
-                    if (point.y > ocean.transform.position.y + 5f && pointDistance > wanderRange)
+                    if (point.y > ocean.transform.position.y + 2f && pointDistance > wanderRange)
                     {
                         agent.SetDestination(point);
                     }
@@ -102,7 +125,11 @@ public class MonsterAI : MonoBehaviour
         }
         else
         {
-            //Debug.Log("hasPath");
+            Debug.Log("hasPath");
+        }
+        if (seesPlayer)
+        {
+            state = enemyStates.Attack;
         }
     }
 
@@ -113,7 +140,42 @@ public class MonsterAI : MonoBehaviour
 
     void Attack()
     {
+        if (seesPlayer)
+        {
+            agent.SetDestination(player.transform.position);
+            if (agent.remainingDistance <= agent.stoppingDistance + 3 && playingAttackAnim == false)
+            {
+                playingAttackAnim = true;
+                Debug.Log("Is Attacking");
+                int random = Random.Range(1, 4);
+                if(random == 1)
+                {
+                    anim.SetTrigger("do_attack_melee_1");
+                }
+                else if(random == 2)
+                {
+                    anim.SetTrigger("do_attack_melee_2");
+                }
+                else
+                {
+                    anim.SetTrigger("do_attack_ranged_1");
+                }
+                StartCoroutine(ResetAttack());
+            }
+        }
+        else if (leftSight == false)
+        {
+            StartCoroutine(leavingSight());
+            leftSight = true;
+        }
 
+    }
+
+    public IEnumerator leavingSight()
+    {
+        yield return new WaitForSeconds(attackSearchTime);
+        state = enemyStates.Wander;
+        leftSight = false;
     }
 
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
