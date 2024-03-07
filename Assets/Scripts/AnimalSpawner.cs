@@ -41,7 +41,14 @@ public class AnimalSpawner : MonoBehaviour
                 {
                     GameObject temp = Instantiate(animal, transform.position, Quaternion.identity);
                     //add temp animal to manager list for despawn (not working)
-                    manager.animalList.Add(temp);
+                    if(animal.name == "OculonMonster")
+                    {
+                        manager.monsterList.Add(temp);
+                    }
+                    else
+                    {
+                        manager.animalList.Add(temp);
+                    }
                     Vector3 positionForAnimal = point + new Vector3(0, 3, 0);
                     temp.transform.position = positionForAnimal;
                     animalsSpawnedCount++;

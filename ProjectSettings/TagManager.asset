@@ -11,6 +11,7 @@ TagManager:
   - body
   - spawner
   - MonsterAttack
+  - MonsterSpawner
   layers:
   - Default
   - TransparentFX

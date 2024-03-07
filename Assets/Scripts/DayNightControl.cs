@@ -83,6 +83,9 @@ public class DayNightControl : MonoBehaviour
             manager.animalsDespawned = false;
             GameObject[] spawners = GameObject.FindGameObjectsWithTag("spawner");
             manager.DespawnAllAnimals();
+            manager.despawnMonsters();
+            manager.monsterSpawnerParent.SetActive(false);
+            manager.animalsDespawned = false;
             objectWithScript.GetComponent<turnInScript>().dayCountUpdate();
             Debug.Log("CALLED DAYCOUNT FROM DAYNIGHT");
             for (int i = 0; i < spawners.Length; i++)

@@ -15,12 +15,16 @@ public class GameManager : MonoBehaviour
     public GameObject treeObstacle;
     public List<GameObject> animalList = new List<GameObject>();
     public bool animalsDespawned;
+    public GameObject monsterSpawnerParent;
+    public List<GameObject> monsterList;
+    
     // Start is called before the first frame update
     void Start()
     {
         animalsDespawned = false;
         SpawnTreeObstacles();
         sunControl = GameObject.Find("Sun").GetComponent<DayNightControl>();
+        monsterSpawnerParent.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,6 +40,7 @@ public class GameManager : MonoBehaviour
         if (sunControl.currentTime > 19 && animalsDespawned == false)
         {
             DespawnAnimals();
+            spawnMonsters();
         }
     }
 
@@ -74,6 +79,27 @@ public class GameManager : MonoBehaviour
             i--;
         }
         animalsDespawned = true;
+    }
+
+    public void spawnMonsters()
+    {
+        
+        monsterSpawnerParent.SetActive(true);
+        GameObject[] monsterSpawners = GameObject.FindGameObjectsWithTag("MonsterSpawner");
+        for (int i = 0; i < monsterSpawners.Length; i++)
+        {
+            monsterSpawners[i].GetComponent<AnimalSpawner>().animalsSpawnedCount = 0;
+        }
+    }
+    public void despawnMonsters()
+    {
+        //monsterSpawnerParent.SetActive(true);
+        for (int i = 0; i < monsterList.Count; i++)
+        {
+            Destroy(monsterList[i]);
+            monsterList.Remove(monsterList[i]);
+            i--;
+        }
     }
 
 }
