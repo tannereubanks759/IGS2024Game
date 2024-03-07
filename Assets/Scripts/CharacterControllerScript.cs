@@ -49,8 +49,8 @@ public class CharacterControllerScript : MonoBehaviour
         originalSpeed = moveSpeed;
         sprintSpeed = moveSpeed * 2;
         airSpeed = moveSpeed / 4;
-        scopeSenseX = xSens / 3;
-        scopeSenseY = ySens / 3;
+        scopeSenseX = xSens / 6;
+        scopeSenseY = ySens / 6;
         controller = this.GetComponent<CharacterController>();
         mainCam = Camera.main.gameObject;
         isScoped = false;
@@ -95,11 +95,8 @@ public class CharacterControllerScript : MonoBehaviour
                 }
                 //Debug.Log("Crouched");
             }
-            if (Input.GetMouseButtonDown(1) && gun.gameObject.activeSelf == true)
-            {
-                //Debug.Log("Scoped");
-                isScoped = !isScoped;
-            }
+            isScoped = gun.isScoped;
+
             float currentX = isScoped ? scopeSenseX : xSens;
             float currentY = isScoped ? scopeSenseY : ySens;
             if (controller.isGrounded)
@@ -141,6 +138,7 @@ public class CharacterControllerScript : MonoBehaviour
 
             if (gun.isScoped == false)
             {
+
                 controller.SimpleMove((moveDirection).normalized * moveSpeed);
                 controller.Move(Velocity * Time.deltaTime);
             }
