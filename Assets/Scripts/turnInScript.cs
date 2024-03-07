@@ -14,7 +14,7 @@ public class turnInScript : MonoBehaviour
     public bool hasAnimal = false;
     public GameObject noAnimalText;
     //public string[] quotaAnimals;
-    private bool isQuota = false;
+    public bool isQuota = false;
     string nameOfAnimal;
     public List<string> quotaAnimalsList;
     public GameObject rifle;
@@ -75,6 +75,8 @@ public class turnInScript : MonoBehaviour
                     {
                         Debug.Log("QUOTA FINISHED");
                         readyForNextDay=true;
+                        isQuota = false;
+                        hasAnimal = false;
                         //dayCounter++; set this in sleep script
                         
                     }
