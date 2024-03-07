@@ -162,11 +162,14 @@ public class RandomMovement : MonoBehaviour
         {
             for(int i = 0; i < manager.animalList.Count; i++) //loop through animals in scene
             {
-                RandomMovement animal = manager.animalList[i].GetComponent<RandomMovement>();
-                if (animal.packLeader && Vector3.Distance(animal.transform.position, this.transform.position) < 78.11)
+                if (manager.animalList[i].GetComponent<RandomMovement>())
                 {
-                    packleaderAnimal = animal.gameObject;
-                    Debug.Log("Found pack animal");
+                    RandomMovement animal = manager.animalList[i].GetComponent<RandomMovement>();
+                    if (animal.packLeader && Vector3.Distance(animal.transform.position, this.transform.position) < 78.11)
+                    {
+                        packleaderAnimal = animal.gameObject;
+                        Debug.Log("Found pack animal");
+                    }
                 }
             }
         }
