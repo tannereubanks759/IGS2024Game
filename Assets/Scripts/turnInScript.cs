@@ -68,6 +68,8 @@ public class turnInScript : MonoBehaviour
                     interactScipt.isHolding = false;
                     interactScipt.holdingAnimal = false;
                     interactScipt.holderAnimal = null;
+                    isQuota = false;
+                    hasAnimal = false;
                     //oldArms.SetActive(false);
                     rifle.SetActive(true);
                     Debug.Log("Animal removed from quota");
@@ -104,8 +106,10 @@ public class turnInScript : MonoBehaviour
         if(collision.tag == "Animal")
         {
             Debug.Log("Animal carried into range");
+            
             hasAnimal = true;
              nameOfAnimal = collision.name;
+            Debug.Log(nameOfAnimal);
             animalBeingCarried = collision.gameObject;
             //Debug.Log(nameOfAnimal);
             //string toFind = "FpsArms (1)";

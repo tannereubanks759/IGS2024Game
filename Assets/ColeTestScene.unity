@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 9207.802, g: 5536.6147, b: 4044.771, a: 1}
+  m_IndirectSpecularColor: {r: 9213.872, g: 5535.938, b: 4031.4614, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2012,7 +2012,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inRangeOfPlayer: 0
+  seesPlayer: 0
   wanderRange: 100
+  attackSearchTime: 0
 --- !u!114 &69412229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6129,7 +6131,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inRangeOfPlayer: 0
+  seesPlayer: 0
   wanderRange: 100
+  attackSearchTime: 0
 --- !u!114 &178184562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12625,7 +12629,8 @@ MonoBehaviour:
   currentDay: 0
   manager: {fileID: 925644833}
   SleepText: {fileID: 753888796}
-  objectWithScript: {fileID: 0}
+  objectWithScript: {fileID: 673379513}
+  turnInObj: {fileID: 673379515}
 --- !u!114 &361060411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17761,7 +17766,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inRangeOfPlayer: 0
+  seesPlayer: 0
   wanderRange: 100
+  attackSearchTime: 0
 --- !u!114 &479672546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20932,6 +20939,7 @@ MonoBehaviour:
   baseFOV: 60
   armAnimator: {fileID: 1949138364}
   isReloaded: 1
+  playerControl: {fileID: 0}
 --- !u!1 &562419602
 GameObject:
   m_ObjectHideFlags: 0
@@ -25603,18 +25611,19 @@ MonoBehaviour:
   inRange: 0
   hasAnimal: 0
   noAnimalText: {fileID: 2060803487}
-  quotaAnimalsList:
-  - Bear
+  isQuota: 0
+  quotaAnimalsList: []
   rifle: {fileID: 560773073}
   animalBeingCarried: {fileID: 0}
   oldArms: {fileID: 0}
-  quotaOne: {fileID: 0}
-  quotaTwo: {fileID: 0}
-  quotaThree: {fileID: 0}
-  quotaFour: {fileID: 0}
-  quotaFive: {fileID: 0}
-  quotaSix: {fileID: 0}
-  quotaSeven: {fileID: 0}
+  quotaOne: {fileID: 1000164255}
+  quotaTwo: {fileID: 1030017020}
+  quotaThree: {fileID: 157576913}
+  quotaFour: {fileID: 617931961}
+  quotaFive: {fileID: 1044062269}
+  quotaSix: {fileID: 1378451329}
+  quotaSeven: {fileID: 1212425104}
+  objWithAlterScript: {fileID: 2004360881}
 --- !u!4 &673379516
 Transform:
   m_ObjectHideFlags: 0
@@ -30801,9 +30810,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 801955035}
+  - component: {fileID: 801955037}
+  - component: {fileID: 801955036}
   m_Layer: 2
   m_Name: Goat
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30825,6 +30836,54 @@ Transform:
   - {fileID: 1038717801}
   m_Father: {fileID: 554191373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &801955036
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801955034}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &801955037
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801955034}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &802407989
 GameObject:
   m_ObjectHideFlags: 0
@@ -35773,6 +35832,8 @@ MonoBehaviour:
     type: 3}
   animalList: []
   animalsDespawned: 0
+  monsterSpawnerParent: {fileID: 0}
+  monsterList: []
 --- !u!4 &925644834
 Transform:
   m_ObjectHideFlags: 0
@@ -37220,9 +37281,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 965143820}
+  - component: {fileID: 965143822}
+  - component: {fileID: 965143821}
   m_Layer: 2
   m_Name: Bear
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37244,6 +37307,54 @@ Transform:
   - {fileID: 522880849}
   m_Father: {fileID: 554191373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &965143821
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965143819}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &965143822
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965143819}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &967085968
 GameObject:
   m_ObjectHideFlags: 0
@@ -40243,9 +40354,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1053249864}
+  - component: {fileID: 1053249866}
+  - component: {fileID: 1053249865}
   m_Layer: 2
   m_Name: Deer
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40267,6 +40380,54 @@ Transform:
   - {fileID: 940471823}
   m_Father: {fileID: 554191373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1053249865
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053249863}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0919706, y: 2.2516737, z: 1.2653214}
+  m_Center: {x: 0.04598552, y: -0.7169337, z: 0.7626374}
+--- !u!54 &1053249866
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053249863}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1056198328
 GameObject:
   m_ObjectHideFlags: 0
@@ -42062,7 +42223,7 @@ Transform:
   m_GameObject: {fileID: 1093997722}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 90.715, y: 8.16, z: 524.8}
+  m_LocalPosition: {x: 465.12, y: 14.26, z: 576.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45265,7 +45426,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inRangeOfPlayer: 0
+  seesPlayer: 0
   wanderRange: 100
+  attackSearchTime: 0
 --- !u!114 &1187698988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46872,7 +47035,7 @@ Transform:
   m_GameObject: {fileID: 1226514684}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 96.29001, y: 9.13, z: 519.153}
+  m_LocalPosition: {x: 470.94, y: 15.27, z: 570.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -54463,7 +54626,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inRangeOfPlayer: 0
+  seesPlayer: 0
   wanderRange: 100
+  attackSearchTime: 0
 --- !u!114 &1451170316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75472,9 +75637,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2020314974}
+  - component: {fileID: 2020314976}
+  - component: {fileID: 2020314975}
   m_Layer: 2
   m_Name: Rabbit
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75496,6 +75663,54 @@ Transform:
   - {fileID: 2047155089}
   m_Father: {fileID: 554191373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &2020314975
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020314973}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &2020314976
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020314973}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2023749993
 GameObject:
   m_ObjectHideFlags: 0
@@ -76273,9 +76488,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2041742226}
+  - component: {fileID: 2041742228}
+  - component: {fileID: 2041742227}
   m_Layer: 2
   m_Name: Wolf
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76297,6 +76514,54 @@ Transform:
   - {fileID: 708520559}
   m_Father: {fileID: 554191373}
   m_LocalEulerAnglesHint: {x: 0.39, y: 5.086, z: 356.491}
+--- !u!54 &2041742227
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041742225}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &2041742228
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041742225}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2042226513
 GameObject:
   m_ObjectHideFlags: 0
