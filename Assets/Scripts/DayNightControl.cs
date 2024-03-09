@@ -15,7 +15,7 @@ public class DayNightControl : MonoBehaviour
     public GameManager manager;
     public TextMeshProUGUI SleepText;
     public GameObject objectWithScript;
-    public turnInScript turnInObj;
+    //public turnInScript turnInObj;
     private void Update()
     {
         if (currentTime < 24f)
@@ -62,13 +62,13 @@ public class DayNightControl : MonoBehaviour
         SleepText.enabled = false;
         objectWithScript.GetComponent<turnInScript>();
         // update quota list on turninscript with day one quota
-        if (currentDay == 1)
+        /*if (currentDay == 1)
         {
             turnInObj.quotaAnimalsList.Add("Deer");
             turnInObj.quotaAnimalsList.Add("Deer");
             turnInObj.quotaAnimalsList.Add("Rabbit");
             turnInObj.quotaAnimalsList.Add("Rabbit");
-        }
+        }*/
     }
 
     void UpdateLight()
@@ -84,12 +84,12 @@ public class DayNightControl : MonoBehaviour
     }
     public void Sleep()
     {
-        if(currentTime >= 19 || turnInObj.quotaAnimalsList.Count == 0) { 
+        if(currentTime >= 19) { 
             currentTime = 5.5f;
             isRotating = true;
             currentDay += 1;
             // quota logic for days past day one, add quota animals to list on turninscript based on current day
-            if (currentDay == 2)
+            /*if (currentDay == 2)
             {
                 turnInObj.quotaAnimalsList.Add("Deer");
                 turnInObj.quotaAnimalsList.Add("Deer");
@@ -136,7 +136,7 @@ public class DayNightControl : MonoBehaviour
                 turnInObj.quotaAnimalsList.Add("Wolf");
                 turnInObj.quotaAnimalsList.Add("Deer");
 
-            }
+            }*/
             SleepText.enabled = false;
             manager.animalsDespawned = false;
             GameObject[] spawners = GameObject.FindGameObjectsWithTag("spawner");
@@ -145,7 +145,7 @@ public class DayNightControl : MonoBehaviour
             manager.monsterSpawnerParent.SetActive(false);
             manager.animalsDespawned = false;
             objectWithScript.GetComponent<turnInScript>().dayCountUpdate();
-            Debug.Log("CALLED DAYCOUNT FROM DAYNIGHT");
+            //Debug.Log("CALLED DAYCOUNT FROM DAYNIGHT");
             for (int i = 0; i < spawners.Length; i++)
             {
                 if (spawners[i].GetComponent<AnimalSpawner>())
