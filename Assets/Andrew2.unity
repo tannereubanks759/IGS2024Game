@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 9213.431, g: 5536.235, b: 4033.1099, a: 1}
+  m_IndirectSpecularColor: {r: 9195.37, g: 5535.598, b: 4056.3599, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9187,7 +9187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &194431796
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -62324,6 +62324,7 @@ MonoBehaviour:
   inRange: 0
   hasAnimal: 0
   noAnimalText: {fileID: 1952618774}
+  isQuota: 0
   quotaAnimalsList:
   - Rabbit
   - Rabbit
