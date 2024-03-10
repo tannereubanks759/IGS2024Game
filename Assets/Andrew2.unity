@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 9195.37, g: 5535.598, b: 4056.3599, a: 1}
+  m_IndirectSpecularColor: {r: 9212.616, g: 5536.11, b: 4034.4692, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6924,13 +6924,14 @@ GameObject:
   - component: {fileID: 133818527}
   - component: {fileID: 133818526}
   - component: {fileID: 133818525}
+  - component: {fileID: 133818528}
   m_Layer: 5
   m_Name: ScopeImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &133818525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6988,6 +6989,28 @@ RectTransform:
   m_AnchoredPosition: {x: -1.4, y: -4}
   m_SizeDelta: {x: 2375.7388, y: 1095.1025}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &133818528
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133818524}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eb41e339253d82642b8f1a9b0a08589f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &134154504
 GameObject:
   m_ObjectHideFlags: 0
@@ -99543,6 +99566,8 @@ MonoBehaviour:
   armAnimator: {fileID: 984195912}
   isReloaded: 1
   playerControl: {fileID: 461315745}
+  scopeAnimator: {fileID: 133818528}
+  gunShot: {fileID: 1965269220}
 --- !u!82 &1965269220
 AudioSource:
   m_ObjectHideFlags: 0

@@ -29,6 +29,8 @@ public class gunScript : MonoBehaviour
     public Animator armAnimator;
     public bool isReloaded = true;
     public CharacterController playerControl;
+    public Animator scopeAnimator;
+    public AudioSource gunShot;
     void Start()
     {
         reloadText.SetActive(false);
@@ -127,7 +129,7 @@ public class gunScript : MonoBehaviour
     {
         isReloaded = false;
         RaycastHit target;
-
+        gunShot.Play();
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
         armAnimator.ResetTrigger("rr");
         if (Physics.Raycast(ray, out target, range, mask))
@@ -160,7 +162,10 @@ public class gunScript : MonoBehaviour
         {
             animator.SetTrigger("clickShot");
         }
-
+        if(isScoped == true && isAmmo == true)
+        {
+            scopeAnimator.SetTrigger("scopedShot");
+        }
         AnimalChecker();
 
         isAmmo = false;
