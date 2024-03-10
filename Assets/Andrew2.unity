@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 9212.616, g: 5536.11, b: 4034.4692, a: 1}
+  m_IndirectSpecularColor: {r: 9212.585, g: 5536.11, b: 4034.3599, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -23837,7 +23837,7 @@ MonoBehaviour:
     type: 3}
   animalList: []
   animalsDespawned: 0
-  monsterSpawnerParent: {fileID: 0}
+  monsterSpawnerParent: {fileID: 1271737216}
   monsterList: []
 --- !u!1 &473630856
 GameObject:
@@ -39802,7 +39802,7 @@ GameObject:
   - component: {fileID: 813585919}
   - component: {fileID: 813585918}
   - component: {fileID: 813585917}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
