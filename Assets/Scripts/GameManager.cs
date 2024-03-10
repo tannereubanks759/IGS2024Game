@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
     public bool animalsDespawned;
     public GameObject monsterSpawnerParent;
     public List<GameObject> monsterList;
-    
+    public GameObject canvas;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,11 @@ public class GameManager : MonoBehaviour
         {
             DespawnAnimals();
             spawnMonsters();
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            win();
         }
     }
 
@@ -100,6 +106,22 @@ public class GameManager : MonoBehaviour
             monsterList.Remove(monsterList[i]);
             i--;
         }
+    }
+    public void win()
+    {
+        //451.88, 15.29, 577.54
+        //rot 0, 84, 0
+        player.GetComponent<CharacterControllerScript>().enabled = false;
+        canvas.SetActive(false);
+        player.transform.rotation = Quaternion.Euler(0, 84, 0);
+        player.transform.position = new Vector3(451.88f, 15.29f, 577.54f);
+        StartCoroutine(winEnum());
+    }
+    IEnumerator winEnum()
+    {
+        yield return new WaitForSeconds(.1f);
+        player.GetComponent<Animator>().enabled = true;
+
     }
 
 }
