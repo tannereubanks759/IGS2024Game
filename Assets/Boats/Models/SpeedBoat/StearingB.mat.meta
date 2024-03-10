@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 536b2da39e6cc524eb132b2be7c85989
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 209382
+  packageName: Boat Collection
+  packageVersion: 1.0
+  assetPath: Assets/Boats/Models/SpeedBoat/StearingB.mat
+  uploadId: 470253

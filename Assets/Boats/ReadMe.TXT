@@ -1,0 +1,2 @@
+In this package, you can find a handful collection of sea vehicles of every kind. More specifically, there are 8 different boats.
+They come with the fbx file format and the vertices are between 5K - 15K. All materials are PBR and the textures have 2K resolution with png file format.

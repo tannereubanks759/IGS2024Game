@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ea40b8e12cd9fc14582031a1cc8e8923
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 209382
+  packageName: Boat Collection
+  packageVersion: 1.0
+  assetPath: Assets/Boats/Models/SmallBoat/RedLeather.mat
+  uploadId: 470253

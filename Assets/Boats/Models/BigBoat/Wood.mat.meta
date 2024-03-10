@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 17ce181d52fd331428328a9ce722c82f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 209382
+  packageName: Boat Collection
+  packageVersion: 1.0
+  assetPath: Assets/Boats/Models/BigBoat/Wood.mat
+  uploadId: 470253

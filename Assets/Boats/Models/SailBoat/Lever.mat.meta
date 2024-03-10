@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0a4bc83a65a06414b9e2dde4a7ce7801
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 209382
+  packageName: Boat Collection
+  packageVersion: 1.0
+  assetPath: Assets/Boats/Models/SailBoat/Lever.mat
+  uploadId: 470253

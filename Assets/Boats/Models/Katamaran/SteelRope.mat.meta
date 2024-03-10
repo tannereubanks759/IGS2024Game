@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5479396735e75294f8f70883e516a4e9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 209382
+  packageName: Boat Collection
+  packageVersion: 1.0
+  assetPath: Assets/Boats/Models/Katamaran/SteelRope.mat
+  uploadId: 470253

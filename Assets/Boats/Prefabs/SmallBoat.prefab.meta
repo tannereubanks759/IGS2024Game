@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fae3bd038621cfa459aedb1fa3a4245d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 209382
+  packageName: Boat Collection
+  packageVersion: 1.0
+  assetPath: Assets/Boats/Prefabs/SmallBoat.prefab
+  uploadId: 470253

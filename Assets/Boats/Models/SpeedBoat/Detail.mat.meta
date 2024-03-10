@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bec0feda9c546a24eac7118994b96707
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 209382
+  packageName: Boat Collection
+  packageVersion: 1.0
+  assetPath: Assets/Boats/Models/SpeedBoat/Detail.mat
+  uploadId: 470253

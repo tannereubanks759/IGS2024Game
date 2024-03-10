@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bdeebae64a798764a8057e3be264f829
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 209382
+  packageName: Boat Collection
+  packageVersion: 1.0
+  assetPath: Assets/Boats/Models/SailBoat/Material.002.mat
+  uploadId: 470253

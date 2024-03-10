@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b823eeab82d1f3f488f0b7056a1392cb
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 209382
+  packageName: Boat Collection
+  packageVersion: 1.0
+  assetPath: Assets/Boats/Models/BigBoat/BlackDetail.mat
+  uploadId: 470253

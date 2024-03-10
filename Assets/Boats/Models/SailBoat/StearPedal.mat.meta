@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a16765b62d02d1348a025dd8222a49e2
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 209382
+  packageName: Boat Collection
+  packageVersion: 1.0
+  assetPath: Assets/Boats/Models/SailBoat/StearPedal.mat
+  uploadId: 470253

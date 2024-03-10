@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e66e0aa5b388bbc40a0f577ae2c4f54a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 209382
+  packageName: Boat Collection
+  packageVersion: 1.0
+  assetPath: Assets/Boats/Models/JetSki/Jetski.mat
+  uploadId: 470253

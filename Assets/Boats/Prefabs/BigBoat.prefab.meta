@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e197de6e0aeca9e428f9a1bb1ed2da91
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 209382
+  packageName: Boat Collection
+  packageVersion: 1.0
+  assetPath: Assets/Boats/Prefabs/BigBoat.prefab
+  uploadId: 470253

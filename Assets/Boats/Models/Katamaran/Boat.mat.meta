@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a866b52c72db14b43b754f8211473fba
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 209382
+  packageName: Boat Collection
+  packageVersion: 1.0
+  assetPath: Assets/Boats/Models/Katamaran/Boat.mat
+  uploadId: 470253

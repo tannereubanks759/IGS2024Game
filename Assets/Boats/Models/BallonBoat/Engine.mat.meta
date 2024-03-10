@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 91b400429e21cf446aa912ccee3fee45
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 209382
+  packageName: Boat Collection
+  packageVersion: 1.0
+  assetPath: Assets/Boats/Models/BallonBoat/Engine.mat
+  uploadId: 470253

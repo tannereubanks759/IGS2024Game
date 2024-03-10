@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2db3649450580404c91b591cc195954f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 112000000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 209382
+  packageName: Boat Collection
+  packageVersion: 1.0
+  assetPath: Assets/Boats/Demo/Demo/LightingData.asset
+  uploadId: 470253

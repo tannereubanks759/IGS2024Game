@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f92d8415f334067419506906c61596b8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 209382
+  packageName: Boat Collection
+  packageVersion: 1.0
+  assetPath: Assets/Boats/Models/BallonBoat/Boat.mat
+  uploadId: 470253

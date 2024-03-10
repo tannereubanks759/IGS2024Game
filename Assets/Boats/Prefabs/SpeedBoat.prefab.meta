@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 904f600e37b29f04882e0a1222623cd3
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 209382
+  packageName: Boat Collection
+  packageVersion: 1.0
+  assetPath: Assets/Boats/Prefabs/SpeedBoat.prefab
+  uploadId: 470253

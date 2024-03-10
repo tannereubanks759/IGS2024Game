@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a1b59964ff39de342ae79a7a5988eac5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 209382
+  packageName: Boat Collection
+  packageVersion: 1.0
+  assetPath: Assets/Boats/Models/BigBoat/Metal.mat
+  uploadId: 470253
