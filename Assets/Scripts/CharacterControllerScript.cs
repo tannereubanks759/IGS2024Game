@@ -39,6 +39,7 @@ public class CharacterControllerScript : MonoBehaviour
     public GameObject caveSpawn;
     public GameObject knockoutImage;
 
+    public AudioSource meteorSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -198,5 +199,10 @@ public class CharacterControllerScript : MonoBehaviour
             col.gameObject.GetComponentInParent<MonsterAI>().seesPlayer = false;
             Die();
         }
+    }
+
+    public void playMeteorSound()
+    {
+        meteorSource.Play();
     }
 }
