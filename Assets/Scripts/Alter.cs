@@ -10,6 +10,7 @@ public class Alter : MonoBehaviour
     public KeyCode spawnKeyDebug;
     public bool allTotemsIn;
     public GameManager manager;
+    public AudioSource caveSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,13 @@ public class Alter : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            spawnTotem();
+        }
+    }
     public void place()
     {
         for(int i = 0; i < alterTotems.Length; i++)
@@ -34,6 +42,8 @@ public class Alter : MonoBehaviour
         if (alterTotems[6].activeSelf)
         {
             this.GetComponent<Animator>().SetBool("end", true);
+            this.GetComponent<AudioSource>().Play();
+            caveSource.Play();
             manager.win();
         }
     }
