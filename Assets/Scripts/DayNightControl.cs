@@ -14,7 +14,7 @@ public class DayNightControl : MonoBehaviour
     private bool isRotating;
     public GameManager manager;
     public TextMeshProUGUI SleepText;
-    public GameObject objectWithScript;
+    public turnInScript objectWithScript;
     //public turnInScript turnInObj;
     private void Update()
     {
@@ -42,7 +42,7 @@ public class DayNightControl : MonoBehaviour
             isRotating = false;
         }
 
-        if(currentTime > 19)
+        if(currentTime >= 19 || objectWithScript.quotaAnimalsList.Count == 0)
         {
             SleepText.enabled = true;
         }
@@ -60,7 +60,7 @@ public class DayNightControl : MonoBehaviour
         isRotating = true;
         currentDay = 1;
         SleepText.enabled = false;
-        objectWithScript.GetComponent<turnInScript>();
+        
         // update quota list on turninscript with day one quota
         /*if (currentDay == 1)
         {
@@ -84,7 +84,7 @@ public class DayNightControl : MonoBehaviour
     }
     public void Sleep()
     {
-        if(currentTime >= 19) { 
+        if(currentTime >= 19 || objectWithScript.quotaAnimalsList.Count == 0) { 
             currentTime = 5.5f;
             isRotating = true;
             currentDay += 1;
@@ -144,7 +144,7 @@ public class DayNightControl : MonoBehaviour
             manager.despawnMonsters();
             manager.monsterSpawnerParent.SetActive(false);
             manager.animalsDespawned = false;
-            objectWithScript.GetComponent<turnInScript>().dayCountUpdate();
+            objectWithScript.dayCountUpdate();
             //Debug.Log("CALLED DAYCOUNT FROM DAYNIGHT");
             for (int i = 0; i < spawners.Length; i++)
             {
