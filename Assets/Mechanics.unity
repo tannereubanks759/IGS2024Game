@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 7879.618, g: 4454.2974, b: 3156.2349, a: 1}
+  m_IndirectSpecularColor: {r: 7877.6357, g: 4454.9653, b: 3160.1958, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8809,6 +8809,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: prefab_beech_forest_stones_01_14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566276046555049618, guid: b2e75757887dfab449c921a7a25078b1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566276046555049620, guid: b2e75757887dfab449c921a7a25078b1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566276046555049622, guid: b2e75757887dfab449c921a7a25078b1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -60127,10 +60142,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1733178630}
     m_Modifications:
+    - target: {fileID: 3783054325739327008, guid: 7b4b23d69b2c6e149a6e6c6a6c4fd731,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783054325739327010, guid: 7b4b23d69b2c6e149a6e6c6a6c4fd731,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3783054325739327014, guid: 7b4b23d69b2c6e149a6e6c6a6c4fd731,
         type: 3}
       propertyPath: m_Name
       value: prefab_beech_forest_stones_01_12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783054325739327014, guid: 7b4b23d69b2c6e149a6e6c6a6c4fd731,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3783054325739491842, guid: 7b4b23d69b2c6e149a6e6c6a6c4fd731,
         type: 3}
@@ -62454,10 +62484,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7046631540937994658, guid: fd7869b37f2a04649925a66f439e4d23,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7046631540937994666, guid: fd7869b37f2a04649925a66f439e4d23,
         type: 3}
       propertyPath: m_Name
       value: prefab_beech_forest_stones_01_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7046631540937994666, guid: fd7869b37f2a04649925a66f439e4d23,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7046631540937994668, guid: fd7869b37f2a04649925a66f439e4d23,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7046631540937994670, guid: fd7869b37f2a04649925a66f439e4d23,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
