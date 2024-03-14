@@ -39,7 +39,7 @@ public class CharacterControllerScript : MonoBehaviour
     public GameObject caveSpawn;
     public GameObject knockoutImage;
 
-
+    public GameObject endingScreen;
     public AudioSource meteorSource;
     // Start is called before the first frame update
     void Start()
@@ -206,5 +206,12 @@ public class CharacterControllerScript : MonoBehaviour
     public void playMeteorSound()
     {
         meteorSource.Play();
+    }
+
+    public void endScreenEnable()
+    {
+        cursorEnable();
+        endingScreen.SetActive(true);
+
     }
 }
