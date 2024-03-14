@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
+using UnityEngine.Rendering;
 using TMPro;
 //[ExecuteAlways]
 public class DayNightControl : MonoBehaviour
@@ -15,6 +16,8 @@ public class DayNightControl : MonoBehaviour
     public GameManager manager;
     public TextMeshProUGUI SleepText;
     public turnInScript objectWithScript;
+    public Animator skyAnim;
+    public Volume skyVolume;
     //public turnInScript turnInObj;
     private void Update()
     {
@@ -46,7 +49,17 @@ public class DayNightControl : MonoBehaviour
         {
             SleepText.enabled = true;
         }
-
+        if(currentTime >= 19 && skyVolume.weight != 1f)
+        {
+            //skyAnim.SetBool("isNight", true);
+            skyVolume.weight = skyVolume.weight + (.1f * Time.deltaTime);
+        }
+        else if(currentTime < 19f && skyVolume.weight != 0f)
+        {
+            //skyAnim.SetBool("isNight", false);
+            skyVolume.weight = skyVolume.weight - (.1f * Time.deltaTime);
+        }
+        
 
         if (isRotating)
         {
