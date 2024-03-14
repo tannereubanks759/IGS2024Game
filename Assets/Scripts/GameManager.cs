@@ -44,10 +44,10 @@ public class GameManager : MonoBehaviour
             spawnMonsters();
         }
 
-        if (Input.GetKeyDown(KeyCode.L))
+        /*if (Input.GetKeyDown(KeyCode.L))
         {
             win();
-        }
+        }*/
     }
 
     void SpawnTreeObstacles()
