@@ -35,7 +35,7 @@ public class Interact : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (isLooking)
+            if (isLooking && !holdingAnimal)
             {
                 if (lookObj != null && lookObj.gameObject.name == "Bed")
                 {
@@ -50,7 +50,7 @@ public class Interact : MonoBehaviour
                 {
                     PlaceTotem();
                 }
-                else if (!isHolding && !holdingAnimal && lookObj != null && (lookObj.gameObject.tag == "head" || lookObj.gameObject.tag == "body") && lookObj.gameObject.GetComponent<AnimalReference>().handler.isDead == true)
+                else if (!isHolding && lookObj != null && (lookObj.gameObject.tag == "head" || lookObj.gameObject.tag == "body") && lookObj.gameObject.GetComponent<AnimalReference>().handler.isDead == true)
                 {
                     PickupAnimal();
 

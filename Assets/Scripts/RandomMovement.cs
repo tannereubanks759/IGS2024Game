@@ -137,6 +137,7 @@ public class RandomMovement : MonoBehaviour
             
             anim.SetBool("attack", true);
             anim.SetBool("run", false);
+            anim.SetBool("walk", false);
             if (!isSwinging)
             {
                 StartCoroutine(attackPlayer());
@@ -146,6 +147,7 @@ public class RandomMovement : MonoBehaviour
         else
         {
             anim.SetBool("run", true);
+            anim.SetBool("walk", false);
             anim.SetBool("attack", false);
         }
 

@@ -157,7 +157,8 @@ public class gunScript : MonoBehaviour
             else if (target.collider.tag == "head")
             {
                 Debug.Log("Headshot");
-                target.collider.GetComponent<AnimalReference>().talkToHandler(); 
+                target.collider.GetComponent<AnimalReference>().talkToHandler();
+                Instantiate(bloodEffect, target.point, Quaternion.LookRotation(target.normal));
             }
 
         }
