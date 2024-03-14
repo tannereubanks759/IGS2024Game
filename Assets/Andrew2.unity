@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 9212.585, g: 5536.11, b: 4034.3599, a: 1}
+  m_IndirectSpecularColor: {r: 7815.325, g: 4439.235, b: 3215.02, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -22511,6 +22511,7 @@ MonoBehaviour:
   lightControl: {fileID: 1704471280}
   caveSpawn: {fileID: 2006249528}
   knockoutImage: {fileID: 1320899104}
+  meteorSource: {fileID: 0}
 --- !u!143 &461315745
 CharacterController:
   m_ObjectHideFlags: 0
@@ -23839,6 +23840,8 @@ MonoBehaviour:
   animalsDespawned: 0
   monsterSpawnerParent: {fileID: 1271737216}
   monsterList: []
+  canvas: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &473630856
 GameObject:
   m_ObjectHideFlags: 0
@@ -25410,6 +25413,9 @@ MonoBehaviour:
   TotemPref: {fileID: 8224519746247955439, guid: 33478f9d90a43a04aa0968d81d191cb7,
     type: 3}
   spawnKeyDebug: 107
+  allTotemsIn: 0
+  manager: {fileID: 0}
+  caveSource: {fileID: 0}
 --- !u!54 &506919413
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -84769,6 +84775,8 @@ MonoBehaviour:
   manager: {fileID: 473522071}
   SleepText: {fileID: 232042262}
   objectWithScript: {fileID: 1218824844}
+  skyAnim: {fileID: 0}
+  skyVolume: {fileID: 0}
 --- !u!114 &1704471281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99545,7 +99553,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1146205126}
   firepoint: {fileID: 1657351144}
-  hitPointObj: {fileID: 194431795}
   isAmmo: 1
   reloadText: {fileID: 805131121}
   ani: {fileID: 0}
@@ -99568,6 +99575,8 @@ MonoBehaviour:
   playerControl: {fileID: 461315745}
   scopeAnimator: {fileID: 133818528}
   gunShot: {fileID: 1965269220}
+  bloodEffect: {fileID: 8967051078935427532, guid: 9a9c53624e8d0a94e9146b6556d0e932,
+    type: 3}
 --- !u!82 &1965269220
 AudioSource:
   m_ObjectHideFlags: 0

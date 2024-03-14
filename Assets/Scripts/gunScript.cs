@@ -8,7 +8,7 @@ public class gunScript : MonoBehaviour
     // Start is called before the first frame update
     public Camera mainCam;
     public GameObject firepoint;
-    public GameObject hitPointObj;
+    //public GameObject hitPointObj;
     public bool isAmmo = true;
     public GameObject reloadText;
     [SerializeField] animalDamageHandler ani;
@@ -31,6 +31,7 @@ public class gunScript : MonoBehaviour
     public CharacterController playerControl;
     public Animator scopeAnimator;
     public AudioSource gunShot;
+    public GameObject bloodEffect;
     void Start()
     {
         reloadText.SetActive(false);
@@ -135,13 +136,15 @@ public class gunScript : MonoBehaviour
         if (Physics.Raycast(ray, out target, range, mask))
         {
             Debug.Log("Hit something");
-            hitPointObj.transform.position = target.point;
+            //hitPointObj.transform.position = target.point;
 
             Debug.Log(target.collider.name);
             if (target.collider.tag == "body")
             {
                 Debug.Log("Hit animal");
                 //target.transform.SendMessage("hitByRay");
+                Instantiate(bloodEffect, target.point, Quaternion.LookRotation(target.normal));
+                Debug.Log("Spawned blood");
                 target.collider.GetComponent<AnimalReference>().talkToHandler();
                 //ani.damage(DAMAGE);
                 //Debug.Log(currentHP);
