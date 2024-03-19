@@ -103,10 +103,10 @@ public class CharacterControllerScript : MonoBehaviour
             float currentY = isScoped ? scopeSenseY : ySens;
             if (controller.isGrounded)
             {
-                if (Velocity.y < 0)
-                {
-                    Velocity.y = -25f;
-                }
+                //if (Velocity.y < 0)
+                //{
+                //    Velocity.y = -25f;
+                //}
 
                 if (Input.GetKey(KeyCode.Space))
                 {
