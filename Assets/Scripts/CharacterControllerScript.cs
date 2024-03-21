@@ -32,7 +32,7 @@ public class CharacterControllerScript : MonoBehaviour
     private float airSpeed;
     private bool isScoped;
     private bool inWater;
-
+    public Pause pauseScript;
     public DayNightControl lightControl;
     private int Lives;
     bool knockedOut;
@@ -212,12 +212,16 @@ public class CharacterControllerScript : MonoBehaviour
     }
     private void LateUpdate()
     {
-        float currentX = isScoped ? scopeSenseX : xSens;
-        float currentY = isScoped ? scopeSenseY : ySens;
-        mouseX -= Input.GetAxisRaw("Mouse Y") * currentY;
-        mouseY += Input.GetAxisRaw("Mouse X") * currentX;
-        mouseX = Mathf.Clamp(mouseX, -90f, 90f);
-        this.transform.rotation = Quaternion.Euler(0, mouseY, 0);
-        mainCam.transform.rotation = Quaternion.Euler(mouseX, mouseY, 0);
+        if (Time.timeScale == 1 && pauseScript.paused == false)
+        {
+            float currentX = isScoped ? scopeSenseX : xSens;
+            float currentY = isScoped ? scopeSenseY : ySens;
+            mouseX -= Input.GetAxisRaw("Mouse Y") * currentY;
+            mouseY += Input.GetAxisRaw("Mouse X") * currentX;
+            mouseX = Mathf.Clamp(mouseX, -90f, 90f);
+            this.transform.rotation = Quaternion.Euler(0, mouseY, 0);
+            mainCam.transform.rotation = Quaternion.Euler(mouseX, mouseY, 0);
+        }
+        
     }
 }

@@ -23,6 +23,7 @@ public class Pause : MonoBehaviour
     {
         if (!paused)
         {
+            //paused = true;
             player.isPaused = true;
             PauseCanvas.gameObject.SetActive(true);
             //mainCanv.gameObject.SetActive(false);
@@ -33,6 +34,7 @@ public class Pause : MonoBehaviour
         }
         else
         {
+            //paused =false;  
             player.isPaused = false;
             Time.timeScale = 1;
             PauseCanvas.gameObject.SetActive(false);
