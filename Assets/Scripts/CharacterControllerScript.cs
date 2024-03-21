@@ -146,11 +146,7 @@ public class CharacterControllerScript : MonoBehaviour
             }
             
             //mouse Look
-            mouseX -= Input.GetAxisRaw("Mouse Y") * currentY;
-            mouseY += Input.GetAxisRaw("Mouse X") * currentX;
-            mouseX = Mathf.Clamp(mouseX, -90f, 90f);
-            this.transform.rotation = Quaternion.Euler(0, mouseY, 0);
-            mainCam.transform.rotation = Quaternion.Euler(mouseX, mouseY, 0);
+            
         }
         
 
@@ -213,5 +209,15 @@ public class CharacterControllerScript : MonoBehaviour
         cursorEnable();
         endingScreen.SetActive(true);
 
+    }
+    private void LateUpdate()
+    {
+        float currentX = isScoped ? scopeSenseX : xSens;
+        float currentY = isScoped ? scopeSenseY : ySens;
+        mouseX -= Input.GetAxisRaw("Mouse Y") * currentY;
+        mouseY += Input.GetAxisRaw("Mouse X") * currentX;
+        mouseX = Mathf.Clamp(mouseX, -90f, 90f);
+        this.transform.rotation = Quaternion.Euler(0, mouseY, 0);
+        mainCam.transform.rotation = Quaternion.Euler(mouseX, mouseY, 0);
     }
 }

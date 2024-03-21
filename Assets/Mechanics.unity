@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 7877.6357, g: 4454.9653, b: 3160.1958, a: 1}
+  m_IndirectSpecularColor: {r: 7879.4873, g: 4454.43, b: 3156.727, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -63206,7 +63206,7 @@ Transform:
   m_GameObject: {fileID: 1083629257}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.6687658, z: -0, w: 0.74347323}
-  m_LocalPosition: {x: 465.002, y: 16.74, z: 574.555}
+  m_LocalPosition: {x: 454.8, y: 15.6, z: 577.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -63225,7 +63225,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083629257}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5c6fccdcaacf00f43afceab78f7a8fc5, type: 2}
   m_CullingMode: 0
@@ -98869,12 +98869,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1533254740}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1651751281 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 59052c6b39b1d414ca3e3111674c620c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1533254740}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1651937151
 GameObject:
   m_ObjectHideFlags: 0
@@ -101140,8 +101134,8 @@ Transform:
   m_GameObject: {fileID: 1704165516}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.29399633, y: -0.33099985, z: 0.69}
-  m_LocalScale: {x: 1.72, y: 1.72, z: 1.72}
+  m_LocalPosition: {x: 0.03, y: -0.03, z: 0.06}
+  m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 28794349}
@@ -101190,6 +101184,7 @@ MonoBehaviour:
   range: 200
   animal: {fileID: 7941402138566422478, guid: 877d960c109c109428fdd687fd12be7c, type: 3}
   currentHP: 100
+  animator: {fileID: 1083629261}
   isScoped: 0
   scopeUI: {fileID: 349182731}
   gun: {fileID: 28794348}
@@ -101200,7 +101195,7 @@ MonoBehaviour:
   shotSoundDistance: 100
   scopedFOV: 10
   baseFOV: 60
-  armAnimator: {fileID: 1651751281}
+  armAnimator: {fileID: 1083629261}
   isReloaded: 1
   playerControl: {fileID: 1083629258}
   scopeAnimator: {fileID: 349182735}
