@@ -16,7 +16,7 @@ public class gunScript : MonoBehaviour
     public float range;
     public GameObject animal;
     public int currentHP;
-    Animator animator;
+    public Animator animator;
     public bool isScoped = false;
     public GameObject scopeUI;
     public GameObject gun;
@@ -36,7 +36,7 @@ public class gunScript : MonoBehaviour
     {
         reloadText.SetActive(false);
         currentHP = 100;
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         ani = animal.GetComponent<animalDamageHandler>();
         scopeUI.SetActive(false);
         baseFOV = mainCam.fieldOfView;
