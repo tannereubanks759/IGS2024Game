@@ -99,8 +99,8 @@ public class CharacterControllerScript : MonoBehaviour
             }
             isScoped = gun.isScoped;
 
-            float currentX = isScoped ? scopeSenseX : xSens;
-            float currentY = isScoped ? scopeSenseY : ySens;
+            /*float currentX = isScoped ? scopeSenseX : xSens;
+            float currentY = isScoped ? scopeSenseY : ySens;*/
             if (controller.isGrounded)
             {
                 //if (Velocity.y < 0)

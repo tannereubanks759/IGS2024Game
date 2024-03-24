@@ -19,6 +19,7 @@ public class Interact : MonoBehaviour
     public Alter alterScript;
     public GameObject[] animalParents;
     public GameObject objectWithScript;
+    public Animator anim;
     //turnInScript turnInRef;
     // Start is called before the first frame update
     void Start()
@@ -66,23 +67,22 @@ public class Interact : MonoBehaviour
     }
     public void PickupTotem()
     {
+        anim.SetBool("Holding Totem", true);
         isHolding = true;
-        totem.SetActive(true);
         Destroy(lookObj);
-        rifle.SetActive(false);
         lookObj = null;
         isLooking = false;
     }
 
     public void PlaceTotem()
     {
+        anim.SetBool("Holding Totem", false);
         alterScript.place();
-        rifle.SetActive(true);
-        totem.SetActive(false);
         isLooking = false;
         isHolding = false;
         lookObj = null;
     }
+
 
 
     public void PickupAnimal()
