@@ -41,6 +41,11 @@ public class CharacterControllerScript : MonoBehaviour
 
     public GameObject endingScreen;
     public AudioSource meteorSource;
+    public AudioSource audioFootstep;
+    public AudioClip footstepClip;
+
+    private bool footstepflag = false;
+    private bool isJumpFlag = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -143,6 +148,30 @@ public class CharacterControllerScript : MonoBehaviour
 
                 controller.SimpleMove((moveDirection).normalized * moveSpeed);
                 controller.Move(Velocity * Time.deltaTime);
+                
+            }
+
+            if (moveDirection.magnitude > 0f && footstepflag == false && controller.isGrounded == true)
+            {
+                audioFootstep.Play();
+                footstepflag = true;
+            }
+
+            else if (moveDirection.magnitude <= 0f || !audioFootstep.isPlaying || !controller.isGrounded)
+            {
+                audioFootstep.Stop();
+                footstepflag = false;
+            }
+
+            if (!controller.isGrounded)
+            {
+                isJumpFlag = true;
+            }
+
+            if (controller.isGrounded == true && isJumpFlag == true)
+            {
+                audioFootstep.PlayOneShot(footstepClip);
+                isJumpFlag = false;
             }
             
             //mouse Look
