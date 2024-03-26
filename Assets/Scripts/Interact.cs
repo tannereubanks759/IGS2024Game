@@ -105,8 +105,9 @@ public class Interact : MonoBehaviour
         Debug.Log("tried animal pickup");
         isHolding = true;
         holdingAnimal = true;
-        rifle.SetActive(false);
+        //rifle.SetActive(false);
         lookObj = null;
+        anim.SetBool("holdingAnimal", true);
         //holderAnimal.GetComponent<BoxCollider>().enabled = false;
     }
 

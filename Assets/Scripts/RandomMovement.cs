@@ -50,7 +50,7 @@ public class RandomMovement : MonoBehaviour
         centrePoint = this.transform.position;
         agent.speed = WalkSpeed;
         isRunning = false;
-        Player = GameObject.Find("Player");
+        Player = GameObject.Find("PlayerParent");
         hasPoint = false;
         oceanHeight = GameObject.Find("Ocean").transform.position.y;
         isAttacking = false;
