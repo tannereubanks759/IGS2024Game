@@ -191,6 +191,7 @@ public class turnInScript : MonoBehaviour
             quotaFour.SetActive(true);
             readyForNextDay = false;
             // set totem 4 quota
+            //END HERE FOR NEW QUOTA
         }
         else if (aQuotaCount == 4)
         {

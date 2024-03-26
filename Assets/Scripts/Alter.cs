@@ -39,7 +39,7 @@ public class Alter : MonoBehaviour
                 break;
             }
         }
-        if (alterTotems[6].activeSelf)
+        if (alterTotems[3].activeSelf)
         {
             this.GetComponent<Animator>().SetBool("end", true);
             this.GetComponent<AudioSource>().Play();
