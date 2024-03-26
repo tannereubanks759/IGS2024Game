@@ -97,7 +97,8 @@ public class Interact : MonoBehaviour
         {
             if(animalParents[i].gameObject.name == holderName)
             {
-                animalParents[i].SetActive(true);
+                //animalParents[i].SetActive(true);
+                anim.SetTrigger(holderName);
                 break;
             }
         }
@@ -114,6 +115,7 @@ public class Interact : MonoBehaviour
 
     public void DropAnimal()
     {
+        anim.SetBool("holdingAnimal", false);
         isLooking = false;
         lookObj = null;
         isHolding = false;
