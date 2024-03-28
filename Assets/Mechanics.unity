@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 7878.9854, g: 4454.219, b: 3157.3833, a: 1}
+  m_IndirectSpecularColor: {r: 7877.6006, g: 4454.9614, b: 3160.188, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -20544,7 +20544,17 @@ MonoBehaviour:
   endingScreen: {fileID: 1124798944}
   meteorSource: {fileID: 2007058351}
   audioFootstep: {fileID: 611329513}
-  footstepClip: {fileID: 8300000, guid: 11510b6559deacc4ea841d9d44902293, type: 3}
+  footstepClip:
+  - {fileID: 8300000, guid: 11510b6559deacc4ea841d9d44902293, type: 3}
+  - {fileID: 8300000, guid: 2ab37cb4d6b591f4ab638d809f7d1299, type: 3}
+  - {fileID: 8300000, guid: 810c44f4ddda4d0408cf4eab7815d440, type: 3}
+  terra: {fileID: 0}
+  playerT: {fileID: 0}
+  playerposx: 0
+  playerposz: 0
+  textureValues: []
+  nextTime: 0
+  FoostepInterval: 0.44
 --- !u!4 &355136055
 Transform:
   m_ObjectHideFlags: 0
@@ -42786,6 +42796,7 @@ MonoBehaviour:
   - {fileID: 1288349588}
   objectWithScript: {fileID: 1024328112}
   anim: {fileID: 1083629261}
+  turnIn: {fileID: 0}
 --- !u!1 &741028945
 GameObject:
   m_ObjectHideFlags: 0
@@ -59844,10 +59855,8 @@ MonoBehaviour:
   quotaTwo: {fileID: 1912380459}
   quotaThree: {fileID: 154043087}
   quotaFour: {fileID: 250496702}
-  quotaFive: {fileID: 514798802}
-  quotaSix: {fileID: 220475463}
-  quotaSeven: {fileID: 1992694279}
   objWithAlterScript: {fileID: 634097746}
+  anim: {fileID: 0}
 --- !u!1 &1024520691
 GameObject:
   m_ObjectHideFlags: 0

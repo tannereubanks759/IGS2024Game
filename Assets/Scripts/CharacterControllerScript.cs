@@ -140,7 +140,7 @@ public class CharacterControllerScript : MonoBehaviour
                     moveSpeed = sprintSpeed;
                     anim.SetBool("Sprinting", true);
                     footstepVolume = 0.8f;
-                    
+                    FoostepInterval = .37f;
                 }
                 else
                 {
@@ -149,12 +149,11 @@ public class CharacterControllerScript : MonoBehaviour
                         moveSpeed = originalSpeed;
                         footstepVolume = 0.44f;
                         anim.SetBool("Sprinting", false);
-
+                        FoostepInterval = .44f;
                     }
                     else
                     {
                         moveSpeed = 1f;
-                        footstepVolume = 0.4f;
                     }
                 }
 
