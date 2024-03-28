@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 7879.0723, g: 4453.7275, b: 3155.2935, a: 1}
+  m_IndirectSpecularColor: {r: 7878.8506, g: 4453.768, b: 3155.66, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5655,10 +5655,8 @@ MonoBehaviour:
   quotaTwo: {fileID: 44684943}
   quotaThree: {fileID: 922673783}
   quotaFour: {fileID: 2125337291}
-  quotaFive: {fileID: 1050115113}
-  quotaSix: {fileID: 1475109366}
-  quotaSeven: {fileID: 1822726030}
   objWithAlterScript: {fileID: 1664396436}
+  anim: {fileID: 0}
 --- !u!4 &87892483
 Transform:
   m_ObjectHideFlags: 0
@@ -110501,7 +110499,10 @@ MonoBehaviour:
   endingScreen: {fileID: 1720461188}
   meteorSource: {fileID: 1632955039}
   audioFootstep: {fileID: 108043277}
-  footstepClip: {fileID: 8300000, guid: 2ab37cb4d6b591f4ab638d809f7d1299, type: 3}
+  footstepClip:
+  - {fileID: 8300000, guid: 11510b6559deacc4ea841d9d44902293, type: 3}
+  - {fileID: 8300000, guid: 2ab37cb4d6b591f4ab638d809f7d1299, type: 3}
+  - {fileID: 8300000, guid: 810c44f4ddda4d0408cf4eab7815d440, type: 3}
   nextTime: 0
   FoostepInterval: 0.44
 --- !u!4 &1769791939
@@ -118558,6 +118559,7 @@ MonoBehaviour:
   - {fileID: 1570446818}
   objectWithScript: {fileID: 87892480}
   anim: {fileID: 1510423687}
+  turnIn: {fileID: 0}
 --- !u!114 &1900681214
 MonoBehaviour:
   m_ObjectHideFlags: 0
