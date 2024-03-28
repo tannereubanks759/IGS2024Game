@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 7878.46, g: 4453.664, b: 3156.3389, a: 1}
+  m_IndirectSpecularColor: {r: 7879.0723, g: 4453.7275, b: 3155.2935, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6845,7 +6845,7 @@ AudioSource:
   m_Resource: {fileID: 8300000, guid: 2d48723bb0d68c440911dcf019ef03d6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.513
-  m_Pitch: 0.66
+  m_Pitch: 0.9
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -110501,7 +110501,9 @@ MonoBehaviour:
   endingScreen: {fileID: 1720461188}
   meteorSource: {fileID: 1632955039}
   audioFootstep: {fileID: 108043277}
-  footstepClip: {fileID: 8300000, guid: 74732c13c11d140418c2c5ea9461edcc, type: 3}
+  footstepClip: {fileID: 8300000, guid: 2ab37cb4d6b591f4ab638d809f7d1299, type: 3}
+  nextTime: 0
+  FoostepInterval: 0.44
 --- !u!4 &1769791939
 Transform:
   m_ObjectHideFlags: 0
