@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Interact : MonoBehaviour
@@ -20,7 +21,8 @@ public class Interact : MonoBehaviour
     public GameObject[] animalParents;
     public GameObject objectWithScript;
     public Animator anim;
-    public turnInScript turnIn; 
+    public turnInScript turnIn;
+    public TextMeshProUGUI deadAnimalText;
     //turnInScript turnInRef;
     // Start is called before the first frame update
     void Start()
@@ -122,11 +124,13 @@ public class Interact : MonoBehaviour
         isHolding = false;
         holderAnimal.SetActive(true);
         string holderName = holderAnimal.GetComponent<Entity>().name;
+        Debug.Log(holderName);
         for (int i = 0; i < animalParents.Length; i++)
         {
             if (animalParents[i].gameObject.name == holderName)
             {
                 animalParents[i].SetActive(false);
+                Debug.Log("removed animal from parent list");
             }
         }
         RaycastHit hit;
@@ -174,6 +178,10 @@ public class Interact : MonoBehaviour
             isLooking = true;
             lookObj = other.gameObject;
             string output = lookObj.tag.ToString();
+            if (other.tag == "head" || other.tag == "body")
+            {
+                deadAnimalText.enabled = true;
+            }
             //Debug.Log(output);
         }
     }
@@ -183,6 +191,7 @@ public class Interact : MonoBehaviour
         {
             isLooking = false;
             lookObj = null;
+            deadAnimalText.enabled = false;
         }
     }
 }
