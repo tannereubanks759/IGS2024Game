@@ -43,6 +43,7 @@ public class CharacterControllerScript : MonoBehaviour
     public AudioSource meteorSource;
     public AudioSource audioFootstep;
     public AudioClip[] footstepClip;
+    private Animator anim;
 
     private bool footstepflag = false;
     private bool isJumpFlag = false;
@@ -62,6 +63,7 @@ public class CharacterControllerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponentInChildren<Animator>();
         knockoutImage.SetActive(false);
         knockedOut = false;
         inWater = false;
@@ -136,7 +138,9 @@ public class CharacterControllerScript : MonoBehaviour
                 if (!inWater && Input.GetKey(KeyCode.LeftShift))
                 {
                     moveSpeed = sprintSpeed;
+                    anim.SetBool("Sprinting", true);
                     footstepVolume = 0.8f;
+                    
                 }
                 else
                 {
@@ -144,6 +148,8 @@ public class CharacterControllerScript : MonoBehaviour
                     {
                         moveSpeed = originalSpeed;
                         footstepVolume = 0.44f;
+                        anim.SetBool("Sprinting", false);
+
                     }
                     else
                     {

@@ -62,7 +62,7 @@ public class gunScript : MonoBehaviour
             if (isScoped == false)
             {
 
-                animator.SetTrigger("ads");
+                animator.SetBool("Scoping", true);
 
                 isScoped = true;
                 if (isScoped)
@@ -75,13 +75,13 @@ public class gunScript : MonoBehaviour
             else
             {
                 //Debug.Log("Unscoped called");
-                animator.ResetTrigger("ads");
-                animator.SetTrigger("unAds");
+                animator.SetBool("Scoping", false);
 
                 isScoped = false;
                 notScoped();
 
             }
+            
 
 
         }
@@ -100,7 +100,7 @@ public class gunScript : MonoBehaviour
     IEnumerator onScoped()
     {
         Camera.main.GetComponent<Interact>().enabled = false;
-        yield return new WaitForSeconds(.25f);
+        yield return new WaitForSeconds(.5f);
         scopeUI.SetActive(true);
         gun.SetActive(false);
         mainCam.fieldOfView = scopedFOV;
