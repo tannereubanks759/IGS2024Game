@@ -20,6 +20,7 @@ public class Interact : MonoBehaviour
     public GameObject[] animalParents;
     public GameObject objectWithScript;
     public Animator anim;
+    public turnInScript turnIn; 
     //turnInScript turnInRef;
     // Start is called before the first frame update
     void Start()
@@ -57,7 +58,7 @@ public class Interact : MonoBehaviour
 
                 }
             }
-            else if (holdingAnimal == true)
+            else if (holdingAnimal == true && turnIn.inRange == false)
             {
                 DropAnimal();
             }
