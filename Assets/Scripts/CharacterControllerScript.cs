@@ -42,12 +42,20 @@ public class CharacterControllerScript : MonoBehaviour
     public GameObject endingScreen;
     public AudioSource meteorSource;
     public AudioSource audioFootstep;
-    public AudioClip footstepClip;
+    public AudioClip[] footstepClip;
 
     private bool footstepflag = false;
     private bool isJumpFlag = false;
 
     private float footstepVolume;
+    private int randFootInt;
+
+    // texture detection
+    public Terrain terra;
+    public Transform playerT;
+    public int playerposx;
+    public int playerposz;
+    public float[] textureValues;
 
     public float nextTime;
     public float FoostepInterval;
@@ -67,11 +75,13 @@ public class CharacterControllerScript : MonoBehaviour
         mainCam = Camera.main.gameObject;
         isScoped = false;
         cursorDisable();
+        terra = Terrain.activeTerrain;
     }
 
     // Update is called once per frame
     void Update()
     {
+        randFootInt = Random.Range(0, 2);
         if (!isPaused)
         {
             if(this.transform.position.y < 4.173f)
@@ -167,7 +177,7 @@ public class CharacterControllerScript : MonoBehaviour
 
             if (nextTime < Time.time && moveDirection.magnitude > 0.1f && controller.isGrounded)
             {
-                audioFootstep.PlayOneShot(footstepClip, footstepVolume);
+                audioFootstep.PlayOneShot(footstepClip[randFootInt], footstepVolume);
                 nextTime = Time.time + FoostepInterval;
             }
 
@@ -178,7 +188,7 @@ public class CharacterControllerScript : MonoBehaviour
 
             if (controller.isGrounded == true && isJumpFlag == true)
             {
-                audioFootstep.PlayOneShot(footstepClip, 0.5f);
+                audioFootstep.PlayOneShot(footstepClip[randFootInt], 0.5f);
                 isJumpFlag = false;
             }
             
@@ -246,6 +256,29 @@ public class CharacterControllerScript : MonoBehaviour
         cursorEnable();
         endingScreen.SetActive(true);
 
+    }
+
+    public void GetTerrainTexture()
+    {
+        ConvertPosition(playerT.position);
+        CheckTexture();
+    }
+    void ConvertPosition(Vector3 playerPosition)
+    {
+        Vector3 terrainPosition = playerPosition - terra.transform.position;
+        Vector3 mapPosition = new Vector3(terrainPosition.x / terra.terrainData.size.x, 0, terrainPosition.z / terra.terrainData.size.z);
+        float xCoord = mapPosition.x * terra.terrainData.alphamapWidth;
+        float zCoord = mapPosition.z * terra.terrainData.alphamapHeight;
+        playerposx = (int)xCoord;
+        playerposz = (int)zCoord;
+    }
+    void CheckTexture()
+    {
+        float[,,] aMap = terra.terrainData.GetAlphamaps(playerposx, playerposz, 1, 1);
+        textureValues[0] = aMap[0, 0, 0];
+        textureValues[1] = aMap[0, 0, 1];
+        textureValues[2] = aMap[0, 0, 2];
+        textureValues[3] = aMap[0, 0, 3];
     }
     private void LateUpdate()
     {
