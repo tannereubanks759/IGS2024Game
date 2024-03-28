@@ -164,7 +164,7 @@ public class turnInScript : MonoBehaviour
             
             quotaAnimalsList.Add("Deer");
             quotaAnimalsList.Add("Goat");
-            quotaAnimalsList.Add("Goat");
+            quotaAnimalsList.Add("Wolf");
             quotaOne.SetActive(false );
             quotaTwo.SetActive(true );
             readyForNextDay = false;

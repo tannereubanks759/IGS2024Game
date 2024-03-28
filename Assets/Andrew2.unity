@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 7872.794, g: 4424.1724, b: 3004.8362, a: 1}
+  m_IndirectSpecularColor: {r: 7836.382, g: 4445.696, b: 3199.0513, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5870,7 +5870,7 @@ MonoBehaviour:
   m_AngularDiameter: 0.5
   diameterMultiplerMode: 0
   diameterMultiplier: 1
-  diameterOverride: 0.45
+  diameterOverride: 211636.94
   celestialBodyShadingSource: 0
   sunLightOverride: {fileID: 0}
   sunColor: {r: 1, g: 1, b: 1, a: 1}
@@ -5883,8 +5883,8 @@ MonoBehaviour:
   flareFalloff: 4
   flareMultiplier: 1
   surfaceTexture: {fileID: 2800000, guid: cce9f0cf7e606e547a7317aedb4ad6d9, type: 3}
-  surfaceTint: {r: 0.26726592, g: 0.37332687, b: 0.3962264, a: 1}
-  m_Distance: 384400000
+  surfaceTint: {r: 0.09433961, g: 0.018392568, b: 0.00854397, a: 1}
+  m_Distance: 1
   m_UseRayTracedShadows: 0
   m_NumRayTracingSamples: 4
   m_FilterTracedShadow: 1
@@ -10401,8 +10401,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '||'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -38824,7 +38824,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: '|'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -39885,7 +39885,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '||'
+  m_text: '|'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -46439,7 +46439,14 @@ MonoBehaviour:
   endingScreen: {fileID: 641030243}
   meteorSource: {fileID: 2024267208}
   audioFootstep: {fileID: 725588946}
-  footstepClip: {fileID: 8300000, guid: 29487af0a652be4459b3e34ec127555d, type: 3}
+  footstepClip: []
+  terra: {fileID: 0}
+  playerT: {fileID: 0}
+  playerposx: 0
+  playerposz: 0
+  textureValues: []
+  nextTime: 0
+  FoostepInterval: 0
 --- !u!143 &734784454
 CharacterController:
   m_ObjectHideFlags: 0
