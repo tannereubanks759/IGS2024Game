@@ -107,7 +107,7 @@ public class turnInScript : MonoBehaviour
         }
         if(collision.tag == "Animal")
         {
-            Debug.Log("Animal carried into range");
+            //Debug.Log("Animal carried into range");
             
             hasAnimal = true;
              nameOfAnimal = collision.name;
