@@ -46,6 +46,11 @@ public class CharacterControllerScript : MonoBehaviour
 
     private bool footstepflag = false;
     private bool isJumpFlag = false;
+
+    private float footstepVolume;
+
+    public float nextTime;
+    public float FoostepInterval;
     // Start is called before the first frame update
     void Start()
     {
@@ -121,16 +126,19 @@ public class CharacterControllerScript : MonoBehaviour
                 if (!inWater && Input.GetKey(KeyCode.LeftShift))
                 {
                     moveSpeed = sprintSpeed;
+                    footstepVolume = 0.8f;
                 }
                 else
                 {
                     if (!inWater)
                     {
                         moveSpeed = originalSpeed;
+                        footstepVolume = 0.44f;
                     }
                     else
                     {
                         moveSpeed = 1f;
+                        footstepVolume = 0.4f;
                     }
                 }
 
@@ -151,16 +159,16 @@ public class CharacterControllerScript : MonoBehaviour
                 
             }
 
-            if (moveDirection.magnitude > 0f && footstepflag == false && controller.isGrounded == true)
+            /*if (moveDirection.magnitude > 0f && footstepflag == false && controller.isGrounded == true)
             {
                 audioFootstep.Play();
                 footstepflag = true;
-            }
+            }*/
 
-            else if (moveDirection.magnitude <= 0f || !audioFootstep.isPlaying || !controller.isGrounded)
+            if (nextTime < Time.time && moveDirection.magnitude > 0.1f && controller.isGrounded)
             {
-                audioFootstep.Stop();
-                footstepflag = false;
+                audioFootstep.PlayOneShot(footstepClip, footstepVolume);
+                nextTime = Time.time + FoostepInterval;
             }
 
             if (!controller.isGrounded)
@@ -170,7 +178,7 @@ public class CharacterControllerScript : MonoBehaviour
 
             if (controller.isGrounded == true && isJumpFlag == true)
             {
-                audioFootstep.PlayOneShot(footstepClip);
+                audioFootstep.PlayOneShot(footstepClip, 0.5f);
                 isJumpFlag = false;
             }
             

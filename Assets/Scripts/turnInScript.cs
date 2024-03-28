@@ -31,10 +31,11 @@ public class turnInScript : MonoBehaviour
     public GameObject quotaTwo;
     public GameObject quotaThree;
     public GameObject quotaFour;
-    public GameObject quotaFive;
+    /*public GameObject quotaFive;
     public GameObject quotaSix;
-    public GameObject quotaSeven;
+    public GameObject quotaSeven;*/
     public GameObject objWithAlterScript;
+    public Animator anim;
     void Start()
     {
         cam = Camera.main;
@@ -52,7 +53,7 @@ public class turnInScript : MonoBehaviour
     {
         if (inRange) 
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 //Debug.Log("Tried to interact");
                 if(hasAnimal && isQuota)
@@ -62,7 +63,7 @@ public class turnInScript : MonoBehaviour
                     //lookObj = null;
                     //isHolding = false;
                     quotaAnimalsList.Remove(nameOfAnimal);
-                    animalBeingCarried.SetActive(false);
+                    //animalBeingCarried.SetActive(false);
                     interactScipt.isLooking = false;
                     interactScipt.lookObj = null;
                     interactScipt.isHolding = false;
@@ -71,8 +72,9 @@ public class turnInScript : MonoBehaviour
                     isQuota = false;
                     hasAnimal = false;
                     //oldArms.SetActive(false);
-                    rifle.SetActive(true);
-                    Debug.Log("Animal removed from quota");
+                    //rifle.SetActive(true);
+                    anim.SetBool("holdingAnimal", false);
+                    //Debug.Log("ANimation set to false");
                     if(quotaAnimalsList.Count == 0)
                     {
                         Debug.Log("QUOTA FINISHED");
@@ -88,7 +90,7 @@ public class turnInScript : MonoBehaviour
                 {
                     //Debug.Log("Player tried to interact without an animal");
                     noAnimalText.SetActive(true);
-                    interactImage.SetActive(false );
+                    interactImage.SetActive(false);
                     //display text that player needs animal 
                 }
             }
@@ -105,7 +107,7 @@ public class turnInScript : MonoBehaviour
         }
         if(collision.tag == "Animal")
         {
-            Debug.Log("Animal carried into range");
+            //Debug.Log("Animal carried into range");
             
             hasAnimal = true;
              nameOfAnimal = collision.name;
@@ -158,11 +160,11 @@ public class turnInScript : MonoBehaviour
         {
             quotaAnimalsList.Clear();
             //Debug.Log("!!!QUOTA FOR DAY 2");
-            quotaAnimalsList.Add("Rabbit");
-            quotaAnimalsList.Add("Rabbit");
+            
+            
             quotaAnimalsList.Add("Deer");
-            quotaAnimalsList.Add("Deer");
-            quotaAnimalsList.Add("Wolf");
+            quotaAnimalsList.Add("Goat");
+            quotaAnimalsList.Add("Goat");
             quotaOne.SetActive(false );
             quotaTwo.SetActive(true );
             readyForNextDay = false;
@@ -171,10 +173,10 @@ public class turnInScript : MonoBehaviour
         else if(aQuotaCount == 2) 
         {
             quotaAnimalsList.Clear();
-            quotaAnimalsList.Add("Rabbit");
-            quotaAnimalsList.Add("Deer");
+            
             quotaAnimalsList.Add("Wolf");
             quotaAnimalsList.Add("Wolf");
+            quotaAnimalsList.Add("Bear");
             quotaTwo.SetActive(false);
             quotaThree.SetActive(true);
             readyForNextDay = false;
@@ -185,15 +187,16 @@ public class turnInScript : MonoBehaviour
             quotaAnimalsList.Clear();
             quotaAnimalsList.Add("Deer");
             quotaAnimalsList.Add("Wolf");
-            quotaAnimalsList.Add("Wolf");
+            quotaAnimalsList.Add("Rabbit");
             quotaAnimalsList.Add("Bear");
+            quotaAnimalsList.Add("Goat");
             quotaThree.SetActive(false);
             quotaFour.SetActive(true);
             readyForNextDay = false;
             // set totem 4 quota
             //END HERE FOR NEW QUOTA
         }
-        else if (aQuotaCount == 4)
+        /*else if (aQuotaCount == 4)
         {
             quotaAnimalsList.Clear();
             quotaAnimalsList.Add("Goat");
@@ -232,7 +235,7 @@ public class turnInScript : MonoBehaviour
             readyForNextDay = false;
             
             // set totem 7 quota
-        }
+        }*/
     }
 }
 
