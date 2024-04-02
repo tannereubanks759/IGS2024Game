@@ -64,15 +64,14 @@ public class gunScript : MonoBehaviour
 
                 animator.SetBool("Scoping", true);
 
-                isScoped = true;
+                
                 if (isScoped)
                 {
-                    StartCoroutine(onScoped());
-
+                    Camera.main.GetComponent<Interact>().enabled = false;
                 }
 
             }
-            else
+            else if(isScoped == true)
             {
                 //Debug.Log("Unscoped called");
                 animator.SetBool("Scoping", false);
@@ -97,14 +96,14 @@ public class gunScript : MonoBehaviour
             reloadText.SetActive (true);    
         }*/
     }
-    IEnumerator onScoped()
+    
+    public void Scoped()
     {
-        Camera.main.GetComponent<Interact>().enabled = false;
-        yield return new WaitForSeconds(.5f);
         scopeUI.SetActive(true);
         gun.SetActive(false);
         mainCam.fieldOfView = scopedFOV;
         crosshair.SetActive(false);
+        isScoped = true;
     }
     void notScoped()
     {

@@ -137,8 +137,15 @@ public class CharacterControllerScript : MonoBehaviour
 
                 if (!inWater && Input.GetKey(KeyCode.LeftShift))
                 {
+                    if(moveDirection != Vector3.zero)
+                    {
+                        anim.SetBool("Sprinting", true);
+                    }
+                    else
+                    {
+                        anim.SetBool("Sprinting", false);
+                    }
                     moveSpeed = sprintSpeed;
-                    anim.SetBool("Sprinting", true);
                     footstepVolume = 0.8f;
                     FoostepInterval = .37f;
                 }
@@ -299,4 +306,5 @@ public class CharacterControllerScript : MonoBehaviour
         }
         
     }
+    
 }

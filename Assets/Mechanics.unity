@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 7877.6006, g: 4454.9614, b: 3160.188, a: 1}
+  m_IndirectSpecularColor: {r: 7879.1846, g: 4454.387, b: 3156.9927, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -42797,6 +42797,7 @@ MonoBehaviour:
   objectWithScript: {fileID: 1024328112}
   anim: {fileID: 1083629261}
   turnIn: {fileID: 0}
+  deadAnimalText: {fileID: 0}
 --- !u!1 &741028945
 GameObject:
   m_ObjectHideFlags: 0
@@ -63364,6 +63365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1083629260}
   - component: {fileID: 1083629261}
+  - component: {fileID: 1083629262}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -63414,6 +63416,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1083629262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083629257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7241792539ee444c92eb438cd05313d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun: {fileID: 1704165519}
 --- !u!1 &1083948085
 GameObject:
   m_ObjectHideFlags: 0
