@@ -32,6 +32,8 @@ public class gunScript : MonoBehaviour
     public Animator scopeAnimator;
     public AudioSource gunShot;
     public GameObject bloodEffect;
+    public Pause pauseRef;
+
     void Start()
     {
         reloadText.SetActive(false);
@@ -48,7 +50,7 @@ public class gunScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (isReloaded == true)
+            if (isReloaded == true && pauseRef.paused == false)
             {
                 //Debug.Log("Fire");
                 fireCalled();
@@ -87,8 +89,8 @@ public class gunScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && (isAmmo == false || isReloaded == false))
         {
             Debug.Log("Reload");
-            isAmmo = true;  
-            StartCoroutine(reload());
+            isAmmo = true;
+            animator.SetTrigger("rr");
             //armAnimator.SetBool("isReload", false);
         }
         /*if (isAmmo = !true)
@@ -118,10 +120,18 @@ public class gunScript : MonoBehaviour
         // create into ienumerator and wait reload animation time
         if (isReloaded == false)
         {
-        armAnimator.SetTrigger("rr");
         yield return new WaitForSeconds(1.16f);
         isAmmo = true;
         reloadText.SetActive(false);
+        }
+        isReloaded = true;
+    }
+    public void Reload()
+    {
+        if (isReloaded == false)
+        {
+            isAmmo = true;
+            reloadText.SetActive(false);
         }
         isReloaded = true;
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 7878.884, g: 4454.5083, b: 3158.3208, a: 1}
+  m_IndirectSpecularColor: {r: 7879.009, g: 4454.1646, b: 3157.6333, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -49659,6 +49659,7 @@ MonoBehaviour:
   gunShot: {fileID: 795963089}
   bloodEffect: {fileID: 8967051078935427532, guid: 9a9c53624e8d0a94e9146b6556d0e932,
     type: 3}
+  pauseRef: {fileID: 1330217806}
 --- !u!1 &796067040
 GameObject:
   m_ObjectHideFlags: 0
