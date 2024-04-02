@@ -87,8 +87,8 @@ public class gunScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && (isAmmo == false || isReloaded == false))
         {
             Debug.Log("Reload");
-            isAmmo = true;  
-            StartCoroutine(reload());
+            isAmmo = true;
+            animator.SetTrigger("rr");
             //armAnimator.SetBool("isReload", false);
         }
         /*if (isAmmo = !true)
@@ -118,10 +118,18 @@ public class gunScript : MonoBehaviour
         // create into ienumerator and wait reload animation time
         if (isReloaded == false)
         {
-        armAnimator.SetTrigger("rr");
         yield return new WaitForSeconds(1.16f);
         isAmmo = true;
         reloadText.SetActive(false);
+        }
+        isReloaded = true;
+    }
+    public void Reload()
+    {
+        if (isReloaded == false)
+        {
+            isAmmo = true;
+            reloadText.SetActive(false);
         }
         isReloaded = true;
     }

@@ -10,4 +10,8 @@ public class PlayerAnimEvents : MonoBehaviour
     {
         gun.Scoped();
     }
+    public void reload()
+    {
+        gun.Reload();
+    }
 }
