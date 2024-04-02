@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1486847741031114503}
   m_Layer: 8
   m_Name: Totem
-  m_TagString: Interact
+  m_TagString: spawnedTotem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647

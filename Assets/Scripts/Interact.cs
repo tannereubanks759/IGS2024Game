@@ -23,6 +23,7 @@ public class Interact : MonoBehaviour
     public Animator anim;
     public turnInScript turnIn;
     public TextMeshProUGUI deadAnimalText;
+    public TextMeshProUGUI totemPickupText;
     //turnInScript turnInRef;
     // Start is called before the first frame update
     void Start()
@@ -72,6 +73,7 @@ public class Interact : MonoBehaviour
     {
         anim.SetBool("Holding Totem", true);
         isHolding = true;
+        totemPickupText.enabled = false;
         Destroy(lookObj);
         lookObj = null;
         isLooking = false;
@@ -173,7 +175,7 @@ public class Interact : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Interact" || other.tag == "head" || other.tag == "body")
+        if(other.tag == "Interact" || other.tag == "head" || other.tag == "body" || other.tag == "spawnedTotem")
         {
             isLooking = true;
             lookObj = other.gameObject;
@@ -182,16 +184,21 @@ public class Interact : MonoBehaviour
             {
                 deadAnimalText.enabled = true;
             }
+            if (other.gameObject.tag == "spawnedTotem")
+            {
+                totemPickupText.enabled = true;
+            }
             //Debug.Log(output);
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Interact" || other.tag == "head" || other.tag == "body")
+        if(other.tag == "Interact" || other.tag == "head" || other.tag == "body" || other.tag == "spawnedTotem")
         {
             isLooking = false;
             lookObj = null;
             deadAnimalText.enabled = false;
+            totemPickupText.enabled = false;
         }
     }
 }

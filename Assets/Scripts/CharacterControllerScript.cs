@@ -60,6 +60,10 @@ public class CharacterControllerScript : MonoBehaviour
 
     public float nextTime;
     public float FoostepInterval;
+    private bool inCave = false;
+    public AudioClip[] caveFootstepClip;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,6 +82,22 @@ public class CharacterControllerScript : MonoBehaviour
         isScoped = false;
         cursorDisable();
         terra = Terrain.activeTerrain;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Cave")
+        {
+            inCave = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Cave")
+        {
+            inCave = false;
+        }
     }
 
     // Update is called once per frame
@@ -187,9 +207,15 @@ public class CharacterControllerScript : MonoBehaviour
                 footstepflag = true;
             }*/
 
-            if (nextTime < Time.time && moveDirection.magnitude > 0.1f && controller.isGrounded)
+            if (nextTime < Time.time && moveDirection.magnitude > 0.1f && controller.isGrounded && !inCave)
             {
                 audioFootstep.PlayOneShot(footstepClip[randFootInt], footstepVolume);
+                nextTime = Time.time + FoostepInterval;
+            }
+
+            if (nextTime < Time.time && moveDirection.magnitude > 0.1f && controller.isGrounded && inCave)
+            {
+                audioFootstep.PlayOneShot(caveFootstepClip[randFootInt], footstepVolume);
                 nextTime = Time.time + FoostepInterval;
             }
 
@@ -198,14 +224,22 @@ public class CharacterControllerScript : MonoBehaviour
                 isJumpFlag = true;
             }
 
-            if (controller.isGrounded == true && isJumpFlag == true)
+            if (controller.isGrounded == true && isJumpFlag == true && !inCave)
             {
+                
                 audioFootstep.PlayOneShot(footstepClip[randFootInt], 0.5f);
                 isJumpFlag = false;
             }
-            
+
+            if (controller.isGrounded == true && isJumpFlag == true && inCave)
+            {
+
+                audioFootstep.PlayOneShot(caveFootstepClip[randFootInt], 0.5f);
+                isJumpFlag = false;
+            }
+
             //mouse Look
-            
+
         }
         
 
@@ -278,7 +312,7 @@ public class CharacterControllerScript : MonoBehaviour
     void ConvertPosition(Vector3 playerPosition)
     {
         Vector3 terrainPosition = playerPosition - terra.transform.position;
-        Vector3 mapPosition = new Vector3(terrainPosition.x / terra.terrainData.size.x, 0, terrainPosition.z / terra.terrainData.size.z);
+        Vector3 mapPosition = new Vector3   (terrainPosition.x / terra.terrainData.size.x, 0, terrainPosition.z / terra.terrainData.size.z);
         float xCoord = mapPosition.x * terra.terrainData.alphamapWidth;
         float zCoord = mapPosition.z * terra.terrainData.alphamapHeight;
         playerposx = (int)xCoord;

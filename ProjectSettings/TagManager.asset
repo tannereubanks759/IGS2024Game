@@ -12,6 +12,8 @@ TagManager:
   - spawner
   - MonsterAttack
   - MonsterSpawner
+  - Cave
+  - spawnedTotem
   layers:
   - Default
   - TransparentFX
