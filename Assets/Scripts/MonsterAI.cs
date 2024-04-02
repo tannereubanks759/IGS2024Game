@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 
 public class MonsterAI : MonoBehaviour
@@ -35,6 +36,14 @@ public class MonsterAI : MonoBehaviour
     public float wanderRange;
     public float attackSearchTime; //how much time it takes to stop attacking after the player has left the sight of the monster;
     private Animator anim;
+
+    public AudioSource monsterSource;
+    public AudioClip[] monsterFootstep;
+    public AudioClip monsterAttack;
+    public AudioClip monsterHit;
+    public float nextTime;
+    public float FoostepInterval = 0.44f;
+    public int randFootInt;
     
     // Start is called before the first frame update
     void Start()
@@ -97,7 +106,12 @@ public class MonsterAI : MonoBehaviour
     }
     void Wander()
     {
-       
+        if (nextTime < Time.time)
+        {
+            randFootInt = Random.Range(0, 2);
+            monsterSource.PlayOneShot(monsterFootstep[randFootInt], 0.25f);
+            nextTime = Time.time + FoostepInterval;
+        }
         if (agent.remainingDistance <= agent.stoppingDistance + 1)
         {
             Debug.Log("does not have point");

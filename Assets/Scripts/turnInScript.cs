@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,7 @@ public class turnInScript : MonoBehaviour
     Interact interactScipt;
     private Camera cam;
     bool readyForNextDay = false;
-    int quotaCount=0;
+    int quotaCount = 0;
     /*public GameObject lookObj;*/
     [SerializeField]
     public GameObject quotaOne;
@@ -36,6 +37,21 @@ public class turnInScript : MonoBehaviour
     public GameObject quotaSeven;*/
     public GameObject objWithAlterScript;
     public Animator anim;
+    public GameObject[] arrayOne;
+    public GameObject[] arrayTwo;
+    public GameObject[] arrayThree;
+    public GameObject[] arrayFour;
+    private GameObject[] usingArray;
+    private int rabbitCount = 2;
+    private int deerCount = 2;
+    private int wolfCount=0;
+    private int bearCount=0;
+    private int goatCount=0;
+    private int rabbitIndex = 1;
+    private int deerIndex = 4;
+    private int wolfIndex = 0;
+    private int bearIndex = 0;  
+    private int goatIndex = 0;
     void Start()
     {
         cam = Camera.main;
@@ -45,6 +61,7 @@ public class turnInScript : MonoBehaviour
         interactScipt = cam.GetComponent<Interact>();
         objWithAlterScript.GetComponent<Alter>();
         //lookObj = null;
+        usingArray = arrayOne;
         
     }
 
@@ -74,8 +91,55 @@ public class turnInScript : MonoBehaviour
                     //oldArms.SetActive(false);
                     //rifle.SetActive(true);
                     anim.SetBool("holdingAnimal", false);
+                    
+                    if(nameOfAnimal == "Rabbit") 
+                    {
+                        for (int i = rabbitIndex; i > rabbitIndex - rabbitCount; i--)
+                        {
+                            if (usingArray[i].activeSelf == true) 
+                            {
+                                usingArray[i].SetActive(false);
+                                break;
+                            }
+                        }
+                    }
+                    /*
+                    if(deerCount > 0)
+                    {
+                        for (int i = deerIndex; i > deerIndex - deerCount; i--)
+                        {
+                            if (arrayOne[i].activeSelf == true)
+                            {
+                                arrayOne[i].SetActive(false);
+                                break;
+                            }
+                        }
+                    }
+                    if (wolfCount > 0)
+                    {
+                        for (int i = wolfIndex; i > wolfIndex - wolfCount; i--)
+                        {
+                            if (arrayOne[i].activeSelf == true)
+                            {
+                                arrayOne[i].SetActive(false);
+                                break;
+                            }
+                        }
+                    }
+                    if (bearCount > 0)
+                    {
+                        for (int i = bearIndex; i > bearIndex - bearCount; i--)
+                        {
+                            if (arrayOne[i].activeSelf == true)
+                            {
+                                arrayOne[i].SetActive(false);
+                                break;
+                            }
+                        }
+                    }*/
+
                     //Debug.Log("ANimation set to false");
-                    if(quotaAnimalsList.Count == 0)
+                    if (quotaAnimalsList.Count == 0)
                     {
                         Debug.Log("QUOTA FINISHED");
                         readyForNextDay=true;
@@ -168,6 +232,11 @@ public class turnInScript : MonoBehaviour
             quotaOne.SetActive(false );
             quotaTwo.SetActive(true );
             readyForNextDay = false;
+            deerCount = 1;
+            goatCount = 1;
+            wolfCount = 1;
+            usingArray = arrayTwo;
+            //setCount and new indexForNew Array here.
             //SET totem 2 QUOTA
         }
         else if(aQuotaCount == 2) 

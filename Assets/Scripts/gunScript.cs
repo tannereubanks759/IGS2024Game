@@ -32,6 +32,8 @@ public class gunScript : MonoBehaviour
     public Animator scopeAnimator;
     public AudioSource gunShot;
     public GameObject bloodEffect;
+    public Pause pauseRef;
+
     void Start()
     {
         reloadText.SetActive(false);
@@ -48,7 +50,7 @@ public class gunScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (isReloaded == true)
+            if (isReloaded == true && pauseRef.paused == false)
             {
                 //Debug.Log("Fire");
                 fireCalled();
