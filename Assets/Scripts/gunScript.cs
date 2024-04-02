@@ -87,8 +87,7 @@ public class gunScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && (isAmmo == false || isReloaded == false))
         {
             Debug.Log("Reload");
-            isAmmo = true;
-            animator.SetTrigger("rr");
+            animator.SetBool("rr", true);
             //armAnimator.SetBool("isReload", false);
         }
         /*if (isAmmo = !true)
@@ -113,23 +112,14 @@ public class gunScript : MonoBehaviour
         gun.SetActive(true);
         crosshair.SetActive(true);
     }
-    IEnumerator reload()
-    {
-        // create into ienumerator and wait reload animation time
-        if (isReloaded == false)
-        {
-        yield return new WaitForSeconds(1.16f);
-        isAmmo = true;
-        reloadText.SetActive(false);
-        }
-        isReloaded = true;
-    }
+    
     public void Reload()
     {
         if (isReloaded == false)
         {
             isAmmo = true;
             reloadText.SetActive(false);
+            animator.SetBool("rr", false);
         }
         isReloaded = true;
     }
