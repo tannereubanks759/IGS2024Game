@@ -103,8 +103,9 @@ public class turnInScript : MonoBehaviour
                             }
                         }
                     }
-                    /*
-                    if(deerCount > 0)
+                    
+                    
+                    if(nameOfAnimal == "Deer")
                     {
                         for (int i = deerIndex; i > deerIndex - deerCount; i--)
                         {
@@ -115,7 +116,7 @@ public class turnInScript : MonoBehaviour
                             }
                         }
                     }
-                    if (wolfCount > 0)
+                    if (nameOfAnimal == "Wolf")
                     {
                         for (int i = wolfIndex; i > wolfIndex - wolfCount; i--)
                         {
@@ -126,7 +127,7 @@ public class turnInScript : MonoBehaviour
                             }
                         }
                     }
-                    if (bearCount > 0)
+                    if (nameOfAnimal == "Bear")
                     {
                         for (int i = bearIndex; i > bearIndex - bearCount; i--)
                         {
@@ -136,7 +137,7 @@ public class turnInScript : MonoBehaviour
                                 break;
                             }
                         }
-                    }*/
+                    }
 
                     //Debug.Log("ANimation set to false");
                     if (quotaAnimalsList.Count == 0)
@@ -236,6 +237,9 @@ public class turnInScript : MonoBehaviour
             goatCount = 1;
             wolfCount = 1;
             usingArray = arrayTwo;
+            deerIndex = 1;
+            goatIndex = 2;
+            wolfIndex = 3;
             //setCount and new indexForNew Array here.
             //SET totem 2 QUOTA
         }
@@ -249,6 +253,11 @@ public class turnInScript : MonoBehaviour
             quotaTwo.SetActive(false);
             quotaThree.SetActive(true);
             readyForNextDay = false;
+            wolfCount = 2;
+            bearCount = 1;
+            usingArray = arrayThree;
+            wolfIndex = 2;
+            bearIndex = 3;
             //SET totem 3 QUOTA
         }
         else if (aQuotaCount == 3)
@@ -262,6 +271,18 @@ public class turnInScript : MonoBehaviour
             quotaThree.SetActive(false);
             quotaFour.SetActive(true);
             readyForNextDay = false;
+            usingArray = arrayFour;
+            deerCount = 1;
+            wolfCount = 1;
+            rabbitCount = 1;
+            bearCount = 1;
+            goatCount = 1;
+            rabbitIndex = 1;
+            deerIndex = 2;
+            goatIndex = 3;
+            wolfIndex = 4;
+            bearIndex = 5;
+
             // set totem 4 quota
             //END HERE FOR NEW QUOTA
         }
