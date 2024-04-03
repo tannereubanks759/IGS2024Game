@@ -41,7 +41,7 @@ public class turnInScript : MonoBehaviour
     public GameObject[] arrayTwo;
     public GameObject[] arrayThree;
     public GameObject[] arrayFour;
-    private GameObject[] usingArray;
+    public GameObject[] usingArray;
     private int rabbitCount = 2;
     private int deerCount = 2;
     private int wolfCount=0;
@@ -109,9 +109,9 @@ public class turnInScript : MonoBehaviour
                     {
                         for (int i = deerIndex; i > deerIndex - deerCount; i--)
                         {
-                            if (arrayOne[i].activeInHierarchy == true)
+                            if (usingArray[i].activeInHierarchy == true)
                             {
-                                arrayOne[i].SetActive(false);
+                                usingArray[i].SetActive(false);
                                 break;
                             }
                         }
@@ -120,9 +120,9 @@ public class turnInScript : MonoBehaviour
                     {
                         for (int i = wolfIndex; i > wolfIndex - wolfCount; i--)
                         {
-                            if (arrayOne[i].activeInHierarchy == true)
+                            if (usingArray[i].activeInHierarchy == true)
                             {
-                                arrayOne[i].SetActive(false);
+                                usingArray[i].SetActive(false);
                                 break;
                             }
                         }
@@ -131,9 +131,20 @@ public class turnInScript : MonoBehaviour
                     {
                         for (int i = bearIndex; i > bearIndex - bearCount; i--)
                         {
-                            if (arrayOne[i].activeInHierarchy == true)
+                            if (usingArray[i].activeInHierarchy == true)
                             {
-                                arrayOne[i].SetActive(false);
+                                usingArray[i].SetActive(false);
+                                break;
+                            }
+                        }
+                    }
+                    if(nameOfAnimal == "Goat")
+                    {
+                        for (int i = goatIndex; i > goatIndex - goatCount; i--)
+                        {
+                            if (usingArray[i].activeInHierarchy == true)
+                            {
+                                usingArray[i].SetActive(false);
                                 break;
                             }
                         }
@@ -238,8 +249,8 @@ public class turnInScript : MonoBehaviour
             wolfCount = 1;
             usingArray = arrayTwo;
             deerIndex = 0;
-            goatIndex = 1;
-            wolfIndex = 2;
+            goatIndex = 1;  
+            wolfIndex = 2; 
             //setCount and new indexForNew Array here.
             //SET totem 2 QUOTA
         }
