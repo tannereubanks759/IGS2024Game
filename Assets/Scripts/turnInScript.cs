@@ -96,7 +96,7 @@ public class turnInScript : MonoBehaviour
                     {
                         for (int i = rabbitIndex; i > rabbitIndex - rabbitCount; i--)
                         {
-                            if (usingArray[i].activeSelf == true) 
+                            if (usingArray[i].activeInHierarchy == true) 
                             {
                                 usingArray[i].SetActive(false);
                                 break;
@@ -109,7 +109,7 @@ public class turnInScript : MonoBehaviour
                     {
                         for (int i = deerIndex; i > deerIndex - deerCount; i--)
                         {
-                            if (arrayOne[i].activeSelf == true)
+                            if (arrayOne[i].activeInHierarchy == true)
                             {
                                 arrayOne[i].SetActive(false);
                                 break;
@@ -120,7 +120,7 @@ public class turnInScript : MonoBehaviour
                     {
                         for (int i = wolfIndex; i > wolfIndex - wolfCount; i--)
                         {
-                            if (arrayOne[i].activeSelf == true)
+                            if (arrayOne[i].activeInHierarchy == true)
                             {
                                 arrayOne[i].SetActive(false);
                                 break;
@@ -131,7 +131,7 @@ public class turnInScript : MonoBehaviour
                     {
                         for (int i = bearIndex; i > bearIndex - bearCount; i--)
                         {
-                            if (arrayOne[i].activeSelf == true)
+                            if (arrayOne[i].activeInHierarchy == true)
                             {
                                 arrayOne[i].SetActive(false);
                                 break;

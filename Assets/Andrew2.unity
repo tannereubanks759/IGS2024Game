@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 7878.9365, g: 4454.2935, b: 3157.9692, a: 1}
+  m_IndirectSpecularColor: {r: 7879.468, g: 4454.4067, b: 3156.766, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -23359,11 +23359,11 @@ Transform:
   m_GameObject: {fileID: 364199160}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.005079891, z: -0, w: 0.9999871}
-  m_LocalPosition: {x: 5.454909, y: 1.1759996, z: -2.5976074}
-  m_LocalScale: {x: 0.047855996, y: 0.03, z: 0.039845083}
+  m_LocalPosition: {x: 0.1386099, y: 0.23526669, z: 0.06573017}
+  m_LocalScale: {x: 0.015465559, y: 0.009695061, z: 0.012876684}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 474562250}
+  m_Father: {fileID: 725588952}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &364199162
 MeshCollider:
@@ -25283,7 +25283,7 @@ MonoBehaviour:
   gunShot: {fileID: 389860766}
   bloodEffect: {fileID: 8967051078935427532, guid: 9a9c53624e8d0a94e9146b6556d0e932,
     type: 3}
-  pauseRef: {fileID: 0}
+  pauseRef: {fileID: 1077719913}
 --- !u!1 &390248781
 GameObject:
   m_ObjectHideFlags: 0
@@ -30654,9 +30654,6 @@ Transform:
   - {fileID: 1976235756}
   - {fileID: 1393121327}
   - {fileID: 2005675529}
-  - {fileID: 1770951838}
-  - {fileID: 364199161}
-  - {fileID: 1615876587}
   m_Father: {fileID: 1333023140}
   m_LocalEulerAnglesHint: {x: 0, y: -0.582, z: 0}
 --- !u!1 &475082089
@@ -45157,6 +45154,9 @@ Transform:
   - {fileID: 227744398}
   - {fileID: 1002342991}
   - {fileID: 1511977736}
+  - {fileID: 1770951838}
+  - {fileID: 364199161}
+  - {fileID: 1615876587}
   m_Father: {fileID: 474562250}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &725588953
@@ -103674,11 +103674,11 @@ Transform:
   m_GameObject: {fileID: 1615876586}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.005079891, z: -0, w: 0.9999871}
-  m_LocalPosition: {x: 4.6890926, y: 1.1780005, z: -3.1652346}
-  m_LocalScale: {x: 0.043386247, y: 0.027198, z: 0.03612355}
+  m_LocalPosition: {x: -0.10887792, y: 0.23591329, z: -0.117709175}
+  m_LocalScale: {x: 0.014021077, y: 0.008789542, z: 0.011674}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 474562250}
+  m_Father: {fileID: 725588952}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1615876588
 MeshCollider:
@@ -113183,11 +113183,11 @@ Transform:
   m_GameObject: {fileID: 1770951837}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.005079891, z: -0, w: 0.9999871}
-  m_LocalPosition: {x: 4.575593, y: 1.1780005, z: -2.7896724}
-  m_LocalScale: {x: 0.047855996, y: 0.03, z: 0.039845083}
+  m_LocalPosition: {x: -0.14555745, y: 0.23591329, z: 0.003660772}
+  m_LocalScale: {x: 0.015465559, y: 0.009695061, z: 0.012876684}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 474562250}
+  m_Father: {fileID: 725588952}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1770951839
 MeshCollider:
