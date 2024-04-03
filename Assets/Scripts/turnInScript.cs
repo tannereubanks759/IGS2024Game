@@ -48,7 +48,7 @@ public class turnInScript : MonoBehaviour
     private int bearCount=0;
     private int goatCount=0;
     private int rabbitIndex = 1;
-    private int deerIndex = 4;
+    private int deerIndex = 3;
     private int wolfIndex = 0;
     private int bearIndex = 0;  
     private int goatIndex = 0;
@@ -237,9 +237,9 @@ public class turnInScript : MonoBehaviour
             goatCount = 1;
             wolfCount = 1;
             usingArray = arrayTwo;
-            deerIndex = 1;
-            goatIndex = 2;
-            wolfIndex = 3;
+            deerIndex = 0;
+            goatIndex = 1;
+            wolfIndex = 2;
             //setCount and new indexForNew Array here.
             //SET totem 2 QUOTA
         }
@@ -256,8 +256,8 @@ public class turnInScript : MonoBehaviour
             wolfCount = 2;
             bearCount = 1;
             usingArray = arrayThree;
-            wolfIndex = 2;
-            bearIndex = 3;
+            wolfIndex = 1;
+            bearIndex = 2;
             //SET totem 3 QUOTA
         }
         else if (aQuotaCount == 3)
@@ -277,11 +277,11 @@ public class turnInScript : MonoBehaviour
             rabbitCount = 1;
             bearCount = 1;
             goatCount = 1;
-            rabbitIndex = 1;
-            deerIndex = 2;
-            goatIndex = 3;
-            wolfIndex = 4;
-            bearIndex = 5;
+            rabbitIndex = 0;
+            deerIndex = 1;
+            goatIndex = 2;
+            wolfIndex = 3;
+            bearIndex = 4;
 
             // set totem 4 quota
             //END HERE FOR NEW QUOTA
