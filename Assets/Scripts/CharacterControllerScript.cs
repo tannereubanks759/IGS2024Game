@@ -153,6 +153,7 @@ public class CharacterControllerScript : MonoBehaviour
                 if (Input.GetKey(KeyCode.Space))
                 {
                     Velocity.y = jumpForce;
+                    isJumpFlag = true;
                 }
 
                 if (!inWater && Input.GetKey(KeyCode.LeftShift))
@@ -219,10 +220,7 @@ public class CharacterControllerScript : MonoBehaviour
                 nextTime = Time.time + FoostepInterval;
             }
 
-            if (!controller.isGrounded)
-            {
-                isJumpFlag = true;
-            }
+           
 
             if (controller.isGrounded == true && isJumpFlag == true && !inCave)
             {
