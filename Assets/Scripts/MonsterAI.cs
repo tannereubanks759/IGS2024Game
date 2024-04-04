@@ -109,7 +109,7 @@ public class MonsterAI : MonoBehaviour
         if (nextTime < Time.time)
         {
             randFootInt = Random.Range(0, 2);
-            monsterSource.PlayOneShot(monsterFootstep[randFootInt], 0.25f);
+            monsterSource.PlayOneShot(monsterFootstep[randFootInt]);
             nextTime = Time.time + FoostepInterval;
         }
         if (agent.remainingDistance <= agent.stoppingDistance + 1)

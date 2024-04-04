@@ -120,7 +120,12 @@ public class GameManager : MonoBehaviour
     IEnumerator winEnum()
     {
         yield return new WaitForSeconds(.1f);
-        player.GetComponent<Animator>().enabled = true;
+        player.transform.position =  new Vector3(451.585999f, 15.6129999f, 577.273987f);
+        player.transform.eulerAngles = Vector3.zero;
+        player.GetComponent<CharacterControllerScript>().enabled = false;
+        player.GetComponent<CharacterController>().enabled = false;
+        
+        player.GetComponentInChildren<Animator>().SetBool("won", true);
 
     }
 
