@@ -168,7 +168,7 @@ public class CharacterControllerScript : MonoBehaviour
                     }
                     moveSpeed = sprintSpeed;
                     footstepVolume = 0.8f;
-                    FoostepInterval = .37f;
+                    FoostepInterval = .34f;
                 }
                 else
                 {
@@ -208,13 +208,13 @@ public class CharacterControllerScript : MonoBehaviour
                 footstepflag = true;
             }*/
 
-            if (nextTime < Time.time && moveDirection.magnitude > 0.1f && controller.isGrounded && !inCave)
+            if (nextTime < Time.time && moveDirection.magnitude > 0.1f && controller.isGrounded && !inCave && !isScoped)
             {
                 audioFootstep.PlayOneShot(footstepClip[randFootInt], footstepVolume);
                 nextTime = Time.time + FoostepInterval;
             }
 
-            if (nextTime < Time.time && moveDirection.magnitude > 0.1f && controller.isGrounded && inCave)
+            if (nextTime < Time.time && moveDirection.magnitude > 0.1f && controller.isGrounded && inCave && !isScoped)
             {
                 audioFootstep.PlayOneShot(caveFootstepClip[randFootInt], footstepVolume);
                 nextTime = Time.time + FoostepInterval;
