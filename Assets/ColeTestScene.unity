@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 7879.009, g: 4454.1646, b: 3157.6333, a: 1}
+  m_IndirectSpecularColor: {r: 7881.622, g: 4455.4575, b: 3155.6685, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5657,6 +5657,11 @@ MonoBehaviour:
   quotaFour: {fileID: 2125337291}
   objWithAlterScript: {fileID: 1664396436}
   anim: {fileID: 1510423687}
+  arrayOne: []
+  arrayTwo: []
+  arrayThree: []
+  arrayFour: []
+  usingArray: []
 --- !u!4 &87892483
 Transform:
   m_ObjectHideFlags: 0
@@ -36277,6 +36282,78 @@ Transform:
   - {fileID: 901504972}
   m_Father: {fileID: 533902115}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &576580009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 576580012}
+  - component: {fileID: 576580011}
+  - component: {fileID: 576580010}
+  m_Layer: 5
+  m_Name: blackOverlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &576580010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576580009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: bb45718cef774d24aa2f519245ffc60b, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &576580011
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576580009}
+  m_CullTransparentMesh: 1
+--- !u!224 &576580012
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576580009}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 963022351}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &576700781
 GameObject:
   m_ObjectHideFlags: 0
@@ -62301,6 +62378,7 @@ RectTransform:
   - {fileID: 1296625385}
   - {fileID: 1826938121}
   - {fileID: 1097595576}
+  - {fileID: 576580012}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -96343,6 +96421,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 795963090}
+  meteorSource: {fileID: 0}
+  endingScreen: {fileID: 0}
 --- !u!1 &1511750288
 GameObject:
   m_ObjectHideFlags: 0
@@ -110670,6 +110750,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2e3fc899329f2d448a9b6a6e107122e7, type: 3}
   - {fileID: 8300000, guid: 5c161ba35a413a44fb14d306a90a0be2, type: 3}
   - {fileID: 8300000, guid: 7b0354f4ad53ca54588af08c548b5a88, type: 3}
+  drownTime: 7
+  blackOverlay: {fileID: 576580010}
+  fadeTime: 7
+  resetColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1769791939
 Transform:
   m_ObjectHideFlags: 0
@@ -110679,7 +110763,7 @@ Transform:
   m_GameObject: {fileID: 1769791937}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 464.16522, y: 31.1, z: 564.4}
+  m_LocalPosition: {x: 365.06, y: 31.1, z: 564.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
