@@ -73,9 +73,20 @@ public class tutorialScript : MonoBehaviour
         }
         else if (popUpIndex == 7)
         {
-            if(dayNightControl.isSleep)
+            if(Input.GetKeyDown(KeyCode.E))
             {
                 popUpIndex++;
+            }
+        }
+        else if (popUpIndex == 8)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if(Input.GetKey(KeyCode.E))
+                {
+                    popUpIndex++;
+                }
+                
             }
         }
     }
