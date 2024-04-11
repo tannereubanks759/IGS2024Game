@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class CharacterControllerScript : MonoBehaviour
 {
@@ -63,10 +66,19 @@ public class CharacterControllerScript : MonoBehaviour
     private bool inCave = false;
     public AudioClip[] caveFootstepClip;
 
+    [Header("Drowning Variables")]
+    private bool isSubmerged;
+    public float drownTime = 7f;
+    public RawImage blackOverlay;
+    public float fadeTime = 7f;
+    Coroutine a;
+    public Color resetColor;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        
         anim = GetComponentInChildren<Animator>();
         knockoutImage.SetActive(false);
         knockedOut = false;
@@ -114,6 +126,33 @@ public class CharacterControllerScript : MonoBehaviour
             {
                 inWater = false;
             }
+            if (this.transform.position.y < 2.4569f)
+            {
+                if (a == null)
+                {
+                    a = StartCoroutine(FadeIn(blackOverlay));
+                }
+                
+                if (drownTime <= 0)
+                {
+                    Die();
+                }
+            }
+            if (this.transform.position.y >= 2.4569f)
+            {
+                fadeTime = 7f;
+                drownTime = 7f;
+                isSubmerged = false;
+                if (a != null)
+                {
+                    Debug.Log("stopped routine");
+                    StopCoroutine(a);
+                    a = null;
+                    blackOverlay.color = resetColor;
+                }
+                
+            }
+            
 
             //movement
             horizontal = Input.GetAxisRaw("Horizontal");
@@ -176,13 +215,13 @@ public class CharacterControllerScript : MonoBehaviour
                     {
                         moveSpeed = originalSpeed;
                         footstepVolume = 0.44f;
-                        anim.SetBool("Sprinting", false);
                         FoostepInterval = .44f;
                     }
                     else
                     {
                         moveSpeed = 1f;
                     }
+                    anim.SetBool("Sprinting", false);
                 }
 
             }
@@ -268,6 +307,7 @@ public class CharacterControllerScript : MonoBehaviour
         Lives--;
         this.transform.position = caveSpawn.transform.position;
         StartCoroutine(HurtEnum());
+        blackOverlay.color = resetColor;
     }
 
     public IEnumerator HurtEnum()
@@ -324,6 +364,22 @@ public class CharacterControllerScript : MonoBehaviour
         textureValues[2] = aMap[0, 0, 2];
         textureValues[3] = aMap[0, 0, 3];
     }
+
+    private YieldInstruction fadeInstruction = new YieldInstruction();
+    IEnumerator FadeIn(RawImage image)
+    {
+        
+        float elapsedTime = 0.0f;
+        Color c = image.color;
+        while (elapsedTime < fadeTime)
+        {
+            yield return fadeInstruction;
+            elapsedTime += Time.deltaTime;
+            c.a = Mathf.Clamp01(elapsedTime / fadeTime);
+            image.color = c;
+        }
+    }
+
     private void LateUpdate()
     {
         if (Time.timeScale == 1 && pauseScript.paused == false)
