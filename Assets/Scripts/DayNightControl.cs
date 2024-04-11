@@ -18,6 +18,7 @@ public class DayNightControl : MonoBehaviour
     public turnInScript objectWithScript;
     public Animator skyAnim;
     public Volume skyVolume;
+    public bool isSleep = false;
     //public turnInScript turnInObj;
     private void Update()
     {
@@ -101,6 +102,7 @@ public class DayNightControl : MonoBehaviour
             currentTime = 5.5f;
             isRotating = true;
             currentDay += 1;
+            isSleep = true;
             // quota logic for days past day one, add quota animals to list on turninscript based on current day
             /*if (currentDay == 2)
             {
