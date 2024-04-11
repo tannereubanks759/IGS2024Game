@@ -49,6 +49,7 @@ public class DayNightControl : MonoBehaviour
         if(currentTime >= 19 || objectWithScript.quotaAnimalsList.Count == 0)
         {
             SleepText.enabled = true;
+            
         }
         if(currentTime >= 19 && skyVolume.weight != 1f)
         {
