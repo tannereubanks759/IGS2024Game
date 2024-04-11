@@ -10,9 +10,13 @@ public class caveIconUpdater : MonoBehaviour
     public Vector3 offset;
     public float fovAngle = 60f;
     public GameObject image;
+    public GameObject nightImage;
+    public DayNightControl sunScript;
+    private GameObject usingImage;
     void Start()
     {
         mainCam = Camera.main;
+        usingImage = image;
     }
 
     // Update is called once per frame
@@ -27,6 +31,19 @@ public class caveIconUpdater : MonoBehaviour
         
         float angle = Vector3.Angle(cameraForward, directionToLookPoint);
 
+
+        if(sunScript.currentTime >= 19)
+        {
+            nightImage.SetActive(true);
+            image.SetActive(false);
+            usingImage = nightImage;
+        }
+        else
+        {
+            nightImage.SetActive(false);
+            image.SetActive(true);
+            usingImage = image;
+        }
         //player fov looking at lookpoint
         if (angle <= fovAngle)
         {
@@ -34,23 +51,23 @@ public class caveIconUpdater : MonoBehaviour
             Vector3 pos = mainCam.WorldToScreenPoint(lookPoint.position + offset);
 
            
-            if (image.transform.position != pos)
+            if (usingImage.transform.position != pos)
             {
-                image.transform.position = pos;
+                usingImage.transform.position = pos;
             }
 
             //renable if previously was false
-            if (!image.activeSelf)
+            if (!usingImage.activeSelf)
             {
-                image.SetActive(true);
+                usingImage.SetActive(true);
             }
         }
         else
         {
             
-            if (image.activeSelf)
+            if (usingImage.activeSelf)
             {
-                image.SetActive(false);
+                usingImage.SetActive(false);
             }
         }
     }
