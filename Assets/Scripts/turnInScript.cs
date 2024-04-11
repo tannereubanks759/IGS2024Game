@@ -42,13 +42,13 @@ public class turnInScript : MonoBehaviour
     public GameObject[] arrayThree;
     public GameObject[] arrayFour;
     public GameObject[] usingArray;
-    private int rabbitCount = 2;
-    private int deerCount = 2;
+    private int rabbitCount = 1;
+    private int deerCount = 1;
     private int wolfCount=0;
     private int bearCount=0;
     private int goatCount=0;
-    private int rabbitIndex = 1;
-    private int deerIndex = 3;
+    private int rabbitIndex = 0;
+    private int deerIndex = 1;
     private int wolfIndex = 0;
     private int bearIndex = 0;  
     private int goatIndex = 0;

@@ -28,11 +28,17 @@ public class tutorialScript : MonoBehaviour
         }
         else if (popUpIndex == 1)
         {
-           
+           if(Input.GetMouseButtonDown(0)|| Input.GetMouseButtonDown(1)) 
+            {
+                popUpIndex++;
+            }
         }
         else if (popUpIndex == 2)
         {
-           
+           if(Input.GetKeyDown(KeyCode.E))
+            {
+                popUpIndex++;
+            }
         }
 
     }
