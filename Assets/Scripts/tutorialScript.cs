@@ -6,6 +6,9 @@ public class tutorialScript : MonoBehaviour
 {
     public GameObject[] popups;
     private int popUpIndex;
+    public Interact interactObj;
+    public turnInScript turnInScript;
+    public DayNightControl dayNightControl;
     private void Update()
     {
         for (int i = 0; i < popups.Length; i++)
@@ -40,6 +43,40 @@ public class tutorialScript : MonoBehaviour
                 popUpIndex++;
             }
         }
-
+        else if (popUpIndex == 3)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                popUpIndex++;
+            }
+        }
+        else if (popUpIndex == 4)
+        {
+            if(interactObj.isHolding)
+            {
+                popUpIndex++;
+            }
+        }
+        else if (popUpIndex == 5)
+        {
+            if(turnInScript.inRange)
+            {
+                popUpIndex++;
+            }
+        }
+        else if (popUpIndex == 6)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                popUpIndex++;
+            }
+        }
+        else if (popUpIndex == 7)
+        {
+            if(dayNightControl.isSleep)
+            {
+                popUpIndex++;
+            }
+        }
     }
 }
