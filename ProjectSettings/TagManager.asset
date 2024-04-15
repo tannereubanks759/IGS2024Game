@@ -14,6 +14,7 @@ TagManager:
   - MonsterSpawner
   - Cave
   - spawnedTotem
+  - bed
   layers:
   - Default
   - TransparentFX

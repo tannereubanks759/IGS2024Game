@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.103297964, g: 0.01751721, b: 0.007847824, a: 1}
+  m_IndirectSpecularColor: {r: 0.10291095, g: 0.017446132, b: 0.00781151, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -472,7 +472,6 @@ GameObject:
   - component: {fileID: 331049713}
   - component: {fileID: 331049712}
   - component: {fileID: 331049711}
-  - component: {fileID: 331049710}
   m_Layer: 0
   m_Name: sun
   m_TagString: Untagged
@@ -480,26 +479,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &331049710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 331049709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6d27d9b3716df04aae5f4480d07bd5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTime: 5.14
-  timeSpeed: 0.05
-  currentDay: 0
-  manager: {fileID: 0}
-  SleepText: {fileID: 0}
-  objectWithScript: {fileID: 0}
-  skyAnim: {fileID: 0}
-  skyVolume: {fileID: 0}
 --- !u!114 &331049711
 MonoBehaviour:
   m_ObjectHideFlags: 0

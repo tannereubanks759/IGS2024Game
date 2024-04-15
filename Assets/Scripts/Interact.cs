@@ -24,28 +24,34 @@ public class Interact : MonoBehaviour
     public turnInScript turnIn;
     public TextMeshProUGUI deadAnimalText;
     public TextMeshProUGUI totemPickupText;
+    public TextMeshProUGUI sleepText;
+    public TextMeshProUGUI altertext;
+    public bool introDone;
+    public DayNightControl sunControl;
     //turnInScript turnInRef;
     // Start is called before the first frame update
-    void Start()
-    {
-        holdingAnimal = false;
-        isLooking = false;
-        objectWithScript.GetComponent<turnInScript>();
-        rifle.SetActive(true);
-        totem.SetActive(false);
-    }
+    
 
     // Update is called once per frame
     void Update()
     {
+        if (introDone)
+        {
+            holdingAnimal = false;
+            isLooking = false;
+            objectWithScript.GetComponent<turnInScript>();
+            rifle.SetActive(true);
+            totem.SetActive(false);
+            sleepText.enabled = false;
+            introDone = false;
+        }
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (isLooking && !holdingAnimal)
             {
-                if (lookObj != null && lookObj.gameObject.name == "Bed")
+                if (lookObj != null && lookObj.gameObject.name == "Bed" && sunControl.currentTime >= 19)
                 {
-                    lightSystem.Sleep();
-                    //objectWithScript.GetComponent<turnInScript>().dayCountUpdate();
+                    lightSystem.isSleep = true;
                 }
                 else if (!isHolding && lookObj != null && lookObj.gameObject.layer == 8)
                 {
@@ -175,7 +181,7 @@ public class Interact : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Interact" || other.tag == "head" || other.tag == "body" || other.tag == "spawnedTotem")
+        if(other.tag == "Interact" || other.tag == "head" || other.tag == "body" || other.tag == "spawnedTotem" || other.tag == "bed")
         {
             isLooking = true;
             lookObj = other.gameObject;
@@ -184,21 +190,32 @@ public class Interact : MonoBehaviour
             {
                 deadAnimalText.enabled = true;
             }
-            if (other.gameObject.tag == "spawnedTotem")
+            else if (other.gameObject.tag == "spawnedTotem")
             {
                 totemPickupText.enabled = true;
+            }
+            else if(other.tag == "bed" && lightSystem.currentTime>= 19 && lightSystem.isSleep == false)
+            {
+                sleepText.enabled = true;
+            }
+            else if(other.name == "alter" && isHolding)
+            {
+                altertext.enabled = true;
             }
             //Debug.Log(output);
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Interact" || other.tag == "head" || other.tag == "body" || other.tag == "spawnedTotem")
+        if(other.tag == "Interact" || other.tag == "head" || other.tag == "body" || other.tag == "spawnedTotem"||other.tag == "bed")
         {
             isLooking = false;
             lookObj = null;
             deadAnimalText.enabled = false;
             totemPickupText.enabled = false;
+            sleepText.enabled = false;
+            altertext.enabled = false;
         }
+
     }
 }

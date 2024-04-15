@@ -20,7 +20,9 @@ public class CharacterControllerScript : MonoBehaviour
     public bool isPaused;
     public gunScript gun;
 
+
     //private variables
+    public bool introComplete;
     private float mouseX;
     private float mouseY;
     private Vector3 Velocity;
@@ -46,7 +48,7 @@ public class CharacterControllerScript : MonoBehaviour
     public AudioSource meteorSource;
     public AudioSource audioFootstep;
     public AudioClip[] footstepClip;
-    private Animator anim;
+    public Animator anim;
 
     private bool footstepflag = false;
     private bool isJumpFlag = false;
@@ -68,18 +70,19 @@ public class CharacterControllerScript : MonoBehaviour
 
     [Header("Drowning Variables")]
     private bool isSubmerged;
-    public float drownTime = 7f;
+    public float drownTime;
     public RawImage blackOverlay;
     public float fadeTime = 7f;
-    Coroutine a;
-    public Color resetColor;
     
-
+    public Color resetColor;
+    float elapsedTime = 0.0f;
+    bool died;
+    
     // Start is called before the first frame update
     void Start()
     {
         
-        anim = GetComponentInChildren<Animator>();
+        
         knockoutImage.SetActive(false);
         knockedOut = false;
         inWater = false;
@@ -90,10 +93,11 @@ public class CharacterControllerScript : MonoBehaviour
         scopeSenseX = xSens / 6;
         scopeSenseY = ySens / 6;
         controller = this.GetComponent<CharacterController>();
-        mainCam = Camera.main.gameObject;
+        
         isScoped = false;
         cursorDisable();
         terra = Terrain.activeTerrain;
+        introComplete = false;
     }
 
     private void OnTriggerStay(Collider other)
@@ -115,8 +119,9 @@ public class CharacterControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         randFootInt = Random.Range(0, 2);
-        if (!isPaused)
+        if (!isPaused && introComplete)
         {
             if(this.transform.position.y < 4.173f)
             {
@@ -128,29 +133,27 @@ public class CharacterControllerScript : MonoBehaviour
             }
             if (this.transform.position.y < 2.4569f)
             {
-                if (a == null)
+                if (blackOverlay.color.a < 1)
                 {
-                    a = StartCoroutine(FadeIn(blackOverlay));
+                    Debug.Log(blackOverlay.color.a);
+                    //a = StartCoroutine(FadeIn(blackOverlay));
+                    BlackFade(blackOverlay);
                 }
-                
-                if (drownTime <= 0)
+                else if(!died)
                 {
+                    drownTime = 0;
+                    elapsedTime = 0;
                     Die();
+                    died = true;
                 }
             }
-            if (this.transform.position.y >= 2.4569f)
+            else if(blackOverlay.color.a > 0)
             {
-                fadeTime = 7f;
-                drownTime = 7f;
-                isSubmerged = false;
-                if (a != null)
-                {
-                    Debug.Log("stopped routine");
-                    StopCoroutine(a);
-                    a = null;
-                    blackOverlay.color = resetColor;
-                }
-                
+                elapsedTime = 0f;
+                drownTime = 0f;
+                Color c = new Color(1f, 1f, 1f, blackOverlay.color.a - Time.deltaTime*.1f);
+
+                blackOverlay.color = c;
             }
             
 
@@ -193,6 +196,7 @@ public class CharacterControllerScript : MonoBehaviour
                 {
                     Velocity.y = jumpForce;
                     isJumpFlag = true;
+                    
                 }
 
                 if (!inWater && Input.GetKey(KeyCode.LeftShift))
@@ -221,6 +225,7 @@ public class CharacterControllerScript : MonoBehaviour
                     {
                         moveSpeed = 1f;
                     }
+                    
                     anim.SetBool("Sprinting", false);
                 }
 
@@ -341,7 +346,7 @@ public class CharacterControllerScript : MonoBehaviour
         endingScreen.SetActive(true);
 
     }
-
+    /*
     public void GetTerrainTexture()
     {
         ConvertPosition(playerT.position);
@@ -364,7 +369,7 @@ public class CharacterControllerScript : MonoBehaviour
         textureValues[2] = aMap[0, 0, 2];
         textureValues[3] = aMap[0, 0, 3];
     }
-
+    
     private YieldInstruction fadeInstruction = new YieldInstruction();
     IEnumerator FadeIn(RawImage image)
     {
@@ -375,6 +380,20 @@ public class CharacterControllerScript : MonoBehaviour
         {
             yield return fadeInstruction;
             elapsedTime += Time.deltaTime;
+            drownTime = elapsedTime;
+            c.a = Mathf.Clamp01(elapsedTime / fadeTime);
+            image.color = c;
+        } 
+        
+        
+    }
+    */
+    public void BlackFade(RawImage image)
+    {
+        if(elapsedTime < fadeTime)
+        {
+            elapsedTime += Time.deltaTime;
+            Color c = image.color;
             c.a = Mathf.Clamp01(elapsedTime / fadeTime);
             image.color = c;
         }
@@ -390,7 +409,11 @@ public class CharacterControllerScript : MonoBehaviour
             mouseY += Input.GetAxisRaw("Mouse X") * currentX;
             mouseX = Mathf.Clamp(mouseX, -90f, 90f);
             this.transform.rotation = Quaternion.Euler(0, mouseY, 0);
-            mainCam.transform.rotation = Quaternion.Euler(mouseX, mouseY, 0);
+            if (introComplete)
+            {
+                mainCam = Camera.main.gameObject;
+                mainCam.transform.rotation = Quaternion.Euler(mouseX, mouseY, 0);
+            }
         }
         
     }

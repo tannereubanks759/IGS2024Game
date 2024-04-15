@@ -67,6 +67,18 @@ public class DayNightControl : MonoBehaviour
         {
             UpdateLight();
         }
+        if (isSleep)
+        {
+            CharacterControllerScript player = manager.player.GetComponent<CharacterControllerScript>();
+            player.isPaused = true;
+            player.BlackFade(player.blackOverlay);
+            if(player.blackOverlay.color.a >= 1)
+            {
+                player.isPaused = false;
+                Sleep();
+                isSleep = false;
+            }
+        }
     }
 
     private void Start()
@@ -103,56 +115,6 @@ public class DayNightControl : MonoBehaviour
             currentTime = 5.5f;
             isRotating = true;
             currentDay += 1;
-            isSleep = true;
-            // quota logic for days past day one, add quota animals to list on turninscript based on current day
-            /*if (currentDay == 2)
-            {
-                turnInObj.quotaAnimalsList.Add("Deer");
-                turnInObj.quotaAnimalsList.Add("Deer");
-                turnInObj.quotaAnimalsList.Add("Rabbit");
-                turnInObj.quotaAnimalsList.Add("Rabbit");
-                turnInObj.quotaAnimalsList.Add("Wolf");
-            }
-            if (currentDay == 3)
-            {
-                turnInObj.quotaAnimalsList.Add("Wolf");
-                turnInObj.quotaAnimalsList.Add("Deer");
-                turnInObj.quotaAnimalsList.Add("Wolf");
-                turnInObj.quotaAnimalsList.Add("Rabbit");
-            }
-            if (currentDay == 4)
-            {
-                turnInObj.quotaAnimalsList.Add("Bear");
-                turnInObj.quotaAnimalsList.Add("Deer");
-                turnInObj.quotaAnimalsList.Add("Wolf");
-                turnInObj.quotaAnimalsList.Add("Wolf");
-
-            }
-            if (currentDay == 5)
-            {
-                turnInObj.quotaAnimalsList.Add("Bear");
-                turnInObj.quotaAnimalsList.Add("Bear");
-                turnInObj.quotaAnimalsList.Add("Wolf");
-                turnInObj.quotaAnimalsList.Add("Goat");
-            }
-            if (currentDay == 6)
-            {
-                turnInObj.quotaAnimalsList.Add("Bear");
-                turnInObj.quotaAnimalsList.Add("Bear");
-                turnInObj.quotaAnimalsList.Add("Bear");
-                turnInObj.quotaAnimalsList.Add("Wolf");
-                turnInObj.quotaAnimalsList.Add("Wolf");
-                turnInObj.quotaAnimalsList.Add("Goat");
-            }
-            if (currentDay == 7)
-            {
-                turnInObj.quotaAnimalsList.Add("Bear");
-                turnInObj.quotaAnimalsList.Add("Goat");
-                turnInObj.quotaAnimalsList.Add("Rabbit");
-                turnInObj.quotaAnimalsList.Add("Wolf");
-                turnInObj.quotaAnimalsList.Add("Deer");
-
-            }*/
             SleepText.enabled = false;
             manager.animalsDespawned = false;
             GameObject[] spawners = GameObject.FindGameObjectsWithTag("spawner");
@@ -175,6 +137,7 @@ public class DayNightControl : MonoBehaviour
             }
         }
     }
+    
 
 
 }

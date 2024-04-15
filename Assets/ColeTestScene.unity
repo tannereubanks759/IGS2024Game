@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 7881.622, g: 4455.4575, b: 3155.6685, a: 1}
+  m_IndirectSpecularColor: {r: 7839.1475, g: 4445.8325, b: 3196.2935, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14680,6 +14680,8 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   fovAngle: 60
   image: {fileID: 486664821}
+  nightImage: {fileID: 1326859498}
+  sunScript: {fileID: 1340123619}
 --- !u!4 &210633565
 Transform:
   m_ObjectHideFlags: 0
@@ -62379,6 +62381,7 @@ RectTransform:
   - {fileID: 1826938121}
   - {fileID: 1097595576}
   - {fileID: 576580012}
+  - {fileID: 1326859499}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -84251,6 +84254,81 @@ Transform:
   - {fileID: 1212232149}
   m_Father: {fileID: 1876711821}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1326859498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1326859499}
+  - component: {fileID: 1326859501}
+  - component: {fileID: 1326859500}
+  m_Layer: 5
+  m_Name: SleepImage (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1326859499
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326859498}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.2867963, y: 3.2867963, z: 3.2867963}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 963022351}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 32.45456, y: -17.208538}
+  m_SizeDelta: {x: 65.6123, y: 65.6123}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1326859500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326859498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 7ebc0611f7756894a955a29fe1550889, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1326859501
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326859498}
+  m_CullTransparentMesh: 1
 --- !u!1 &1326860394
 GameObject:
   m_ObjectHideFlags: 0
@@ -85303,6 +85381,7 @@ MonoBehaviour:
   objectWithScript: {fileID: 87892482}
   skyAnim: {fileID: 0}
   skyVolume: {fileID: 1709646488}
+  isSleep: 0
 --- !u!114 &1340123620
 MonoBehaviour:
   m_ObjectHideFlags: 0
