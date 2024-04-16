@@ -8,6 +8,8 @@ public class introScript : MonoBehaviour
     public GameObject icons;
     public GameObject Canvas;
     public GameObject turnIn;
+    public AudioClip oceanSound;
+    public AudioSource source;
     // Start is called before the first frame update
     private void Start()
     {
@@ -32,5 +34,10 @@ public class introScript : MonoBehaviour
         player.GetComponentInParent<CharacterControllerScript>().introComplete = true;
         player.GetComponentInChildren<Interact>().introDone = true;
         this.gameObject.SetActive(false);
+    }
+    public void playOceanSound()
+    {
+        source.clip = oceanSound;
+        source.Play();
     }
 }

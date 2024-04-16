@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using System.Linq;
 public class GameManager : MonoBehaviour
 {
     private int currentDay;
@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     public List<GameObject> monsterList;
     public GameObject canvas;
     public GameObject player;
+    public List<AudioClip> nightClips;
+    public List<AudioClip> dayClips;
+    private AudioSource source;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,7 @@ public class GameManager : MonoBehaviour
         SpawnTreeObstacles();
         sunControl = GameObject.Find("Sun").GetComponent<DayNightControl>();
         monsterSpawnerParent.SetActive(false);
+        source = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,8 +52,26 @@ public class GameManager : MonoBehaviour
         {
             win();
         }*/
+        if(sunControl.currentTime >= 19)
+        {
+            playRandomSong(nightClips);
+        }
+        /*
+        else
+        {
+            playRandomSong(dayClips);
+        }*/
     }
-
+    public void playRandomSong(List<AudioClip> clips)
+    {
+        if(source.isPlaying == false)
+        {
+            int random = Random.Range(0, clips.Count);
+            AudioClip clip = clips.ElementAt(random);
+            source.clip =(clip);
+            source.Play();
+        }
+    }
     void SpawnTreeObstacles()
     {
         for (int i = 0; i < terrain.terrainData.treeInstances.Length; i++)

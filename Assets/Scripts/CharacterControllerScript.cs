@@ -77,12 +77,12 @@ public class CharacterControllerScript : MonoBehaviour
     public Color resetColor;
     float elapsedTime = 0.0f;
     bool died;
-    
+    public GameObject boat;
     // Start is called before the first frame update
     void Start()
     {
-        
-        
+
+        boat.SetActive(false);
         knockoutImage.SetActive(false);
         knockedOut = false;
         inWater = false;
@@ -123,6 +123,7 @@ public class CharacterControllerScript : MonoBehaviour
         randFootInt = Random.Range(0, 2);
         if (!isPaused && introComplete)
         {
+            boat.SetActive(true);
             if(this.transform.position.y < 4.173f)
             {
                 inWater = true;
