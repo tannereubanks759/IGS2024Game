@@ -53,6 +53,12 @@ public class turnInScript : MonoBehaviour
     private int wolfIndex = 0;
     private int bearIndex = 0;  
     private int goatIndex = 0;
+    public AudioSource turninSource;
+    public AudioClip turninSound;
+    public GameObject fireParticleSys;
+    public ParticleSystem normalFire;
+    public ParticleSystem turnInFire;
+
     void Start()
     {
         cam = Camera.main;
@@ -100,6 +106,9 @@ public class turnInScript : MonoBehaviour
                             if (usingArray[i].activeInHierarchy == true) 
                             {
                                 usingArray[i].SetActive(false);
+                                turninSource.PlayOneShot(turninSound);
+                                //normalFire.Stop();
+                                Instantiate(turnInFire, fireParticleSys.transform);
                                 break;
                             }
                         }
@@ -113,6 +122,7 @@ public class turnInScript : MonoBehaviour
                             if (usingArray[i].activeInHierarchy == true)
                             {
                                 usingArray[i].SetActive(false);
+                                turninSource.PlayOneShot(turninSound);
                                 break;
                             }
                         }
@@ -124,6 +134,7 @@ public class turnInScript : MonoBehaviour
                             if (usingArray[i].activeInHierarchy == true)
                             {
                                 usingArray[i].SetActive(false);
+                                turninSource.PlayOneShot(turninSound);
                                 break;
                             }
                         }
@@ -135,6 +146,7 @@ public class turnInScript : MonoBehaviour
                             if (usingArray[i].activeInHierarchy == true)
                             {
                                 usingArray[i].SetActive(false);
+                                turninSource.PlayOneShot(turninSound);
                                 break;
                             }
                         }
@@ -146,6 +158,7 @@ public class turnInScript : MonoBehaviour
                             if (usingArray[i].activeInHierarchy == true)
                             {
                                 usingArray[i].SetActive(false);
+                                turninSource.PlayOneShot(turninSound);
                                 break;
                             }
                         }
