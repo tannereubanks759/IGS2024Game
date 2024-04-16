@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
-
+using UnityEngine.SceneManagement;
 public class CharacterControllerScript : MonoBehaviour
 {
     //public variables
@@ -97,7 +97,10 @@ public class CharacterControllerScript : MonoBehaviour
         isScoped = false;
         cursorDisable();
         terra = Terrain.activeTerrain;
-        introComplete = false;
+        if(SceneManager.GetActiveScene().name == "Mechanics")
+        {
+            introComplete = false;
+        }
     }
 
     private void OnTriggerStay(Collider other)
