@@ -9,6 +9,14 @@ public class tutorialScript : MonoBehaviour
     public Interact interactObj;
     public turnInScript turnInScript;
     public DayNightControl dayNightControl;
+    public CharacterControllerScript characterControllerScript;
+    public Camera currentCamera;
+    public Camera camTwo;
+    private void Start()
+    {
+        characterControllerScript.introComplete = true;
+        currentCamera = Camera.main;   
+    }
     private void Update()
     {
         for (int i = 0; i < popups.Length; i++)
@@ -34,12 +42,17 @@ public class tutorialScript : MonoBehaviour
            if(Input.GetMouseButtonDown(0)|| Input.GetMouseButtonDown(1)) 
             {
                 popUpIndex++;
+                camTwo.enabled = true;
+                currentCamera.enabled = false;
+                
             }
         }
         else if (popUpIndex == 2)
         {
            if(Input.GetKeyDown(KeyCode.E))
             {
+                // move camera
+                
                 popUpIndex++;
             }
         }
@@ -47,6 +60,9 @@ public class tutorialScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                currentCamera.enabled = true;
+                camTwo.enabled = false;
+                
                 popUpIndex++;
             }
         }
