@@ -10,6 +10,7 @@ public class turnInScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public BoxCollider boxCol;
+    public bool ableToSleep;
     public GameObject interactImage;
     public bool inRange = false;
     public bool hasAnimal = false;
@@ -62,7 +63,7 @@ public class turnInScript : MonoBehaviour
         objWithAlterScript.GetComponent<Alter>();
         //lookObj = null;
         usingArray = arrayOne;
-        
+        ableToSleep = false;
     }
 
     // Update is called once per frame
@@ -155,6 +156,7 @@ public class turnInScript : MonoBehaviour
                     {
                         Debug.Log("QUOTA FINISHED");
                         readyForNextDay=true;
+                        interactScipt.ableToSleepAfterQuota = true;
                         isQuota = false;
                         hasAnimal = false;
                         //dayCounter++; set this in sleep script
@@ -186,7 +188,7 @@ public class turnInScript : MonoBehaviour
             //Debug.Log("Animal carried into range");
             
             hasAnimal = true;
-             nameOfAnimal = collision.name;
+            nameOfAnimal = collision.name;
             Debug.Log(nameOfAnimal);
             animalBeingCarried = collision.gameObject;
             //Debug.Log(nameOfAnimal);

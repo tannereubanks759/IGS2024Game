@@ -19,6 +19,7 @@ public class DayNightControl : MonoBehaviour
     public Animator skyAnim;
     public Volume skyVolume;
     public bool isSleep = false;
+    public Interact interact;
     //public turnInScript turnInObj;
     private void Update()
     {
@@ -46,7 +47,7 @@ public class DayNightControl : MonoBehaviour
             isRotating = false;
         }
 
-        if(currentTime >= 19 || objectWithScript.quotaAnimalsList.Count == 0)
+        if(currentTime >= 19 || interact.ableToSleepAfterQuota)
         {
             SleepText.enabled = true;
             

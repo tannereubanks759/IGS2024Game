@@ -28,10 +28,17 @@ public class Interact : MonoBehaviour
     public TextMeshProUGUI altertext;
     public bool introDone;
     public DayNightControl sunControl;
+    public bool ableToSleepAfterQuota;
     //turnInScript turnInRef;
     // Start is called before the first frame update
-    
 
+    private void Start()
+    {
+        deadAnimalText.enabled = false;
+        totemPickupText.enabled = false;
+        sleepText.enabled = false;
+        altertext.enabled = false;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -49,9 +56,10 @@ public class Interact : MonoBehaviour
         {
             if (isLooking && !holdingAnimal)
             {
-                if (lookObj != null && lookObj.gameObject.name == "Bed" && sunControl.currentTime >= 19)
+                if (lookObj != null && lookObj.gameObject.name == "Bed" && (sunControl.currentTime >= 19 || ableToSleepAfterQuota))
                 {
                     lightSystem.isSleep = true;
+                    ableToSleepAfterQuota = false;
                 }
                 else if (!isHolding && lookObj != null && lookObj.gameObject.layer == 8)
                 {
@@ -201,6 +209,13 @@ public class Interact : MonoBehaviour
             else if(other.name == "alter" && isHolding)
             {
                 altertext.enabled = true;
+            }
+            else
+            {
+                deadAnimalText.enabled = false;
+                totemPickupText.enabled = false;
+                sleepText.enabled =false;
+                altertext.enabled =false;
             }
             //Debug.Log(output);
         }
