@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 6928.034, g: 3955.4067, b: 2881.4612, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -56744,7 +56744,7 @@ MonoBehaviour:
   m_AngularDiameter: 2.5
   diameterMultiplerMode: 0
   diameterMultiplier: 1
-  diameterOverride: 0.2
+  diameterOverride: 2.62
   celestialBodyShadingSource: 1
   sunLightOverride: {fileID: 0}
   sunColor: {r: 1, g: 1, b: 1, a: 1}
@@ -56754,11 +56754,11 @@ MonoBehaviour:
   earthshine: 1
   flareSize: 0
   flareTint: {r: 1, g: 1, b: 1, a: 1}
-  flareFalloff: 3.92
-  flareMultiplier: 1
+  flareFalloff: 0
+  flareMultiplier: 0
   surfaceTexture: {fileID: 0}
-  surfaceTint: {r: 1, g: 0.5147059, b: 0.25, a: 1}
-  m_Distance: 1.5e+11
+  surfaceTint: {r: 1, g: 0.8721739, b: 0.6999999, a: 1}
+  m_Distance: 1
   m_UseRayTracedShadows: 0
   m_NumRayTracingSamples: 4
   m_FilterTracedShadow: 1
@@ -56891,7 +56891,7 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 1
-  m_ColorTemperature: 5262
+  m_ColorTemperature: 4618
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
