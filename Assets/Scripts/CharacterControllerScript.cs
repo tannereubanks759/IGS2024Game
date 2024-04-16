@@ -27,7 +27,7 @@ public class CharacterControllerScript : MonoBehaviour
     private float mouseY;
     private Vector3 Velocity;
     private Vector3 moveDirection;
-    private GameObject mainCam;
+    public GameObject mainCam;
     private CharacterController controller;
     private float horizontal;
     private float vertical;
@@ -405,7 +405,7 @@ public class CharacterControllerScript : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (Time.timeScale == 1 && pauseScript.paused == false)
+        if (Time.timeScale == 1 && pauseScript.paused == false && introComplete)
         {
             float currentX = isScoped ? scopeSenseX : xSens;
             float currentY = isScoped ? scopeSenseY : ySens;
@@ -413,11 +413,8 @@ public class CharacterControllerScript : MonoBehaviour
             mouseY += Input.GetAxisRaw("Mouse X") * currentX;
             mouseX = Mathf.Clamp(mouseX, -90f, 90f);
             this.transform.rotation = Quaternion.Euler(0, mouseY, 0);
-            if (introComplete)
-            {
-                mainCam = Camera.main.gameObject;
-                mainCam.transform.rotation = Quaternion.Euler(mouseX, mouseY, 0);
-            }
+            mainCam.transform.rotation = Quaternion.Euler(mouseX, mouseY, 0);
+            
         }
         
     }
