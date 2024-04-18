@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 6720.548, g: 3575.0532, b: 2358.1448, a: 1}
+  m_IndirectSpecularColor: {r: 6704.042, g: 3572.936, b: 2369.2034, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7613,6 +7613,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &144721304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 144721305}
+  m_Layer: 0
+  m_Name: FireSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &144721305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144721304}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 340236463}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &146387297
 GameObject:
   m_ObjectHideFlags: 0
@@ -19581,6 +19612,7 @@ Transform:
   - {fileID: 808992676}
   - {fileID: 846938126}
   - {fileID: 305714716}
+  - {fileID: 144721305}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -0.582, z: 0}
 --- !u!82 &340236464
@@ -61007,9 +61039,10 @@ MonoBehaviour:
   usingArray: []
   turninSource: {fileID: 1024328116}
   turninSound: {fileID: 8300000, guid: 7dce59721b5c165489c01f1d70ba3972, type: 3}
-  fireParticleSys: {fileID: 0}
+  fireParticleSys: {fileID: 144721304}
   normalFire: {fileID: 0}
-  turnInFire: {fileID: 0}
+  turnInFire: {fileID: 4865594306449104885, guid: 4e675ac2ba579f54abccf223ffe2e477,
+    type: 3}
 --- !u!82 &1024328116
 AudioSource:
   m_ObjectHideFlags: 0
