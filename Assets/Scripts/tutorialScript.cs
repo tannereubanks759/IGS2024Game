@@ -42,8 +42,8 @@ public class tutorialScript : MonoBehaviour
            if(Input.GetMouseButtonDown(0)|| Input.GetMouseButtonDown(1)) 
             {
                 popUpIndex++;
-                camTwo.enabled = true;
-                currentCamera.enabled = false;
+               // camTwo.enabled = true;
+                //currentCamera.enabled = false;
                 
             }
         }
@@ -60,8 +60,8 @@ public class tutorialScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                currentCamera.enabled = true;
-                camTwo.enabled = false;
+                //currentCamera.enabled = true;
+                //camTwo.enabled = false;
                 
                 popUpIndex++;
             }
@@ -110,6 +110,8 @@ public class tutorialScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 popUpIndex++;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
     }
