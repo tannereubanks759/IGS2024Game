@@ -105,5 +105,12 @@ public class tutorialScript : MonoBehaviour
                 
             }
         }
+        else if(popUpIndex == 9)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                popUpIndex++;
+            }
+        }
     }
 }

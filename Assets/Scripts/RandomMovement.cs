@@ -37,7 +37,7 @@ public class RandomMovement : MonoBehaviour
     float distanceFromPlayer;
 
     public Animator anim;
-
+    public AlignWithGround alignScript;
     public GameManager manager;
     //instead of centrePoint you can set it as the transform of the agent if you don't care about a specific area
 
@@ -55,11 +55,22 @@ public class RandomMovement : MonoBehaviour
         oceanHeight = GameObject.Find("Ocean").transform.position.y;
         isAttacking = false;
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        alignScript = this.GetComponentInChildren<AlignWithGround>();
     }
     
     void Update()
     {
         distanceFromPlayer = Vector3.Distance(Player.transform.position, this.transform.position);
+        if(distanceFromPlayer > 150)
+        {
+            anim.enabled = false;
+            alignScript.enabled = false;
+        }
+        else
+        {
+            anim.enabled = true;
+            alignScript.enabled = true;
+        }
         if (isRunning == false && isAttacking == false)
         {
             Roam();

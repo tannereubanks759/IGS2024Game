@@ -11,8 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Mechanics.unity
     guid: 642ce96c279f6dc40b9c25f4c7e7039b
-  - enabled: 0
-    path: Assets/Environment.unity
-    guid: 8124e5870f4fd4c779e7a5f994e84ad1
+  - enabled: 1
+    path: Assets/Tutorial.unity
+    guid: 67fa6032ecc88214faeedf13e5faa5d8
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

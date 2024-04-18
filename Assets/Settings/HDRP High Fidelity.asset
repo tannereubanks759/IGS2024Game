@@ -17,7 +17,7 @@ MonoBehaviour:
     supportSSR: 0
     supportSSRTransparent: 0
     supportSSAO: 1
-    supportSSGI: 1
+    supportSSGI: 0
     supportSubsurfaceScattering: 1
     sssSampleBudget:
       m_Values: 140000002800000050000000
@@ -28,7 +28,7 @@ MonoBehaviour:
       m_SchemaId:
         m_Id: With3Levels
     supportVolumetrics: 1
-    supportVolumetricClouds: 1
+    supportVolumetricClouds: 0
     supportLightLayers: 1
     renderingLayerMaskBuffer: 0
     supportWater: 1
@@ -45,7 +45,7 @@ MonoBehaviour:
     computeThicknessLayerMask:
       serializedVersion: 2
       m_Bits: 0
-    supportDistortion: 1
+    supportDistortion: 0
     supportTransparentBackface: 1
     supportTransparentDepthPrepass: 1
     supportTransparentDepthPostpass: 1
@@ -212,7 +212,7 @@ MonoBehaviour:
       ChromaticAberrationMaxSamples: 03000000060000000c000000
     lightSettings:
       useContactShadow:
-        m_Values: 000101
+        m_Values: 000100
         m_SchemaId:
           m_Id: 
     maximumLODLevel:
@@ -228,12 +228,12 @@ MonoBehaviour:
         m_Id: With3Levels
     lightingQualitySettings:
       AOStepCount: 040000000600000015000000
-      AOFullRes: 000001
+      AOFullRes: 000000
       AOMaximumRadiusPixels: 200000002800000050000000
       AOBilateralUpsample: 000101
       AODirectionCount: 010000000200000004000000
       ContactShadowSampleCount: 060000000a0000001f000000
-      SSRMaxRaySteps: 100000002000000058000000
+      SSRMaxRaySteps: 100000002000000000000000
       SSGIRaySteps: 20000000400000004c000000
       SSGIDenoise: 010101
       SSGIHalfResDenoise: 010000
@@ -243,13 +243,13 @@ MonoBehaviour:
       - 0.5
       SSGISecondDenoise: 010101
       RTAORayLength:
-      - 0.5
+      - 0.01
       - 3
       - 20
       RTAOSampleCount: 010000000200000008000000
-      RTAODenoise: 010101
+      RTAODenoise: 000101
       RTAODenoiserRadius:
-      - 0.25
+      - 0.001
       - 0.5
       - 0.65
       RTGIRayLength:

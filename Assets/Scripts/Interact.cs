@@ -42,7 +42,7 @@ public class Interact : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (introDone)
+        if (introDone && objectWithScript == null)
         {
             holdingAnimal = false;
             isLooking = false;
