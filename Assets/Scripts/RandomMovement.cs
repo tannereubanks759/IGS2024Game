@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
+using Random = UnityEngine.Random;
+
 public class RandomMovement : MonoBehaviour
 {
     public NavMeshAgent agent;
@@ -39,6 +42,18 @@ public class RandomMovement : MonoBehaviour
     public Animator anim;
     public AlignWithGround alignScript;
     public GameManager manager;
+
+    [Header ("Footsteps")]
+    public float animalWalkStepInterval;
+    public float animalRunStepInterval;
+    public AudioClip[] animalFootstepClips;
+    public AudioSource animalAudioSource;
+
+    public float nextTime;
+    private int randFootInt;
+    public float footstepVolume;
+
+    private Entity thisEntity;
     //instead of centrePoint you can set it as the transform of the agent if you don't care about a specific area
 
     void Start()
@@ -56,10 +71,19 @@ public class RandomMovement : MonoBehaviour
         isAttacking = false;
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         alignScript = this.GetComponentInChildren<AlignWithGround>();
+        thisEntity = this.gameObject.GetComponent<Entity>();
     }
     
     void Update()
     {
+        if (thisEntity.name == "Goat")
+        {
+            randFootInt = Random.Range(0, 1);
+        }
+        else {
+            randFootInt = Random.Range(0, 2);
+        }
+        
         distanceFromPlayer = Vector3.Distance(Player.transform.position, this.transform.position);
         if(distanceFromPlayer > 150)
         {
@@ -102,6 +126,7 @@ public class RandomMovement : MonoBehaviour
 
     void Running()
     {
+        
         if (agent.velocity == Vector3.zero)
         {
             anim.SetBool("run", false);
@@ -109,6 +134,11 @@ public class RandomMovement : MonoBehaviour
         else
         {
             anim.SetBool("run", true);
+            if (nextTime < Time.time)
+            {
+                animalAudioSource.PlayOneShot(animalFootstepClips[randFootInt], footstepVolume);
+                nextTime = Time.time + animalRunStepInterval;
+            }
         }
         anim.SetBool("walk", false);
         anim.SetBool("attack", false);
@@ -123,8 +153,8 @@ public class RandomMovement : MonoBehaviour
                     agent.SetDestination(point);
                     hasPoint = true;
                 }
-                
             }
+
         }
         
         if (Vector3.Distance(agent.transform.position, point) <= 3f && hasPoint)
@@ -197,6 +227,11 @@ public class RandomMovement : MonoBehaviour
         else
         {
             anim.SetBool("walk", true);
+            if (nextTime < Time.time)
+            {
+                animalAudioSource.PlayOneShot(animalFootstepClips[randFootInt], footstepVolume);
+                nextTime = Time.time + animalWalkStepInterval;
+            }
         }
         anim.SetBool("run", false);
         anim.SetBool("attack", false);
@@ -232,6 +267,7 @@ public class RandomMovement : MonoBehaviour
                         hasTime = false;
                     }
                 }
+                
             }
         }
         

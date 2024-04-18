@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 6923.042, g: 3953.895, b: 2884.1018, a: 1}
+  m_IndirectSpecularColor: {r: 6703.007, g: 3988.1313, b: 3116.106, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -46137,6 +46137,7 @@ MonoBehaviour:
   isPaused: 0
   gun: {fileID: 210140756}
   introComplete: 0
+  mainCam: {fileID: 1546943587}
   pauseScript: {fileID: 1138837392}
   lightControl: {fileID: 314034622}
   caveSpawn: {fileID: 1819560277}
@@ -103605,7 +103606,6 @@ MonoBehaviour:
   - {fileID: 1824274751}
   - {fileID: 1007577213}
   - {fileID: 237428577}
-  objectWithScript: {fileID: 2063239504}
   anim: {fileID: 2036113668}
   turnIn: {fileID: 2063239505}
   deadAnimalText: {fileID: 314665538}
@@ -134104,6 +134104,9 @@ MonoBehaviour:
   rifle: {fileID: 210140753}
   animalBeingCarried: {fileID: 0}
   oldArms: {fileID: 0}
+  interactScipt: {fileID: 1546943590}
+  cam: {fileID: 1546943593}
+  quotaCount: 0
   quotaOne: {fileID: 1661434684}
   quotaTwo: {fileID: 609524249}
   quotaThree: {fileID: 1345576488}
