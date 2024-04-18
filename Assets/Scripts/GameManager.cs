@@ -56,6 +56,10 @@ public class GameManager : MonoBehaviour
         {
             playRandomSong(nightClips);
         }
+        else
+        {
+            source.Stop();
+        }
         /*
         else
         {

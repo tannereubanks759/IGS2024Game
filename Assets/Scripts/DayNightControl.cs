@@ -20,6 +20,15 @@ public class DayNightControl : MonoBehaviour
     public Volume skyVolume;
     public bool isSleep = false;
     public Interact interact;
+
+    private void Start()
+    {
+        currentTime = 6f;
+        isRotating = true;
+        currentDay = 1;
+        SleepText.enabled = false;
+
+    }
     //public turnInScript turnInObj;
     private void Update()
     {
@@ -52,12 +61,12 @@ public class DayNightControl : MonoBehaviour
             SleepText.enabled = true;
             
         }
-        if(currentTime >= 19 && skyVolume.weight != 1f)
+        if(currentTime >= 19 && skyVolume.weight <= 1f)
         {
             //skyAnim.SetBool("isNight", true);
             skyVolume.weight = skyVolume.weight + (.1f * Time.deltaTime);
         }
-        else if(currentTime < 19f && skyVolume.weight != 0f)
+        if(currentTime < 19f && skyVolume.weight >= 0f)
         {
             //skyAnim.SetBool("isNight", false);
             skyVolume.weight = skyVolume.weight - (.1f * Time.deltaTime);
@@ -82,22 +91,7 @@ public class DayNightControl : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        currentTime = 6f;
-        isRotating = true;
-        currentDay = 1;
-        SleepText.enabled = false;
-        
-        // update quota list on turninscript with day one quota
-        /*if (currentDay == 1)
-        {
-            turnInObj.quotaAnimalsList.Add("Deer");
-            turnInObj.quotaAnimalsList.Add("Deer");
-            turnInObj.quotaAnimalsList.Add("Rabbit");
-            turnInObj.quotaAnimalsList.Add("Rabbit");
-        }*/
-    }
+    
 
     void UpdateLight()
     {
@@ -112,31 +106,31 @@ public class DayNightControl : MonoBehaviour
     }
     public void Sleep()
     {
-        if(currentTime >= 19 || objectWithScript.quotaAnimalsList.Count == 0) { 
-            currentTime = 5.5f;
-            isRotating = true;
-            currentDay += 1;
-            SleepText.enabled = false;
-            manager.animalsDespawned = false;
-            GameObject[] spawners = GameObject.FindGameObjectsWithTag("spawner");
-            manager.DespawnAllAnimals();
-            manager.despawnMonsters();
-            manager.monsterSpawnerParent.SetActive(false);
-            manager.animalsDespawned = false;
-            objectWithScript.dayCountUpdate();
-            //Debug.Log("CALLED DAYCOUNT FROM DAYNIGHT");
-            for (int i = 0; i < spawners.Length; i++)
+         
+        currentTime = 5.5f;
+        isRotating = true;
+        currentDay += 1;
+        SleepText.enabled = false;
+        manager.animalsDespawned = false;
+        GameObject[] spawners = GameObject.FindGameObjectsWithTag("spawner");
+        manager.DespawnAllAnimals();
+        manager.despawnMonsters();
+        manager.monsterSpawnerParent.SetActive(false);
+        manager.animalsDespawned = false;
+        //Debug.Log("CALLED DAYCOUNT FROM DAYNIGHT");
+        for (int i = 0; i < spawners.Length; i++)
+        {
+            if (spawners[i].GetComponent<AnimalSpawner>())
             {
-                if (spawners[i].GetComponent<AnimalSpawner>())
-                {
-                    spawners[i].GetComponent<AnimalSpawner>().animalsSpawnedCount = 0;
-                }
-                else if(spawners[i].GetComponent<WolfSpawner>())
-                {
-                    spawners[i].GetComponent<WolfSpawner>().animalsSpawnedCount = 0;
-                }
+                spawners[i].GetComponent<AnimalSpawner>().animalsSpawnedCount = 0;
+            }
+            else if(spawners[i].GetComponent<WolfSpawner>())
+            {
+                spawners[i].GetComponent<WolfSpawner>().animalsSpawnedCount = 0;
             }
         }
+        objectWithScript.dayCountUpdate();
+        
     }
     
 

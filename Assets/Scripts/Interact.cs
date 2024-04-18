@@ -19,7 +19,6 @@ public class Interact : MonoBehaviour
     public GameObject holderAnimal;
     public Alter alterScript;
     public GameObject[] animalParents;
-    public GameObject objectWithScript;
     public Animator anim;
     public turnInScript turnIn;
     public TextMeshProUGUI deadAnimalText;
@@ -38,20 +37,18 @@ public class Interact : MonoBehaviour
         totemPickupText.enabled = false;
         sleepText.enabled = false;
         altertext.enabled = false;
+        holdingAnimal = false;
+        isLooking = false;
+        //objectWithScript.GetComponent<turnInScript>();
+        rifle.SetActive(true);
+        totem.SetActive(false);
+        sleepText.enabled = false;
+        
     }
     // Update is called once per frame
     void Update()
     {
-        if (introDone && objectWithScript == null)
-        {
-            holdingAnimal = false;
-            isLooking = false;
-            objectWithScript.GetComponent<turnInScript>();
-            rifle.SetActive(true);
-            totem.SetActive(false);
-            sleepText.enabled = false;
-            introDone = false;
-        }
+        
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (isLooking && !holdingAnimal)
@@ -202,7 +199,7 @@ public class Interact : MonoBehaviour
             {
                 totemPickupText.enabled = true;
             }
-            else if(other.tag == "bed" && lightSystem.currentTime>= 19 && lightSystem.isSleep == false)
+            else if(other.tag == "bed" && (lightSystem.currentTime>= 19 || ableToSleepAfterQuota) && lightSystem.isSleep == false)
             {
                 sleepText.enabled = true;
             }

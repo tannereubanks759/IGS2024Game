@@ -23,10 +23,10 @@ public class turnInScript : MonoBehaviour
     public GameObject animalBeingCarried;
     public GameObject oldArms;
     //private int dayCounter = 0;
-    Interact interactScipt;
-    private Camera cam;
+    public Interact interactScipt;
+    public Camera cam;
     bool readyForNextDay = false;
-    int quotaCount = 0;
+    public int quotaCount;
     /*public GameObject lookObj;*/
     [SerializeField]
     public GameObject quotaOne;
@@ -61,12 +61,11 @@ public class turnInScript : MonoBehaviour
 
     void Start()
     {
-        cam = Camera.main;
+        
         boxCol = GetComponent<BoxCollider>();
         interactImage.SetActive(false);
         noAnimalText.SetActive(false);
-        interactScipt = cam.GetComponent<Interact>();
-        objWithAlterScript.GetComponent<Alter>();
+        
         //lookObj = null;
         usingArray = arrayOne;
         ableToSleep = false;
@@ -115,7 +114,7 @@ public class turnInScript : MonoBehaviour
                     }
                     
                     
-                    if(nameOfAnimal == "Deer")
+                    else if(nameOfAnimal == "Deer")
                     {
                         for (int i = deerIndex; i > deerIndex - deerCount; i--)
                         {
@@ -127,7 +126,7 @@ public class turnInScript : MonoBehaviour
                             }
                         }
                     }
-                    if (nameOfAnimal == "Wolf")
+                    else if (nameOfAnimal == "Wolf")
                     {
                         for (int i = wolfIndex; i > wolfIndex - wolfCount; i--)
                         {
@@ -139,7 +138,7 @@ public class turnInScript : MonoBehaviour
                             }
                         }
                     }
-                    if (nameOfAnimal == "Bear")
+                    else if (nameOfAnimal == "Bear")
                     {
                         for (int i = bearIndex; i > bearIndex - bearCount; i--)
                         {
@@ -151,7 +150,7 @@ public class turnInScript : MonoBehaviour
                             }
                         }
                     }
-                    if(nameOfAnimal == "Goat")
+                    else if(nameOfAnimal == "Goat")
                     {
                         for (int i = goatIndex; i > goatIndex - goatCount; i--)
                         {
@@ -312,46 +311,7 @@ public class turnInScript : MonoBehaviour
             // set totem 4 quota
             //END HERE FOR NEW QUOTA
         }
-        /*else if (aQuotaCount == 4)
-        {
-            quotaAnimalsList.Clear();
-            quotaAnimalsList.Add("Goat");
-            quotaAnimalsList.Add("Wolf");
-            quotaAnimalsList.Add("Bear");
-            quotaAnimalsList.Add("Bear");
-            quotaFour.SetActive(false);
-            quotaFive.SetActive(true);
-            readyForNextDay = false;
-            // set totem 5 quota
-        }
-        else if (aQuotaCount == 5)
-        {
-            quotaAnimalsList.Clear();
-            quotaAnimalsList.Add("Goat");
-            quotaAnimalsList.Add("Wolf");
-            quotaAnimalsList.Add("Wolf");
-            quotaAnimalsList.Add("Bear");
-            quotaAnimalsList.Add("Bear");
-            quotaAnimalsList.Add("Bear");
-            quotaFive.SetActive(false);
-            quotaSix.SetActive(true);
-            readyForNextDay = false;
-            // set totem 6 quota
-        }
-        else if (aQuotaCount == 6)
-        {
-            quotaAnimalsList.Clear();
-            quotaAnimalsList.Add("Rabbit");
-            quotaAnimalsList.Add("Deer");
-            quotaAnimalsList.Add("Goat");
-            quotaAnimalsList.Add("Wolf");
-            quotaAnimalsList.Add("Bear");
-            quotaSix.SetActive(false);
-            quotaSeven.SetActive(true);
-            readyForNextDay = false;
-            
-            // set totem 7 quota
-        }*/
+        
     }
 }
 

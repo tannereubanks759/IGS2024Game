@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 6711.9775, g: 3570.8442, b: 2356.8557, a: 1}
+  m_IndirectSpecularColor: {r: 6720.548, g: 3575.0532, b: 2358.1448, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19007,7 +19007,7 @@ GameObject:
   - component: {fileID: 333144598}
   - component: {fileID: 333144597}
   m_Layer: 5
-  m_Name: Sleep text
+  m_Name: Sleep text Instruct
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21010,7 +21010,7 @@ Transform:
   m_GameObject: {fileID: 355136052}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.6691307, z: 0, w: 0.7431448}
-  m_LocalPosition: {x: 365.85, y: 4.774, z: 330.23}
+  m_LocalPosition: {x: 365.98, y: 4.793, z: 331.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -43665,7 +43665,6 @@ MonoBehaviour:
   - {fileID: 1527261843}
   - {fileID: 1761645467}
   - {fileID: 1288349588}
-  objectWithScript: {fileID: 1024328112}
   anim: {fileID: 1083629261}
   turnIn: {fileID: 1024328115}
   deadAnimalText: {fileID: 1647693354}
@@ -60910,6 +60909,7 @@ GameObject:
   - component: {fileID: 1024328113}
   - component: {fileID: 1024328115}
   - component: {fileID: 1024328114}
+  - component: {fileID: 1024328116}
   m_Layer: 0
   m_Name: scriptAreaTurn
   m_TagString: Untagged
@@ -60978,6 +60978,9 @@ MonoBehaviour:
   rifle: {fileID: 1704165516}
   animalBeingCarried: {fileID: 0}
   oldArms: {fileID: 0}
+  interactScipt: {fileID: 740566322}
+  cam: {fileID: 740566318}
+  quotaCount: 0
   quotaOne: {fileID: 864362452}
   quotaTwo: {fileID: 638449576}
   quotaThree: {fileID: 303783615}
@@ -61002,11 +61005,108 @@ MonoBehaviour:
   - {fileID: 710734237}
   - {fileID: 989116454}
   usingArray: []
-  turninSource: {fileID: 0}
-  turninSound: {fileID: 0}
+  turninSource: {fileID: 1024328116}
+  turninSound: {fileID: 8300000, guid: 7dce59721b5c165489c01f1d70ba3972, type: 3}
   fireParticleSys: {fileID: 0}
   normalFire: {fileID: 0}
   turnInFire: {fileID: 0}
+--- !u!82 &1024328116
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024328112}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7dce59721b5c165489c01f1d70ba3972, type: 3}
+  m_Resource: {fileID: 8300000, guid: 7dce59721b5c165489c01f1d70ba3972, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1024520691
 GameObject:
   m_ObjectHideFlags: 0
