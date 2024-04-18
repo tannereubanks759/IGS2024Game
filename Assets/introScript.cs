@@ -37,7 +37,6 @@ public class introScript : MonoBehaviour
     }
     public void playOceanSound()
     {
-        source.clip = oceanSound;
-        source.Play();
+        source.PlayOneShot(oceanSound, 1f);
     }
 }

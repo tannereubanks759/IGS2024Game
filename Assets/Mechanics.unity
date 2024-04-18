@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 6709.948, g: 3571.7349, b: 2361.0588, a: 1}
+  m_IndirectSpecularColor: {r: 6711.9775, g: 3570.8442, b: 2356.8557, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -21010,7 +21010,7 @@ Transform:
   m_GameObject: {fileID: 355136052}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.6691307, z: 0, w: 0.7431448}
-  m_LocalPosition: {x: 365.85, y: 6.634, z: 330.23}
+  m_LocalPosition: {x: 365.85, y: 4.774, z: 330.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -31531,7 +31531,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -61002,6 +61002,11 @@ MonoBehaviour:
   - {fileID: 710734237}
   - {fileID: 989116454}
   usingArray: []
+  turninSource: {fileID: 0}
+  turninSound: {fileID: 0}
+  fireParticleSys: {fileID: 0}
+  normalFire: {fileID: 0}
+  turnInFire: {fileID: 0}
 --- !u!1 &1024520691
 GameObject:
   m_ObjectHideFlags: 0

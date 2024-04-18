@@ -108,7 +108,7 @@ public class turnInScript : MonoBehaviour
                                 usingArray[i].SetActive(false);
                                 turninSource.PlayOneShot(turninSound);
                                 //normalFire.Stop();
-                                Instantiate(turnInFire, fireParticleSys.transform);
+                                //Instantiate(turnInFire, fireParticleSys.transform);
                                 break;
                             }
                         }

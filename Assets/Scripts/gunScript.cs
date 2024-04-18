@@ -108,7 +108,7 @@ public class gunScript : MonoBehaviour
     }
     void notScoped()
     {
-        Camera.main.GetComponent<Interact>().enabled = true;
+        mainCam.GetComponent<Interact>().enabled = true;
         scopeUI.SetActive(false);
         mainCam.fieldOfView = baseFOV;
         gun.SetActive(true);
