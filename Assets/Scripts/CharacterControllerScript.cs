@@ -126,6 +126,10 @@ public class CharacterControllerScript : MonoBehaviour
         randFootInt = Random.Range(0, 2);
         if (!isPaused && introComplete)
         {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                anim.SetBool("holdingNothing", !anim.GetBool("holdingNothing"));
+            }
             boat.SetActive(true);
             if(this.transform.position.y < 4.173f)
             {
