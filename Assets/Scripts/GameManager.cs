@@ -22,6 +22,10 @@ public class GameManager : MonoBehaviour
     public List<AudioClip> nightClips;
     public List<AudioClip> dayClips;
     private AudioSource source;
+    public GameObject endingAnimator;
+    public GameObject Icon;
+    public GameObject sailboat;
+    public GameObject lookPointCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,10 +52,10 @@ public class GameManager : MonoBehaviour
             spawnMonsters();
         }
 
-        /*if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             win();
-        }*/
+        }
         if(sunControl.currentTime >= 19)
         {
             playRandomSong(nightClips);
@@ -137,22 +141,14 @@ public class GameManager : MonoBehaviour
     {
         //451.88, 15.29, 577.54
         //rot 0, 84, 0
-        player.GetComponent<CharacterControllerScript>().enabled = false;
+        endingAnimator.SetActive(true);
+        GameObject.Find("alter").GetComponent<Animator>().SetBool("end", true);
         canvas.SetActive(false);
-        player.transform.rotation = Quaternion.Euler(0, 84, 0);
-        player.transform.position = new Vector3(451.88f, 15.29f, 577.54f);
-        StartCoroutine(winEnum());
+        player.SetActive(false);
+        Icon.SetActive(false);
+        sailboat.SetActive(false);
+        lookPointCanvas.SetActive(false);
     }
-    IEnumerator winEnum()
-    {
-        yield return new WaitForSeconds(.1f);
-        player.transform.position =  new Vector3(451.585999f, 15.6129999f, 577.273987f);
-        player.transform.eulerAngles = Vector3.zero;
-        player.GetComponent<CharacterControllerScript>().enabled = false;
-        player.GetComponent<CharacterController>().enabled = false;
-        
-        player.GetComponentInChildren<Animator>().SetBool("won", true);
-
-    }
+    
 
 }
