@@ -12,6 +12,7 @@ public class tutorialScript : MonoBehaviour
     public CharacterControllerScript characterControllerScript;
     public Camera currentCamera;
     public Camera camTwo;
+    public Alter alterObj;
     private void Start()
     {
         characterControllerScript.introComplete = true;
@@ -105,14 +106,22 @@ public class tutorialScript : MonoBehaviour
                 
             }
         }
-        else if(popUpIndex == 9)
+        else if(popUpIndex ==9)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (alterObj.allTotemsIn == true)
             {
                 popUpIndex++;
+              
+            }
+        }
+        else if(popUpIndex == 10)
+        {
+           
+                //popUpIndex++;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-            }
+            Debug.Log("Cursor set to active");
+           
         }
     }
 }
