@@ -11,6 +11,7 @@ public class Alter : MonoBehaviour
     public bool allTotemsIn;
     public GameManager manager;
     public AudioSource caveSource;
+    public bool tutRef = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,7 @@ public class Alter : MonoBehaviour
             if(alterTotems[i].activeSelf == false)
             {
                 alterTotems[i].SetActive(true);
+                tutRef = true;
                 break;
             }
         }

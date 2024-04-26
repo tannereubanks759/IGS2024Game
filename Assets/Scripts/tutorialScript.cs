@@ -33,6 +33,7 @@ public class tutorialScript : MonoBehaviour
         }
         if (popUpIndex == 0)
         {
+            // move
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
             {
                 popUpIndex++;
@@ -40,6 +41,7 @@ public class tutorialScript : MonoBehaviour
         }
         else if (popUpIndex == 1)
         {
+            //shoot/aim
            if(Input.GetMouseButtonDown(0)|| Input.GetMouseButtonDown(1)) 
             {
                 popUpIndex++;
@@ -50,6 +52,7 @@ public class tutorialScript : MonoBehaviour
         }
         else if (popUpIndex == 2)
         {
+            //wall1
            if(Input.GetKeyDown(KeyCode.E))
             {
                 // move camera
@@ -59,6 +62,7 @@ public class tutorialScript : MonoBehaviour
         }
         else if (popUpIndex == 3)
         {
+            //wall2
             if (Input.GetKeyDown(KeyCode.E))
             {
                 //currentCamera.enabled = true;
@@ -69,6 +73,7 @@ public class tutorialScript : MonoBehaviour
         }
         else if (popUpIndex == 4)
         {
+            //pick up animal
             if(interactObj.isHolding)
             {
                 popUpIndex++;
@@ -76,6 +81,7 @@ public class tutorialScript : MonoBehaviour
         }
         else if (popUpIndex == 5)
         {
+            //walk to offering pit
             if(turnInScript.inRange)
             {
                 popUpIndex++;
@@ -83,6 +89,7 @@ public class tutorialScript : MonoBehaviour
         }
         else if (popUpIndex == 6)
         {
+            // turnin
             if (Input.GetKeyDown(KeyCode.E))
             {
                 popUpIndex++;
@@ -90,6 +97,7 @@ public class tutorialScript : MonoBehaviour
         }
         else if (popUpIndex == 7)
         {
+            //sleep
             if(Input.GetKeyDown(KeyCode.E))
             {
                 popUpIndex++;
@@ -97,26 +105,18 @@ public class tutorialScript : MonoBehaviour
         }
         else if (popUpIndex == 8)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                if(Input.GetKey(KeyCode.E))
-                {
-                    popUpIndex++;
-                }
-                
-            }
-        }
-        else if(popUpIndex ==9)
-        {
-            if (alterObj.allTotemsIn == true)
+            //grab totem
+            if (alterObj.tutRef == true)
             {
                 popUpIndex++;
-              
+
             }
+
+
         }
-        else if(popUpIndex == 10)
+        else if(popUpIndex == 9)
         {
-           
+           //end
                 //popUpIndex++;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
