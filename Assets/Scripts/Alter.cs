@@ -16,11 +16,13 @@ public class Alter : MonoBehaviour
     void Start()
     {
         allTotemsIn = false;
+        this.GetComponent<Animator>().enabled = false;
         alterTotems = GameObject.FindGameObjectsWithTag("AlterTotem");
         for(int i = 0; i < alterTotems.Length; i++)
         {
             alterTotems[i].SetActive(false);
         }
+        
     }
 
     private void Update()
@@ -43,6 +45,7 @@ public class Alter : MonoBehaviour
         }
         if (alterTotems[3].activeSelf)
         {
+            this.GetComponent<Animator>().enabled = true;
             this.GetComponent<Animator>().SetBool("end", true);
             this.GetComponent<AudioSource>().Play();
             caveSource.Play();
