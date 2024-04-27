@@ -35,6 +35,7 @@ public class introScript : MonoBehaviour
         player.GetComponentInChildren<Interact>().introDone = true;
         this.gameObject.SetActive(false);
     }
+    
     public void playOceanSound()
     {
         source.PlayOneShot(oceanSound, 1f);

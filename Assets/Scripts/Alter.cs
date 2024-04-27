@@ -25,13 +25,13 @@ public class Alter : MonoBehaviour
         
     }
 
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
             spawnTotem();
         }
-    }
+    }*/
     public void place()
     {
         for(int i = 0; i < alterTotems.Length; i++)

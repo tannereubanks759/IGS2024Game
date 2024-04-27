@@ -26,14 +26,19 @@ public class GameManager : MonoBehaviour
     public GameObject Icon;
     public GameObject sailboat;
     public GameObject lookPointCanvas;
+    private CharacterControllerScript playerController;
+    public bool DayMusic;
+    private bool playingNightSong;
     // Start is called before the first frame update
     void Start()
     {
+        DayMusic = true;
         animalsDespawned = false;
         SpawnTreeObstacles();
         sunControl = GameObject.Find("Sun").GetComponent<DayNightControl>();
         monsterSpawnerParent.SetActive(false);
         source = this.GetComponent<AudioSource>();
+        playerController = player.GetComponent<CharacterControllerScript>();
     }
 
     // Update is called once per frame
@@ -52,23 +57,33 @@ public class GameManager : MonoBehaviour
             spawnMonsters();
         }
 
-        if (Input.GetKeyDown(KeyCode.L))
+        /*if (Input.GetKeyDown(KeyCode.L))
         {
             win();
-        }
+        }*/
         if(sunControl.currentTime >= 19)
         {
             playRandomSong(nightClips);
+            playingNightSong = true;
+        }
+        else if((playerController.introComplete && DayMusic))
+        {
+            if(playingNightSong == true)
+            {
+                source.Stop();
+                playingNightSong = false;
+            }
+            playRandomSong(dayClips);
+            
         }
         else
         {
             source.Stop();
         }
-        /*
-        else
-        {
-            playRandomSong(dayClips);
-        }*/
+    }
+    public void DayMusicChange()
+    {
+        DayMusic = !DayMusic;
     }
     public void playRandomSong(List<AudioClip> clips)
     {
@@ -119,7 +134,7 @@ public class GameManager : MonoBehaviour
 
     public void spawnMonsters()
     {
-        
+        source.Stop();
         monsterSpawnerParent.SetActive(true);
         GameObject[] monsterSpawners = GameObject.FindGameObjectsWithTag("MonsterSpawner");
         for (int i = 0; i < monsterSpawners.Length; i++)

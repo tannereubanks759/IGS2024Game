@@ -200,7 +200,7 @@ public class CharacterControllerScript : MonoBehaviour
                 //    Velocity.y = -25f;
                 //}
 
-                if (Input.GetKey(KeyCode.Space))
+                if (Input.GetKey(KeyCode.Space) & isScoped == false)
                 {
                     Velocity.y = jumpForce;
                     isJumpFlag = true;

@@ -12,6 +12,10 @@ public class PlayerAnimEvents : MonoBehaviour
     {
         gun.Scoped();
     }
+    public void StopMusic()
+    {
+        GameObject.Find("GameManager").GetComponent<GameManager>().DayMusicChange();
+    }
     public void reload()
     {
         gun.Reload();

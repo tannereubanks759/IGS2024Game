@@ -97,8 +97,8 @@ public class turnInScript : MonoBehaviour
                     //oldArms.SetActive(false);
                     //rifle.SetActive(true);
                     anim.SetBool("holdingAnimal", false);
-                    
-                    if(nameOfAnimal == "Rabbit") 
+                    Instantiate(turnInFire, fireParticleSys.transform);
+                    if (nameOfAnimal == "Rabbit") 
                     {
                         for (int i = rabbitIndex; i > rabbitIndex - rabbitCount; i--)
                         {
@@ -107,7 +107,6 @@ public class turnInScript : MonoBehaviour
                                 usingArray[i].SetActive(false);
                                 turninSource.PlayOneShot(turninSound);
                                 //normalFire.Stop();
-                                Instantiate(turnInFire, fireParticleSys.transform);
                                 break;
                             }
                         }

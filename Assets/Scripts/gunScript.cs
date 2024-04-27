@@ -33,6 +33,7 @@ public class gunScript : MonoBehaviour
     public AudioSource gunShot;
     public GameObject bloodEffect;
     public Pause pauseRef;
+    public ParticleSystem flash;
 
     void Start()
     {
@@ -65,7 +66,7 @@ public class gunScript : MonoBehaviour
             {
 
                 animator.SetBool("Scoping", true);
-
+                isScoped = true;
                 
                 if (isScoped)
                 {
@@ -128,6 +129,7 @@ public class gunScript : MonoBehaviour
     private void fireCalled()
     {
         isReloaded = false;
+        flash.Play();
         RaycastHit target;
         gunShot.Play();
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
